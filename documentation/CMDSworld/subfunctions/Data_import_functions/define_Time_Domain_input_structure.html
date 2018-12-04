@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of define_Time_Domain_input_structure</title>
+  <meta name="keywords" content="define_Time_Domain_input_structure">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subfunctions</a> &gt; <a href="index.html">Data_import_functions</a> &gt; define_Time_Domain_input_structure.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subfunctions\Data_import_functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>define_Time_Domain_input_structure
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong></strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [Output_Time_Domain_Data, T_vector,NumDim]=define_Time_Domain_input_structure(Input_Time_Domain_Data) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="define_input_structure.html" class="code" title="function varargout = define_input_structure(varargin)">define_input_structure</a>	DEFINE_INPUT_STRUCTURE MATLAB code for define_input_structure.fig</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="input_Time_data.html" class="code" title="function [TimeDomainData, tau_vector, T_vector, t_vector, InputFolder, Time_Domain_Size,variable_vector,file_out]=input_Time_data">input_Time_data</a>	Get 4D Time Domain Data</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function [Output_Time_Domain_Data, T_vector,NumDim]=define_Time_Domain_input_structure(Input_Time_Domain_Data)</a>
+0002 SizeInput=size(Input_Time_Domain_Data);
+0003 
+0004 <span class="comment">% Get Number of Dimensions of Input Time Domain Data</span>
+0005 NumDim=length(SizeInput);
+0006 
+0007 
+0008 <span class="keyword">if</span> NumDim==3
+0009     msgbox(<span class="string">'Input from three-pulse experiment. Structure of data input has to be D(pc steps,tau vector,t vector)!'</span>)
+0010     Output_Time_Domain_Data=zeros(SizeInput(1),SizeInput(2),1,SizeInput(3));
+0011     Output_Time_Domain_Data(:,:,1,:)=Input_Time_Domain_Data;
+0012     T_vector=0;
+0013 <span class="keyword">elseif</span> NumDim==4
+0014     InputStructure=<a href="define_input_structure.html" class="code" title="function varargout = define_input_structure(varargin)">define_input_structure</a>;
+0015     <span class="keyword">switch</span> InputStructure
+0016         <span class="keyword">case</span> <span class="string">'D(pc,tau,T,t)'</span>
+0017             Output_Time_Domain_Data=Input_Time_Domain_Data;
+0018             T_vector=[];
+0019         <span class="keyword">case</span> <span class="string">'D(pc,tau,t,variable)'</span>
+0020             <span class="comment">%generate 5D array D(pc,tau,T=0,t,variable)</span>
+0021             Output_Time_Domain_Data=zeros(SizeInput(1),SizeInput(2),1,SizeInput(3),SizeInput(4));
+0022             Output_Time_Domain_Data(:,:,1,:,:)=Input_Time_Domain_Data;
+0023             T_vector=0;
+0024             NumDim=5;
+0025         <span class="keyword">case</span> <span class="string">'Cancel'</span>
+0026             error(<span class="string">'User Canceled input'</span>);
+0027     <span class="keyword">end</span>
+0028 <span class="keyword">elseif</span> NumDim==5
+0029     Output_Time_Domain_Data=Input_Time_Domain_Data;
+0030     T_vector=[];
+0031 <span class="keyword">end</span></pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

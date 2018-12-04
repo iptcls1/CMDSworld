@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of input_phase_cycling</title>
+  <meta name="keywords" content="input_phase_cycling">
+  <meta name="description" content="function imports phase cycling .mat file">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subfunctions</a> &gt; <a href="index.html">Data_import_functions</a> &gt; input_phase_cycling.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subfunctions\Data_import_functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>input_phase_cycling
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function imports phase cycling .mat file</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [phases,weights,name_of_scheme]=input_phase_cycling(InputFolder) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> function imports phase cycling .mat file</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>	CMDSWORLD MATLAB code for CMDSworld.fig</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <span class="comment">% function imports phase cycling .mat file</span>
+0002 <a name="_sub0" href="#_subfunctions" class="code">function [phases,weights,name_of_scheme]=input_phase_cycling(InputFolder)</a>
+0003 <span class="keyword">if</span> nargin&gt;0
+0004 [file,path] = uigetfile(fullfile([InputFolder <span class="string">'*.mat'</span>]),<span class="string">'Input phase-cycling data'</span>);
+0005 <span class="keyword">else</span>
+0006 [file,path] = uigetfile(<span class="string">'\*.mat'</span>,<span class="string">'Input phase-cycling data'</span>,<span class="string">'phase_cycling_scheme'</span>);
+0007 <span class="keyword">end</span>
+0008 <span class="keyword">if</span> isequal(file,0)
+0009    disp(<span class="string">'User selected Cancel'</span>);
+0010    error(<span class="string">'no input data!'</span>);
+0011 <span class="keyword">else</span>
+0012    tmp=struct2cell(load(fullfile(path,file)));
+0013    phases=tmp{1};
+0014    weights=tmp{2};
+0015    name_of_scheme=file;
+0016 <span class="keyword">end</span></pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

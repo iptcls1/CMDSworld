@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of plotfunction_Time_Domain_maps</title>
+  <meta name="keywords" content="plotfunction_Time_Domain_maps">
+  <meta name="description" content="this plot function plot Time Domain Maps tau vs t for T_increment of">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subfunctions</a> &gt; <a href="index.html">plot_functions</a> &gt; plotfunction_Time_Domain_maps.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subfunctions\plot_functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>plotfunction_Time_Domain_maps
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>this plot function plot Time Domain Maps tau vs t for T_increment of</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">this plot function plot Time Domain Maps tau vs t for T_increment of
+T_vector and phase-cycling step pcstep</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="build_xylabel_timedomain.html" class="code" title="function [ xlabel,ylabel ] = build_xylabel_timedomain(option)">build_xylabel_timedomain</a>	</li><li><a href="generate_color_map.html" class="code" title="function plotcolor_fine=generate_color_map_positive_values(number_of_shades)">generate_color_map</a>	Colormap</li><li><a href="generate_color_map_positive_negative_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_negative_values(~)">generate_color_map_positive_negative_values</a>	Colormap</li><li><a href="generate_color_map_positive_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_values(number_of_shades)">generate_color_map_positive_values</a>	Colormap</li><li><a href="plot_polygon.html" class="code" title="function plot_polygon(X,Y,Color)">plot_polygon</a>	</li><li><a href="plot_square.html" class="code" title="function plot_square(X,Y,Color)">plot_square</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subguis/T_scan_evaluation.html" class="code" title="function varargout = T_scan_evaluation(varargin)">T_scan_evaluation</a>	T_SCAN_EVALUATION MATLAB code for T_scan_evaluation.fig</li><li><a href="../../../CMDSworld/subguis/Time_Domain_Maps.html" class="code" title="function varargout = Time_Domain_Maps(varargin)">Time_Domain_Maps</a>	TIME_DOMAIN_MAPS M-file for Time_Domain_Maps.fig</li><li><a href="../../../CMDSworld/subguis/Time_Domain_Maps_backup.html" class="code" title="function varargout = Time_Domain_Maps(varargin)">Time_Domain_Maps_backup</a>	TIME_DOMAIN_MAPS M-file for Time_Domain_Maps.fig</li><li><a href="../../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/Calculate_and_plot_1Q1Q.html" class="code" title="function [figuredata]=Calculate_and_plot_1Q1Q(TimeDomainData,Domain,tau_vector,T_vector,t_vector,weights,axeshandle,PCpos,Tpos,operation,normalization,Units,XLabel,YLabel,Title,ZeropaddingImage,Contour,ZeropaddingContour,contour_isovalues,name_of_scheme,ROIdata,omega_center,gamma,Double_omega_tau,Double_omega_t,Flip_w_tau,Flip_w_t,Varpos,var_vector)">Calculate_and_plot_1Q1Q</a>	</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <span class="comment">%this plot function plot Time Domain Maps tau vs t for T_increment of</span>
+0002 <span class="comment">%T_vector and phase-cycling step pcstep</span>
+0003 <a name="_sub0" href="#_subfunctions" class="code">function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,</a><span class="keyword">...</span>
+0004         Contour,<span class="keyword">...</span>
+0005         Time_data_contour,<span class="keyword">...</span>
+0006         tau_vector_contour,<span class="keyword">...</span>
+0007         T_vector_contour,<span class="keyword">...</span>
+0008         t_vector_contour,<span class="keyword">...</span>
+0009         contour_isovalues,<span class="keyword">...</span>
+0010         ROIdata)
+0011 
+0012 <span class="keyword">if</span> nargin &lt;7
+0013 plotcolor_fine=<a href="generate_color_map.html" class="code" title="function plotcolor_fine=generate_color_map_positive_values(number_of_shades)">generate_color_map</a>(1000);
+0014 <span class="comment">%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;actual plotting: remember that SpecDomainData is plotted as matrix, hence</span>
+0015 <span class="comment">%the first index is rows, which corresponds to the y axis of a cartesian coordinate</span>
+0016 <span class="comment">%system. &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+0017 
+0018 imagesc(t_vector,tau_vector,squeeze(TimeDomainData(pcstep,:,T_increment,:))');
+0019 plotcolor_fine=<a href="generate_color_map_positive_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_values(number_of_shades)">generate_color_map_positive_values</a>(1000);
+0020 
+0021 <span class="keyword">else</span>
+0022             plotcolor_fine=<a href="generate_color_map_positive_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_values(number_of_shades)">generate_color_map_positive_values</a>(1000);
+0023     <span class="keyword">switch</span> operation
+0024         <span class="keyword">case</span> <span class="string">'absolute'</span> 
+0025             plotcolor_fine=<a href="generate_color_map_positive_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_values(number_of_shades)">generate_color_map_positive_values</a>(1000);
+0026         <span class="keyword">case</span> <span class="string">'realpart'</span>
+0027             plotcolor_fine=<a href="generate_color_map_positive_negative_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_negative_values(~)">generate_color_map_positive_negative_values</a>(1000);
+0028         <span class="keyword">case</span> <span class="string">'imagpart'</span>
+0029             plotcolor_fine=<a href="generate_color_map_positive_negative_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_negative_values(~)">generate_color_map_positive_negative_values</a>(1000);
+0030     <span class="keyword">end</span>
+0031 <span class="comment">%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;actual plotting: remember that SpecDomainData is plotted as matrix, hence</span>
+0032 <span class="comment">%the first index is rows, which corresponds to the y axis of a cartesian coordinate</span>
+0033 <span class="comment">%system. &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+0034     <span class="keyword">if</span> ndims(TimeDomainData)==3
+0035     imagesc(t_vector,tau_vector,squeeze(TimeDomainData(:,T_increment,:))');
+0036     <span class="keyword">elseif</span> ndims(TimeDomainData)&gt;3
+0037     imagesc(t_vector,tau_vector,squeeze(TimeDomainData(pcstep,:,T_increment,:))')    
+0038     <span class="keyword">end</span>
+0039 <span class="keyword">end</span>
+0040 
+0041 axis xy;
+0042 box on
+0043 ax=gca;
+0044 
+0045 ax.BoxStyle=<span class="string">'full'</span>;
+0046 ax.LineWidth=1.5;
+0047 ax.FontSize=14;
+0048 ax.GridAlpha=.1;
+0049 ax.FontName=<span class="string">'Arial'</span>;
+0050 set(ax,<span class="string">'dataaspectratio'</span>,[1 1 1]);
+0051 
+0052 colormap(ax,plotcolor_fine);
+0053 <span class="comment">% axis labels</span>
+0054 [xlabelstring,ylabelstring]=<a href="build_xylabel_timedomain.html" class="code" title="function [ xlabel,ylabel ] = build_xylabel_timedomain(option)">build_xylabel_timedomain</a>(<span class="string">'option1'</span>);
+0055 xlabel(xlabelstring);
+0056 ylabel(ylabelstring);
+0057 
+0058 title(<span class="string">'Time Domain Map'</span>);
+0059 
+0060 ax.YTick=ax.XTick;
+0061 
+0062 <span class="comment">%colorbar</span>
+0063 colb=colorbar;
+0064 colb.LineWidth=1.5;
+0065 <span class="comment">% colb.XColor=[34,139,34]/255;%forest green;</span>
+0066 <span class="comment">% colb.YColor=[34,139,34]/255;%forest green;</span>
+0067 colb.TickDirection=<span class="string">'out'</span>;
+0068 colb.FontSize=16;
+0069 colb.FontName=<span class="string">'Arial'</span>;
+0070 drawnow;
+0071 
+0072 <span class="comment">% define colorbar limits and colorplot limits</span>
+0073 <span class="keyword">if</span> nargin &gt;=7
+0074 <span class="keyword">switch</span> operation
+0075     <span class="keyword">case</span> <span class="string">'realpart'</span>
+0076         set(ax,<span class="string">'Clim'</span>,[-max(max(max(max(abs(TimeDomainData))))) max(max(max(max(abs(TimeDomainData)))))]);
+0077         set(colb,<span class="string">'Limits'</span>,[-max(max(max(max(abs(TimeDomainData))))) max(max(max(max(abs(TimeDomainData)))))]);
+0078     <span class="keyword">case</span> <span class="string">'imagpart'</span>
+0079         set(ax,<span class="string">'Clim'</span>,[-max(max(max(max(abs(TimeDomainData))))) max(max(max(max(abs(TimeDomainData)))))]);
+0080         set(colb,<span class="string">'Limits'</span>,[-max(max(max(max(abs(TimeDomainData))))) max(max(max(max(abs(TimeDomainData)))))]);
+0081     <span class="keyword">case</span> <span class="string">'absolute'</span>
+0082         set(ax,<span class="string">'Clim'</span>,[min(min(min(min(TimeDomainData)))) max(max(max(max(TimeDomainData))))]);
+0083         set(colb,<span class="string">'Limits'</span>,[min(min(min(min(TimeDomainData)))) max(max(max(max(TimeDomainData))))]);
+0084 <span class="keyword">end</span> 
+0085 <span class="keyword">else</span>
+0086         set(ax,<span class="string">'Clim'</span>,[min(min(min(min(TimeDomainData)))) max(max(max(max(TimeDomainData))))]);
+0087         set(colb,<span class="string">'Limits'</span>,[min(min(min(min(TimeDomainData)))) max(max(max(max(TimeDomainData))))]);
+0088 
+0089 <span class="keyword">end</span>
+0090 
+0091 
+0092 <span class="comment">%add contour lines</span>
+0093 <span class="keyword">if</span> nargin &gt; 7        
+0094     <span class="keyword">switch</span> Contour
+0095         <span class="keyword">case</span> <span class="string">'off'</span>
+0096             <span class="comment">%do nothing</span>
+0097         <span class="keyword">case</span> <span class="string">'on'</span>
+0098             hold on
+0099             contour(tau_vector_contour,t_vector_contour,<span class="keyword">...</span>
+0100                 squeeze(permute(Time_data_contour(:,T_increment,:),[3 2 1])),<span class="keyword">...</span>
+0101                 <span class="string">'-k'</span>, <span class="string">'LevelList'</span>, contour_isovalues,<span class="keyword">...</span>
+0102                 <span class="string">'LineWidth'</span>,1);
+0103             hold off
+0104     <span class="keyword">end</span>   
+0105 <span class="keyword">end</span>        
+0106 
+0107 <span class="keyword">if</span> exist(<span class="string">'ROIdata'</span>,<span class="string">'var'</span>)==1 &amp;&amp; ~isempty(ROIdata)==1
+0108   ColorOrder=lines(10);
+0109   <span class="keyword">for</span> nn=1:length(ROIdata.ROI_data_x)
+0110         <span class="comment">%check for polygon or rectangles</span>
+0111         <span class="keyword">if</span> length(ROIdata.ROI_data_x{nn})==2
+0112            <a href="plot_square.html" class="code" title="function plot_square(X,Y,Color)">plot_square</a>(ROIdata.ROI_data_x{nn},ROIdata.ROI_data_y{nn},ColorOrder(nn,:));
+0113         <span class="keyword">else</span>
+0114            <a href="plot_polygon.html" class="code" title="function plot_polygon(X,Y,Color)">plot_polygon</a>(ROIdata.ROI_data_x{nn},ROIdata.ROI_data_y{nn},ColorOrder(nn,:));    
+0115         <span class="keyword">end</span>
+0116   <span class="keyword">end</span>
+0117 <span class="keyword">end</span>
+0118 
+0119 
+0120</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of T_scan_evaluation</title>
+  <meta name="keywords" content="T_scan_evaluation">
+  <meta name="description" content="T_SCAN_EVALUATION MATLAB code for T_scan_evaluation.fig">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../index.html">Home</a> &gt;  <a href="../index.html">CMDSworld</a> &gt; <a href="index.html">subguis</a> &gt; T_scan_evaluation.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../index.html"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+
+<h1>T_scan_evaluation
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>T_SCAN_EVALUATION MATLAB code for T_scan_evaluation.fig</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>function varargout = T_scan_evaluation(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> T_SCAN_EVALUATION MATLAB code for T_scan_evaluation.fig
+      T_SCAN_EVALUATION, by itself, creates a new T_SCAN_EVALUATION or raises the existing
+      singleton*.
+
+      H = T_SCAN_EVALUATION returns the handle to a new T_SCAN_EVALUATION or the handle to
+      the existing singleton*.
+
+      T_SCAN_EVALUATION('CALLBACK',hObject,eventData,handles,...) calls the local
+      function named CALLBACK in T_SCAN_EVALUATION.M with the given input arguments.
+
+      T_SCAN_EVALUATION('Property','Value',...) creates a new T_SCAN_EVALUATION or raises the
+      existing singleton*.  Starting from the left, property value pairs are
+      applied to the GUI before T_scan_evaluation_OpeningFcn gets called.  An
+      unrecognized property name or invalid value makes property application
+      stop.  All inputs are passed to T_scan_evaluation_OpeningFcn via varargin.
+
+      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one
+      instance to run (singleton)&quot;.
+
+ See also: GUIDE, GUIDATA, GUIHANDLES</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../CMDSworld/subfunctions/plot_functions/plot_T_scan.html" class="code" title="function plot_T_scan(axeshandle,T_vector,T_scan_data)">plot_T_scan</a>	</li><li><a href="../../CMDSworld/subfunctions/plot_functions/plotfunction_2D_spec_1Q1Q.html" class="code" title="function plotfunction_2D_spec_1Q1Q(SpecDomainData,w_tau_vector,T_vector,w_t_vector,Tpos,operation,Contour,SpecDomainData_contour,w_tau_contour,T_vector_contour,w_t_contour,contour_isovalues,Units,ROIdata)">plotfunction_2D_spec_1Q1Q</a>	</li><li><a href="../../CMDSworld/subfunctions/plot_functions/plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>	this plot function plot Time Domain Maps tau vs t for T_increment of</li><li><a href="modal_exit_question.html" class="code" title="function varargout = modal_exit_question(varargin)">modal_exit_question</a>	MODAL_EXIT_QUESTION MATLAB code for modal_exit_question.fig</li><li><a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/calculate_T_scan_1Q1Q.html" class="code" title="function T_scan_data=calculate_T_scan_1Q1Q(InputData,ROIdata,T_vector)">calculate_T_scan_1Q1Q</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="TwoDspec1Q1Q.html" class="code" title="function varargout = TwoDspec1Q1Q(varargin)">TwoDspec1Q1Q</a>	TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig</li></ul>
+<!-- crossreference -->
+
+<h2><a name="_subfunctions"></a>SUBFUNCTIONS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="#_sub1" class="code">function T_scan_evaluation_OpeningFcn(hObject, eventdata, handles, varargin)</a></li><li><a href="#_sub2" class="code">function varargout = T_scan_evaluation_OutputFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub3" class="code">function Menu_file_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub4" class="code">function Menu_File_copy_to_figures_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub5" class="code">function Menu_File_save_fig_and_data_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub6" class="code">function Menu_file_exit_Callback(hObject, eventdata, handles)</a></li></ul>
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function varargout = T_scan_evaluation(varargin)</a>
+0002 <span class="comment">% T_SCAN_EVALUATION MATLAB code for T_scan_evaluation.fig</span>
+0003 <span class="comment">%      T_SCAN_EVALUATION, by itself, creates a new T_SCAN_EVALUATION or raises the existing</span>
+0004 <span class="comment">%      singleton*.</span>
+0005 <span class="comment">%</span>
+0006 <span class="comment">%      H = T_SCAN_EVALUATION returns the handle to a new T_SCAN_EVALUATION or the handle to</span>
+0007 <span class="comment">%      the existing singleton*.</span>
+0008 <span class="comment">%</span>
+0009 <span class="comment">%      T_SCAN_EVALUATION('CALLBACK',hObject,eventData,handles,...) calls the local</span>
+0010 <span class="comment">%      function named CALLBACK in T_SCAN_EVALUATION.M with the given input arguments.</span>
+0011 <span class="comment">%</span>
+0012 <span class="comment">%      T_SCAN_EVALUATION('Property','Value',...) creates a new T_SCAN_EVALUATION or raises the</span>
+0013 <span class="comment">%      existing singleton*.  Starting from the left, property value pairs are</span>
+0014 <span class="comment">%      applied to the GUI before T_scan_evaluation_OpeningFcn gets called.  An</span>
+0015 <span class="comment">%      unrecognized property name or invalid value makes property application</span>
+0016 <span class="comment">%      stop.  All inputs are passed to T_scan_evaluation_OpeningFcn via varargin.</span>
+0017 <span class="comment">%</span>
+0018 <span class="comment">%      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one</span>
+0019 <span class="comment">%      instance to run (singleton)&quot;.</span>
+0020 <span class="comment">%</span>
+0021 <span class="comment">% See also: GUIDE, GUIDATA, GUIHANDLES</span>
+0022 
+0023 <span class="comment">% Edit the above text to modify the response to help T_scan_evaluation</span>
+0024 
+0025 <span class="comment">% Last Modified by GUIDE v2.5 25-Jun-2018 11:33:20</span>
+0026 
+0027 <span class="comment">% Begin initialization code - DO NOT EDIT</span>
+0028 gui_Singleton = 0;
+0029 gui_State = struct(<span class="string">'gui_Name'</span>,       mfilename, <span class="keyword">...</span>
+0030                    <span class="string">'gui_Singleton'</span>,  gui_Singleton, <span class="keyword">...</span>
+0031                    <span class="string">'gui_OpeningFcn'</span>, @<a href="#_sub1" class="code" title="subfunction T_scan_evaluation_OpeningFcn(hObject, eventdata, handles, varargin)">T_scan_evaluation_OpeningFcn</a>, <span class="keyword">...</span>
+0032                    <span class="string">'gui_OutputFcn'</span>,  @<a href="#_sub2" class="code" title="subfunction varargout = T_scan_evaluation_OutputFcn(hObject, eventdata, handles)">T_scan_evaluation_OutputFcn</a>, <span class="keyword">...</span>
+0033                    <span class="string">'gui_LayoutFcn'</span>,  [] , <span class="keyword">...</span>
+0034                    <span class="string">'gui_Callback'</span>,   []);
+0035 <span class="keyword">if</span> nargin &amp;&amp; ischar(varargin{1})
+0036     gui_State.gui_Callback = str2func(varargin{1});
+0037 <span class="keyword">end</span>
+0038 
+0039 <span class="keyword">if</span> nargout
+0040     [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+0041 <span class="keyword">else</span>
+0042     gui_mainfcn(gui_State, varargin{:});
+0043 <span class="keyword">end</span>
+0044 <span class="comment">% End initialization code - DO NOT EDIT</span>
+0045 <span class="comment">% --- Executes just before T_scan_evaluation is made visible.</span>
+0046 <a name="_sub1" href="#_subfunctions" class="code">function T_scan_evaluation_OpeningFcn(hObject, eventdata, handles, varargin)</a>
+0047 <span class="comment">% This function has no output args, see OutputFcn.</span>
+0048 <span class="comment">% hObject    handle to figure</span>
+0049 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0050 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0051 <span class="comment">% varargin   command line arguments to T_scan_evaluation (see VARARGIN)</span>
+0052 
+0053 <span class="comment">% Choose default command line output for T_scan_evaluation</span>
+0054 handles.output = hObject;
+0055 handles.figuredata=varargin{1};
+0056 ROIdata=handles.figuredata.ROIdata;
+0057 Domain=handles.figuredata.Domain;
+0058 <span class="keyword">if</span> isempty(ROIdata.ROI_data_x)
+0059     msgbox(<span class="string">'No ROI data available. Define a ROI first.'</span>);
+0060     error(<span class="string">'No ROI data available. Define a ROI first.'</span>);
+0061     delete(hObject);
+0062     
+0063 <span class="keyword">end</span>
+0064 
+0065 
+0066 <span class="keyword">switch</span> Domain
+0067     <span class="keyword">case</span> <span class="string">'TimeMap'</span>
+0068         InputData=handles.figuredata.PC_TimeData_Image;
+0069         axes(handles.axes_TwoD_Spectrum);
+0070         <a href="../../CMDSworld/subfunctions/plot_functions/plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>(handles.figuredata.PC_TimeData_Image,<span class="keyword">...</span>
+0071             handles.figuredata.tau_vector_image,<span class="keyword">...</span>
+0072             handles.figuredata.T_vector_raw,<span class="keyword">...</span>
+0073             handles.figuredata.t_vector_image,<span class="keyword">...</span>
+0074             handles.figuredata.PCpos,<span class="keyword">...</span>
+0075             handles.figuredata.Tpos,<span class="keyword">...</span>
+0076             handles.figuredata.operation,<span class="keyword">...</span>
+0077             handles.figuredata.Contour,<span class="keyword">...</span>
+0078             handles.figuredata.PC_TimeData_Contour,<span class="keyword">...</span>
+0079             handles.figuredata.tau_vector_contour,<span class="keyword">...</span>
+0080             handles.figuredata.T_vector_raw,<span class="keyword">...</span>
+0081             handles.figuredata.t_vector_contour,<span class="keyword">...</span>
+0082             handles.figuredata.contour_isovalues,<span class="keyword">...</span>
+0083             handles.figuredata.ROIdata);
+0084         
+0085         
+0086     <span class="keyword">case</span> <span class="string">'2DSpectrum'</span>
+0087         InputData=handles.figuredata.PC_SpecData_Image;
+0088         axes(handles.axes_TwoD_Spectrum);
+0089         <a href="../../CMDSworld/subfunctions/plot_functions/plotfunction_2D_spec_1Q1Q.html" class="code" title="function plotfunction_2D_spec_1Q1Q(SpecDomainData,w_tau_vector,T_vector,w_t_vector,Tpos,operation,Contour,SpecDomainData_contour,w_tau_contour,T_vector_contour,w_t_contour,contour_isovalues,Units,ROIdata)">plotfunction_2D_spec_1Q1Q</a>(handles.figuredata.PC_SpecData_Image,<span class="keyword">...</span>
+0090             handles.figuredata.w_tau_image,<span class="keyword">...</span>
+0091             handles.figuredata.T_vector_raw,<span class="keyword">...</span>
+0092             handles.figuredata.w_t_image,<span class="keyword">...</span>
+0093             handles.figuredata.Tpos,<span class="keyword">...</span>
+0094             handles.figuredata.operation,<span class="keyword">...</span>
+0095             handles.figuredata.Contour,<span class="keyword">...</span>
+0096             handles.figuredata.PC_SpecData_Contour,<span class="keyword">...</span>
+0097             handles.figuredata.w_tau_contour,<span class="keyword">...</span>
+0098             handles.figuredata.T_vector_raw,<span class="keyword">...</span>
+0099             handles.figuredata.w_t_contour,<span class="keyword">...</span>
+0100             handles.figuredata.contour_isovalues,<span class="keyword">...</span>
+0101             handles.figuredata.Units,<span class="keyword">...</span>
+0102             handles.figuredata.ROIdata);
+0103         
+0104         
+0105 <span class="keyword">end</span>
+0106 T_vector=handles.figuredata.T_vector_raw;
+0107 handles.figuredata.T_scan_data=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/calculate_T_scan_1Q1Q.html" class="code" title="function T_scan_data=calculate_T_scan_1Q1Q(InputData,ROIdata,T_vector)">calculate_T_scan_1Q1Q</a>(InputData,ROIdata,T_vector);
+0108 <a href="../../CMDSworld/subfunctions/plot_functions/plot_T_scan.html" class="code" title="function plot_T_scan(axeshandle,T_vector,T_scan_data)">plot_T_scan</a>(handles.axes_T_scan_data,T_vector,handles.figuredata.T_scan_data);
+0109 
+0110 
+0111 
+0112 <span class="comment">% Update handles structure</span>
+0113 guidata(hObject, handles);
+0114 <span class="comment">% UIWAIT makes T_scan_evaluation wait for user response (see UIRESUME)</span>
+0115 <span class="comment">% uiwait(handles.T_scan_evaluation);</span>
+0116 <span class="comment">% --- Outputs from this function are returned to the command line.</span>
+0117 <a name="_sub2" href="#_subfunctions" class="code">function varargout = T_scan_evaluation_OutputFcn(hObject, eventdata, handles) </a>
+0118 <span class="comment">% varargout  cell array for returning output args (see VARARGOUT);</span>
+0119 <span class="comment">% hObject    handle to figure</span>
+0120 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0121 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0122 
+0123 <span class="comment">% Get default command line output from handles structure</span>
+0124 varargout{1} = handles.output;
+0125 <span class="comment">% --------------------------------------------------------------------</span>
+0126 <a name="_sub3" href="#_subfunctions" class="code">function Menu_file_Callback(hObject, eventdata, handles)</a>
+0127 <span class="comment">% hObject    handle to Menu_file (see GCBO)</span>
+0128 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0129 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0130 <span class="comment">% --------------------------------------------------------------------</span>
+0131 <a name="_sub4" href="#_subfunctions" class="code">function Menu_File_copy_to_figures_Callback(hObject, eventdata, handles)</a>
+0132 <span class="comment">% hObject    handle to Menu_File_copy_to_figures (see GCBO)</span>
+0133 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0134 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0135 h1=figure(<span class="string">'Name'</span>,<span class="string">'ROI Positions'</span>,<span class="string">'Position'</span>,[220   600   468   340]);
+0136 copyobj(handles.axes_TwoD_Spectrum,h1);
+0137 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0138 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0139 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0140 
+0141 h2=figure(<span class="string">'Name'</span>,<span class="string">'Time T Scan'</span>,<span class="string">'Position'</span>,[700  558   692   420]);
+0142 copyobj(handles.axes_T_scan_data,h2);
+0143 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0144 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0145 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0146 <span class="comment">% --------------------------------------------------------------------</span>
+0147 <a name="_sub5" href="#_subfunctions" class="code">function Menu_File_save_fig_and_data_Callback(hObject, eventdata, handles)</a>
+0148 <span class="comment">% hObject    handle to Menu_File_save_fig_and_data (see GCBO)</span>
+0149 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0150 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0151 save_dir=uigetdir(<span class="string">'M:\'</span>);
+0152 filename_out=inputdlg({<span class="string">'Set file name'</span>},<span class="string">''</span>,1,{<span class="string">''</span>});
+0153 filename_out=fullfile(save_dir,filename_out);
+0154 
+0155 <span class="comment">% h1=figure('Name','Time T Scan','Position',[406   374   991   420]);</span>
+0156 <span class="comment">%</span>
+0157 <span class="comment">% copyobj(handles.axes_TwoD_Spectrum,h1);</span>
+0158 <span class="comment">% % set(gca,'ActivePositionProperty','outerposition')</span>
+0159 <span class="comment">% % set(gca,'Units','normalized')</span>
+0160 <span class="comment">% % set(gca,'OuterPosition',[0 0 1 1]);</span>
+0161 <span class="comment">%</span>
+0162 <span class="comment">% copyobj(handles.axes_T_scan_data,h1);</span>
+0163 <span class="comment">% % set(gca,'ActivePositionProperty','outerposition')</span>
+0164 <span class="comment">% % set(gca,'Units','normalized')</span>
+0165 <span class="comment">% % set(gca,'OuterPosition',[0 0 1 1])</span>
+0166 <span class="comment">% %data are saved in UserData of figure</span>
+0167 h1=handles.T_scan_evaluation;
+0168 h1.UserData=handles.figuredata;
+0169 figuredata=handles.figuredata;
+0170 save([filename_out{1} <span class="string">'_T_scan'</span>],<span class="string">'figuredata'</span>);
+0171 <span class="comment">%printeps(get(h1,'Number'),[filename_out{1} '_T_scan']);</span>
+0172 set(h1,<span class="string">'PaperPositionMode'</span>,<span class="string">'auto'</span>);
+0173 saveas(h1,[filename_out{1} <span class="string">'_T_scan'</span> <span class="string">'.fig'</span>]);
+0174 saveas(h1,[filename_out{1} <span class="string">'_T_scan'</span> <span class="string">'.pdf'</span>]);
+0175 saveas(h1,[filename_out{1} <span class="string">'_T_scan'</span> <span class="string">'.png'</span>]); 
+0176 <span class="comment">% --------------------------------------------------------------------</span>
+0177 <a name="_sub6" href="#_subfunctions" class="code">function Menu_file_exit_Callback(hObject, eventdata, handles)</a>
+0178 <span class="comment">% hObject    handle to Menu_file_exit (see GCBO)</span>
+0179 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0180 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0181 out=<a href="modal_exit_question.html" class="code" title="function varargout = modal_exit_question(varargin)">modal_exit_question</a>;
+0182 <span class="keyword">if</span> strcmp(out,<span class="string">'Yes'</span>)
+0183 delete(handles.T_scan_evaluation);
+0184 <span class="keyword">else</span>
+0185 <span class="keyword">end</span></pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

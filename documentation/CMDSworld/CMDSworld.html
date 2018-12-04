@@ -1,0 +1,435 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of CMDSworld</title>
+  <meta name="keywords" content="CMDSworld">
+  <meta name="description" content="CMDSWORLD MATLAB code for CMDSworld.fig">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../index.html">Home</a> &gt;  <a href="index.html">CMDSworld</a> &gt; CMDSworld.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../index.html"><img alt="<" border="0" src="../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld&nbsp;<img alt=">" border="0" src="../right.png"></a></td></tr></table>-->
+
+<h1>CMDSworld
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="box"><strong>CMDSWORLD MATLAB code for CMDSworld.fig</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="box"><strong>function varargout = CMDSworld(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> CMDSWORLD MATLAB code for CMDSworld.fig
+      CMDSWORLD, by itself, creates a new CMDSWORLD or raises the existing
+      singleton*.
+
+      H = CMDSWORLD returns the handle to a new CMDSWORLD or the handle to
+      the existing singleton*.
+
+      CMDSWORLD('CALLBACK',hObject,eventData,handles,...) calls the local
+      function named CALLBACK in CMDSWORLD.M with the given input arguments.
+
+      CMDSWORLD('Property','Value',...) creates a new CMDSWORLD or raises the
+      existing singleton*.  Starting from the left, property value pairs are
+      applied to the GUI before CMDSworld_OpeningFcn gets called.  An
+      unrecognized property name or invalid value makes property application
+      stop.  All inputs are passed to CMDSworld_OpeningFcn via varargin.
+
+      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one
+      instance to run (singleton)&quot;.
+
+ See also: GUIDE, GUIDATA, GUIHANDLES</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../matlabicon.gif)">
+<li><a href="../CMDSworld/subfunctions/Data_import_functions/input_CMDSfigure_file.html" class="code" title="function [figure_data,path,file]=input_CMDSfigure_file">input_CMDSfigure_file</a>	</li><li><a href="../CMDSworld/subfunctions/Data_import_functions/input_Time_data.html" class="code" title="function [TimeDomainData, tau_vector, T_vector, t_vector, InputFolder, Time_Domain_Size,variable_vector,file_out]=input_Time_data">input_Time_data</a>	Get 4D Time Domain Data</li><li><a href="../CMDSworld/subfunctions/Data_import_functions/input_phase_cycling.html" class="code" title="function [phases,weights,name_of_scheme]=input_phase_cycling(InputFolder)">input_phase_cycling</a>	function imports phase cycling .mat file</li><li><a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary.html" class="code" title="function text=generate_text_input_summary(filename,TimeDomainData, tau_vector, T_vector, t_vector,variable_vector)">generate_text_input_summary</a>	</li><li><a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary_SpecDomain.html" class="code" title="function text=generate_text_input_summary_SpecDomain(SpecDomainData, w_tau_vector, w_t_vector)">generate_text_input_summary_SpecDomain</a>	</li><li><a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_pc_input_summary.html" class="code" title="function text=generate_text_pc_input_summary(weights,name_of_scheme)">generate_text_pc_input_summary</a>	</li><li><a href="../CMDSworld/subfunctions/define_TimeDomain_dataset.html" class="code" title="function varargout = define_TimeDomain_dataset(varargin)">define_TimeDomain_dataset</a>	DEFINE_TIMEDOMAIN_DATASET M-file for define_TimeDomain_dataset.fig</li><li><a href="../CMDSworld/subguis/Time_Domain_Calculations.html" class="code" title="function varargout = Time_Domain_Calculations(varargin)">Time_Domain_Calculations</a>	TIME_DOMAIN_CALCULATIONS MATLAB code for Time_Domain_Calculations.fig</li><li><a href="../CMDSworld/subguis/Time_Domain_Maps.html" class="code" title="function varargout = Time_Domain_Maps(varargin)">Time_Domain_Maps</a>	TIME_DOMAIN_MAPS M-file for Time_Domain_Maps.fig</li><li><a href="../CMDSworld/subguis/TwoDspec1Q1Q.html" class="code" title="function varargout = TwoDspec1Q1Q(varargin)">TwoDspec1Q1Q</a>	TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig</li><li><a href="../CMDSworld/subguis/define_TimeDomain_dataset.html" class="code" title="function varargout = define_TimeDomain_dataset(varargin)">define_TimeDomain_dataset</a>	DEFINE_TIMEDOMAIN_DATASET MATLAB code for define_TimeDomain_dataset.fig</li><li><a href="../CMDSworld/subguis/modal_exit_question.html" class="code" title="function varargout = modal_exit_question(varargin)">modal_exit_question</a>	MODAL_EXIT_QUESTION MATLAB code for modal_exit_question.fig</li><li><a href="../CMDSworld/subguis/pc_weights_calculator_gui.html" class="code" title="function varargout = pc_weights_calculator_gui(varargin)">pc_weights_calculator_gui</a>	PC_WEIGHTS_CALCULATOR_GUI MATLAB code for pc_weights_calculator_gui.fig</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../matlabicon.gif)">
+<li><a href="../CMDSworld/subguis/Time_Domain_Maps.html" class="code" title="function varargout = Time_Domain_Maps(varargin)">Time_Domain_Maps</a>	TIME_DOMAIN_MAPS M-file for Time_Domain_Maps.fig</li><li><a href="../CMDSworld/subguis/Time_Domain_Maps_backup.html" class="code" title="function varargout = Time_Domain_Maps(varargin)">Time_Domain_Maps_backup</a>	TIME_DOMAIN_MAPS M-file for Time_Domain_Maps.fig</li><li><a href="../CMDSworld/subguis/TwoDspec1Q1Q.html" class="code" title="function varargout = TwoDspec1Q1Q(varargin)">TwoDspec1Q1Q</a>	TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig</li></ul>
+<!-- crossreference -->
+
+<h2><a name="_subfunctions"></a>SUBFUNCTIONS <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<ul style="list-style-image:url(../matlabicon.gif)">
+<li><a href="#_sub1" class="code">function CMDSworld_OpeningFcn(hObject, eventdata, handles, varargin)</a></li><li><a href="#_sub2" class="code">function varargout = CMDSworld_OutputFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub3" class="code">function Menu_file_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub4" class="code">function Menu_File_Import_T_Data_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub5" class="code">function Menu_file_exit_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub6" class="code">function Menu_File_import_phase_cycling_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub7" class="code">function Menu_data_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub8" class="code">function Data_Time_Domain_Maps_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub9" class="code">function Menu_Data_2Dspec1Q1Q_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub10" class="code">function Menu_File_import_CMDSfigure_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub11" class="code">function Menu_phase_cycling_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub12" class="code">function Menu_phase_cycling_phases_weights_calculator_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub13" class="code">function Data_Time_Domain_Calculations_Callback(hObject, eventdata, handles)</a></li></ul>
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function varargout = CMDSworld(varargin)</a>
+0002 <span class="comment">% CMDSWORLD MATLAB code for CMDSworld.fig</span>
+0003 <span class="comment">%      CMDSWORLD, by itself, creates a new CMDSWORLD or raises the existing</span>
+0004 <span class="comment">%      singleton*.</span>
+0005 <span class="comment">%</span>
+0006 <span class="comment">%      H = CMDSWORLD returns the handle to a new CMDSWORLD or the handle to</span>
+0007 <span class="comment">%      the existing singleton*.</span>
+0008 <span class="comment">%</span>
+0009 <span class="comment">%      CMDSWORLD('CALLBACK',hObject,eventData,handles,...) calls the local</span>
+0010 <span class="comment">%      function named CALLBACK in CMDSWORLD.M with the given input arguments.</span>
+0011 <span class="comment">%</span>
+0012 <span class="comment">%      CMDSWORLD('Property','Value',...) creates a new CMDSWORLD or raises the</span>
+0013 <span class="comment">%      existing singleton*.  Starting from the left, property value pairs are</span>
+0014 <span class="comment">%      applied to the GUI before CMDSworld_OpeningFcn gets called.  An</span>
+0015 <span class="comment">%      unrecognized property name or invalid value makes property application</span>
+0016 <span class="comment">%      stop.  All inputs are passed to CMDSworld_OpeningFcn via varargin.</span>
+0017 <span class="comment">%</span>
+0018 <span class="comment">%      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one</span>
+0019 <span class="comment">%      instance to run (singleton)&quot;.</span>
+0020 <span class="comment">%</span>
+0021 <span class="comment">% See also: GUIDE, GUIDATA, GUIHANDLES</span>
+0022 
+0023 <span class="comment">% Edit the above text to modify the response to help CMDSworld</span>
+0024 
+0025 <span class="comment">% Last Modified by GUIDE v2.5 23-Oct-2018 17:18:02</span>
+0026 
+0027 <span class="comment">% Begin initialization code - DO NOT EDIT</span>
+0028 gui_Singleton = 1;
+0029 gui_State = struct(<span class="string">'gui_Name'</span>,       mfilename, <span class="keyword">...</span>
+0030                    <span class="string">'gui_Singleton'</span>,  gui_Singleton, <span class="keyword">...</span>
+0031                    <span class="string">'gui_OpeningFcn'</span>, @<a href="#_sub1" class="code" title="subfunction CMDSworld_OpeningFcn(hObject, eventdata, handles, varargin)">CMDSworld_OpeningFcn</a>, <span class="keyword">...</span>
+0032                    <span class="string">'gui_OutputFcn'</span>,  @<a href="#_sub2" class="code" title="subfunction varargout = CMDSworld_OutputFcn(hObject, eventdata, handles)">CMDSworld_OutputFcn</a>, <span class="keyword">...</span>
+0033                    <span class="string">'gui_LayoutFcn'</span>,  [] , <span class="keyword">...</span>
+0034                    <span class="string">'gui_Callback'</span>,   []);
+0035 <span class="keyword">if</span> nargin &amp;&amp; ischar(varargin{1})
+0036     gui_State.gui_Callback = str2func(varargin{1});
+0037 <span class="keyword">end</span>
+0038 
+0039 <span class="keyword">if</span> nargout
+0040     [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+0041 <span class="keyword">else</span>
+0042     gui_mainfcn(gui_State, varargin{:});
+0043 <span class="keyword">end</span>
+0044 <span class="comment">% End initialization code - DO NOT EDIT</span>
+0045 <span class="comment">% --- Executes just before CMDSworld is made visible.</span>
+0046 <a name="_sub1" href="#_subfunctions" class="code">function CMDSworld_OpeningFcn(hObject, eventdata, handles, varargin)</a>
+0047 <span class="comment">% This function has no output args, see OutputFcn.</span>
+0048 <span class="comment">% hObject    handle to figure</span>
+0049 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0050 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0051 <span class="comment">% varargin   command line arguments to CMDSworld (see VARARGIN)</span>
+0052 
+0053 <span class="comment">% Choose default command line output for CMDSworld</span>
+0054 handles.output = hObject;
+0055 addpath(genpath(<span class="string">'L:\Matlab Scripts\CMDSworld\subfunctions'</span>),<span class="keyword">...</span>
+0056     genpath(<span class="string">'L:\Matlab Scripts\CMDSworld\subguis'</span>),<span class="keyword">...</span>
+0057     genpath(<span class="string">'L:\Matlab Scripts\CMDSworld\demo_arrays'</span>));
+0058 
+0059 opengl hardware;
+0060 
+0061 <span class="comment">% Update handles structure</span>
+0062 guidata(hObject, handles);
+0063 <span class="comment">% UIWAIT makes CMDSworld wait for user response (see UIRESUME)</span>
+0064 <span class="comment">% uwait(handles.CMDSworld);</span>
+0065 <span class="comment">% --- Outputs from this function are returned to the command line.</span>
+0066 <a name="_sub2" href="#_subfunctions" class="code">function varargout = CMDSworld_OutputFcn(hObject, eventdata, handles) </a>
+0067 <span class="comment">% varargout  cell array for returning output args (see VARARGOUT);</span>
+0068 <span class="comment">% hObject    handle to figure</span>
+0069 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0070 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0071 
+0072 <span class="comment">% Get default command line output from handles structure</span>
+0073 varargout{1} = handles.output;
+0074 <span class="comment">% --------------------------------------------------------------------</span>
+0075 <a name="_sub3" href="#_subfunctions" class="code">function Menu_file_Callback(hObject, eventdata, handles)</a>
+0076 <span class="comment">% --------------------------------------------------------------------</span>
+0077 <a name="_sub4" href="#_subfunctions" class="code">function Menu_File_Import_T_Data_Callback(hObject, eventdata, handles)</a>
+0078 <span class="comment">% hObject    handle to Menu_File_Import_T_Data (see GCBO)</span>
+0079 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0080 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0081 <span class="keyword">if</span> ~isfield(handles,<span class="string">'TDdata'</span>)==1
+0082 handles.TDdata.TimeDomainData={};
+0083 handles.TDdata.tau_vector={};
+0084 handles.TDdata.T_vector={};
+0085 handles.TDdata.t_vector={};
+0086 handles.TDdata.variable_vector={};
+0087 handles.TDdata.name_of_TD_dataset={};
+0088 <span class="keyword">end</span>
+0089 
+0090 <span class="keyword">if</span> ~isfield(handles,<span class="string">'structure'</span>)==1
+0091 handles.structure={};
+0092 <span class="keyword">end</span>
+0093 
+0094 [TimeDomainData, tau_vector, T_vector, t_vector, InputFolder,~,variable_vector,filename]=<a href="../CMDSworld/subfunctions/Data_import_functions/input_Time_data.html" class="code" title="function [TimeDomainData, tau_vector, T_vector, t_vector, InputFolder, Time_Domain_Size,variable_vector,file_out]=input_Time_data">input_Time_data</a>;
+0095 <span class="comment">%store data in handles</span>
+0096 handles.TDdata.TimeDomainData{end+1}=TimeDomainData;
+0097 handles.TDdata.tau_vector{end+1}=tau_vector;
+0098 handles.TDdata.T_vector{end+1}=T_vector;
+0099 handles.TDdata.t_vector{end+1}=t_vector;
+0100 handles.TDdata.variable_vector{end+1}=variable_vector;
+0101 handles.TDdata.name_of_TD_dataset{end+1}=filename;
+0102 handles.structure.InputFolder=InputFolder;
+0103 
+0104 text=<span class="string">''</span>;
+0105 <span class="keyword">for</span> ii=1:length(handles.TDdata.TimeDomainData)
+0106     <span class="keyword">if</span> isempty(variable_vector)
+0107     tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary.html" class="code" title="function text=generate_text_input_summary(filename,TimeDomainData, tau_vector, T_vector, t_vector,variable_vector)">generate_text_input_summary</a>(handles.TDdata.name_of_TD_dataset{ii},handles.TDdata.TimeDomainData{ii}, handles.TDdata.tau_vector{ii}, handles.TDdata.T_vector{ii}, handles.TDdata.t_vector{ii});
+0108     <span class="keyword">else</span>
+0109     tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary.html" class="code" title="function text=generate_text_input_summary(filename,TimeDomainData, tau_vector, T_vector, t_vector,variable_vector)">generate_text_input_summary</a>(handles.TDdata.name_of_TD_dataset{ii},handles.TDdata.TimeDomainData{ii}, handles.TDdata.tau_vector{ii}, handles.TDdata.T_vector{ii}, handles.TDdata.t_vector{ii},handles.TDdata.variable_vector{ii});
+0110     <span class="keyword">end</span>
+0111     text=char(text,tmp_text);
+0112 <span class="keyword">end</span>
+0113     set(handles.textbox_input_summary,<span class="string">'Visible'</span>,<span class="string">'on'</span>,<span class="string">'String'</span>,text,<span class="string">'HorizontalAlignment'</span>,<span class="string">'left'</span>,<span class="keyword">...</span>
+0114         <span class="string">'FontSize'</span>,10);
+0115 
+0116 <span class="comment">%enable TimeDomainMaps function</span>
+0117 set(handles.Data_Time_Domain_Maps,<span class="string">'Enable'</span>,<span class="string">'on'</span>);
+0118 set(handles.Menu_Data_2Dspec1Q1Q,<span class="string">'Enable'</span>,<span class="string">'on'</span>);
+0119 guidata(hObject,handles);
+0120 <span class="comment">% --------------------------------------------------------------------</span>
+0121 <a name="_sub5" href="#_subfunctions" class="code">function Menu_file_exit_Callback(hObject, eventdata, handles)</a>
+0122 out=<a href="../CMDSworld/subguis/modal_exit_question.html" class="code" title="function varargout = modal_exit_question(varargin)">modal_exit_question</a>;
+0123 <span class="keyword">if</span> strcmp(out,<span class="string">'Yes'</span>)
+0124 delete(handles.CMDSworld);
+0125 <span class="keyword">else</span>
+0126 <span class="keyword">end</span>
+0127 <span class="comment">% --------------------------------------------------------------------</span>
+0128 <a name="_sub6" href="#_subfunctions" class="code">function Menu_File_import_phase_cycling_Callback(hObject, eventdata, handles)</a>
+0129 <span class="comment">% hObject    handle to Menu_File_import_phase_cycling (see GCBO)</span>
+0130 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0131 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0132 <span class="keyword">if</span> ~isfield(handles,<span class="string">'pcdata'</span>)==1
+0133 handles.pcdata.all_phases={};
+0134 handles.pcdata.all_weights={};
+0135 handles.pcdata.all_names_of_scheme={};
+0136 <span class="keyword">end</span>
+0137 
+0138 <span class="keyword">if</span> ~isfield(handles,<span class="string">'structure'</span>)==1
+0139 handles.structure={};
+0140 <span class="keyword">end</span>
+0141 
+0142 
+0143 <span class="keyword">if</span> isfield(handles.structure,<span class="string">'InputFolder'</span>)==1
+0144 [phases,weights,name_of_scheme]=<a href="../CMDSworld/subfunctions/Data_import_functions/input_phase_cycling.html" class="code" title="function [phases,weights,name_of_scheme]=input_phase_cycling(InputFolder)">input_phase_cycling</a>(handles.structure.InputFolder);
+0145 <span class="keyword">else</span>
+0146 [phases,weights,name_of_scheme]=<a href="../CMDSworld/subfunctions/Data_import_functions/input_phase_cycling.html" class="code" title="function [phases,weights,name_of_scheme]=input_phase_cycling(InputFolder)">input_phase_cycling</a>();
+0147 <span class="keyword">end</span>
+0148 handles.pcdata.all_phases{end+1}=phases;
+0149 handles.pcdata.all_weights{end+1}=weights;
+0150 handles.pcdata.all_names_of_scheme{end+1}=name_of_scheme;
+0151 text=<span class="string">''</span>;
+0152 <span class="keyword">for</span> ii=1:length(handles.pcdata.all_names_of_scheme)
+0153 tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_pc_input_summary.html" class="code" title="function text=generate_text_pc_input_summary(weights,name_of_scheme)">generate_text_pc_input_summary</a>(handles.pcdata.all_weights{ii},handles.pcdata.all_names_of_scheme{ii});
+0154 text=char(text,tmp_text);   
+0155 <span class="keyword">end</span>
+0156 
+0157 set(handles.text_pc_input_summary,<span class="string">'Visible'</span>,<span class="string">'on'</span>,<span class="string">'String'</span>,text,<span class="string">'FontSize'</span>,10,<span class="keyword">...</span>
+0158     <span class="string">'HorizontalAlignment'</span>,<span class="string">'left'</span>);
+0159 
+0160 guidata(hObject,handles);
+0161 <span class="comment">% --------------------------------------------------------------------</span>
+0162 <a name="_sub7" href="#_subfunctions" class="code">function Menu_data_Callback(hObject, eventdata, handles)</a>
+0163 <span class="comment">% --------------------------------------------------------------------</span>
+0164 <a name="_sub8" href="#_subfunctions" class="code">function Data_Time_Domain_Maps_Callback(hObject, eventdata, handles)</a>
+0165 <span class="comment">% hObject    handle to Data_Time_Domain_Maps (see GCBO)</span>
+0166 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0167 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0168 <span class="keyword">if</span> length(handles.TDdata.name_of_TD_dataset)&gt;1
+0169 [name,number]=<a href="../CMDSworld/subfunctions/define_TimeDomain_dataset.html" class="code" title="function varargout = define_TimeDomain_dataset(varargin)">define_TimeDomain_dataset</a>(handles.TDdata.name_of_TD_dataset);
+0170 number=number{1};
+0171 <span class="keyword">elseif</span> length(handles.TDdata.name_of_TD_dataset)==1
+0172  number=1;
+0173 <span class="keyword">end</span>
+0174 
+0175 maindata.TDdata.TimeDomainData=handles.TDdata.TimeDomainData{number};
+0176 maindata.TDdata.tau_vector=handles.TDdata.tau_vector{number};
+0177 maindata.TDdata.T_vector=handles.TDdata.T_vector{number};
+0178 maindata.TDdata.t_vector=handles.TDdata.t_vector{number};
+0179 maindata.TDdata.variable_vector=handles.TDdata.variable_vector{number};
+0180 
+0181 [out1,out2,out3,out4,out5,out6]=<a href="../CMDSworld/subguis/Time_Domain_Maps.html" class="code" title="function varargout = Time_Domain_Maps(varargin)">Time_Domain_Maps</a>(maindata);
+0182 handles.TDdata.name_of_TD_dataset{end+1}=out1{1};
+0183 handles.TDdata.TimeDomainData{end+1}=out2;
+0184 handles.TDdata.tau_vector{end+1}=out3;
+0185 handles.TDdata.T_vector{end+1}=out4;
+0186 handles.TDdata.t_vector{end+1}=out5;
+0187 <span class="keyword">if</span> isfield(handles.TDdata,<span class="string">'variable_vector'</span>)
+0188     handles.TDdata.variable_vector{end+1}=out6;
+0189 <span class="keyword">end</span>
+0190 text=<span class="string">''</span>;
+0191 <span class="keyword">for</span> ii=1:length(handles.TDdata.TimeDomainData)
+0192     <span class="keyword">if</span> isempty(handles.TDdata.variable_vector)
+0193     tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary.html" class="code" title="function text=generate_text_input_summary(filename,TimeDomainData, tau_vector, T_vector, t_vector,variable_vector)">generate_text_input_summary</a>(handles.TDdata.name_of_TD_dataset{ii},handles.TDdata.TimeDomainData{ii}, handles.TDdata.tau_vector{ii}, handles.TDdata.T_vector{ii}, handles.TDdata.t_vector{ii});
+0194     <span class="keyword">else</span>
+0195     tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary.html" class="code" title="function text=generate_text_input_summary(filename,TimeDomainData, tau_vector, T_vector, t_vector,variable_vector)">generate_text_input_summary</a>(handles.TDdata.name_of_TD_dataset{ii},handles.TDdata.TimeDomainData{ii}, handles.TDdata.tau_vector{ii}, handles.TDdata.T_vector{ii}, handles.TDdata.t_vector{ii},handles.TDdata.variable_vector{ii});
+0196     <span class="keyword">end</span>
+0197     text=char(text,tmp_text);
+0198 <span class="keyword">end</span>
+0199     set(handles.textbox_input_summary,<span class="string">'Visible'</span>,<span class="string">'on'</span>,<span class="string">'String'</span>,text,<span class="string">'HorizontalAlignment'</span>,<span class="string">'left'</span>,<span class="keyword">...</span>
+0200         <span class="string">'FontSize'</span>,10);
+0201 guidata(hObject,handles);
+0202 <span class="comment">% --------------------------------------------------------------------</span>
+0203 <a name="_sub9" href="#_subfunctions" class="code">function Menu_Data_2Dspec1Q1Q_Callback(hObject, eventdata, handles)</a>
+0204 <span class="comment">% hObject    handle to Menu_Data_2Dspec1Q1Q (see GCBO)</span>
+0205 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0206 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0207 <span class="keyword">if</span> length(handles.TDdata.name_of_TD_dataset)&gt;1
+0208 [name,number]=<a href="../CMDSworld/subfunctions/define_TimeDomain_dataset.html" class="code" title="function varargout = define_TimeDomain_dataset(varargin)">define_TimeDomain_dataset</a>(handles.TDdata.name_of_TD_dataset);
+0209 number=number{1};
+0210 <span class="keyword">elseif</span> length(handles.TDdata.name_of_TD_dataset)==1
+0211  number=1;
+0212 <span class="keyword">end</span>
+0213 
+0214 maindata.TDdata.TimeDomainData=handles.TDdata.TimeDomainData{number};
+0215 maindata.TDdata.tau_vector=handles.TDdata.tau_vector{number};
+0216 maindata.TDdata.T_vector=handles.TDdata.T_vector{number};
+0217 maindata.TDdata.t_vector=handles.TDdata.t_vector{number};
+0218 <span class="keyword">if</span> ~isempty(handles.TDdata.variable_vector)
+0219 maindata.TDdata.variable_vector=handles.TDdata.variable_vector{number};
+0220 <span class="keyword">end</span>
+0221 maindata.pcdata=handles.pcdata;
+0222 <span class="keyword">if</span> isfield(handles,<span class="string">'figuredata'</span>)
+0223    maindata.figuredata=handles.figuredata;
+0224 <span class="keyword">end</span>
+0225 <a href="../CMDSworld/subguis/TwoDspec1Q1Q.html" class="code" title="function varargout = TwoDspec1Q1Q(varargin)">TwoDspec1Q1Q</a>(maindata);
+0226 <span class="comment">% --------------------------------------------------------------------</span>
+0227 <a name="_sub10" href="#_subfunctions" class="code">function Menu_File_import_CMDSfigure_Callback(hObject, eventdata, handles)</a>
+0228 <span class="comment">% hObject    handle to Menu_File_import_CMDSfigure (see GCBO)</span>
+0229 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0230 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0231 <span class="keyword">if</span> ~isfield(handles,<span class="string">'TDdata'</span>)==1
+0232 handles.TDdata.TimeDomainData={};
+0233 handles.TDdata.tau_vector={};
+0234 handles.TDdata.T_vector={};
+0235 handles.TDdata.t_vector={};
+0236 handles.TDdata.variable_vector={};
+0237 handles.TDdata.name_of_TD_dataset={};
+0238 <span class="keyword">end</span>
+0239 [handles.figuredata, handles.structure.InputFolder,file]=<a href="../CMDSworld/subfunctions/Data_import_functions/input_CMDSfigure_file.html" class="code" title="function [figure_data,path,file]=input_CMDSfigure_file">input_CMDSfigure_file</a>;
+0240 handles.TDdata.name_of_TD_dataset{end+1}=file;
+0241 handles.TDdata.TimeDomainData{end+1}=handles.figuredata.TimeDomainData;
+0242 handles.TDdata.tau_vector{end+1}=handles.figuredata.tau_vector_raw;
+0243 handles.TDdata.T_vector{end+1}=handles.figuredata.T_vector_raw;
+0244 handles.TDdata.t_vector{end+1}=handles.figuredata.t_vector_raw;
+0245 <span class="keyword">if</span> isfield(handles.figuredata,<span class="string">'variable_vector'</span>)
+0246   handles.TDdata.variable_vector{end+1}=handles.figuredata.variable_vector;
+0247 <span class="keyword">else</span>
+0248   handles.TDdata.variable_vector{end+1}=[];  
+0249 <span class="keyword">end</span>
+0250 text=<span class="string">''</span>;
+0251 <span class="keyword">for</span> ii=1:length(handles.TDdata.TimeDomainData)
+0252     <span class="keyword">if</span> isempty(handles.TDdata.variable_vector{ii})
+0253     tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary.html" class="code" title="function text=generate_text_input_summary(filename,TimeDomainData, tau_vector, T_vector, t_vector,variable_vector)">generate_text_input_summary</a>(handles.TDdata.name_of_TD_dataset{ii},handles.TDdata.TimeDomainData{ii}, handles.TDdata.tau_vector{ii}, handles.TDdata.T_vector{ii}, handles.TDdata.t_vector{ii});
+0254     <span class="keyword">else</span>
+0255     tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary.html" class="code" title="function text=generate_text_input_summary(filename,TimeDomainData, tau_vector, T_vector, t_vector,variable_vector)">generate_text_input_summary</a>(handles.TDdata.name_of_TD_dataset{ii},handles.TDdata.TimeDomainData{ii}, handles.TDdata.tau_vector{ii}, handles.TDdata.T_vector{ii}, handles.TDdata.t_vector{ii},handles.TDdata.variable_vector{ii});
+0256     <span class="keyword">end</span>
+0257     text=char(text,tmp_text);
+0258 <span class="keyword">end</span>
+0259     set(handles.textbox_input_summary,<span class="string">'Visible'</span>,<span class="string">'on'</span>,<span class="string">'String'</span>,text,<span class="string">'HorizontalAlignment'</span>,<span class="string">'left'</span>,<span class="keyword">...</span>
+0260         <span class="string">'FontSize'</span>,10);
+0261 set(handles.textbox_input_summary,<span class="string">'String'</span>,text,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0262 
+0263 handles.SDdata.PC_SpecData_raw=handles.figuredata.PC_SpecData_raw;
+0264 handles.SDdata.w_tau_vector_raw=handles.figuredata.tau_vector_raw;
+0265 <span class="comment">%handles.SDdata.T_vector=handles.figuredata.T_vector_raw;</span>
+0266 handles.SDdata.w_t_vector_raw=handles.figuredata.t_vector_raw;
+0267 text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary_SpecDomain.html" class="code" title="function text=generate_text_input_summary_SpecDomain(SpecDomainData, w_tau_vector, w_t_vector)">generate_text_input_summary_SpecDomain</a>(handles.SDdata.PC_SpecData_raw,<span class="keyword">...</span>
+0268     handles.SDdata.w_tau_vector_raw,<span class="keyword">...</span>
+0269     handles.SDdata.w_t_vector_raw);
+0270 set(handles.text_spec_input_summary,<span class="string">'String'</span>,text,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0271 
+0272 <span class="keyword">if</span> ~isfield(handles,<span class="string">'pcdata'</span>)==1
+0273 handles.pcdata.all_phases={};
+0274 handles.pcdata.all_weights={};
+0275 handles.pcdata.all_names_of_scheme={};
+0276 <span class="keyword">end</span>
+0277 
+0278 <span class="keyword">if</span> ~iscell(handles.figuredata.name_of_scheme)==1
+0279     temp{1}=handles.figuredata.name_of_scheme;
+0280     handles.figuredata.name_of_scheme=temp;
+0281 <span class="keyword">else</span>
+0282     <span class="keyword">for</span> jj=1:length(handles.figuredata.name_of_scheme)
+0283         handles.figuredata.name_of_scheme{jj}=[handles.figuredata.name_of_scheme{jj} <span class="string">'.mat'</span>];
+0284     <span class="keyword">end</span>
+0285     
+0286 <span class="keyword">end</span>
+0287 
+0288 
+0289 
+0290 <span class="keyword">for</span> jj=1:length(handles.figuredata.name_of_scheme)
+0291 handles.pcdata.all_phases{end+1}={[0 0 0 0]};
+0292 handles.pcdata.all_weights{end+1}=handles.figuredata.weights{jj};
+0293 handles.pcdata.all_names_of_scheme{end+1}=handles.figuredata.name_of_scheme{jj};<span class="comment">%.mat is necessary for 2D analyzer program to find the string</span>
+0294 text=<span class="string">''</span>;
+0295 <span class="keyword">end</span>
+0296 
+0297 <span class="keyword">for</span> ii=1:length(handles.pcdata.all_names_of_scheme)
+0298 tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_pc_input_summary.html" class="code" title="function text=generate_text_pc_input_summary(weights,name_of_scheme)">generate_text_pc_input_summary</a>(handles.pcdata.all_weights{ii},handles.pcdata.all_names_of_scheme{ii});
+0299 text=char(text,tmp_text);   
+0300 <span class="keyword">end</span>
+0301 
+0302 set(handles.text_pc_input_summary,<span class="string">'Visible'</span>,<span class="string">'on'</span>,<span class="string">'String'</span>,text,<span class="string">'FontSize'</span>,10,<span class="keyword">...</span>
+0303     <span class="string">'HorizontalAlignment'</span>,<span class="string">'left'</span>);
+0304 set(handles.Data_Time_Domain_Maps,<span class="string">'Enable'</span>,<span class="string">'on'</span>);
+0305 set(handles.Menu_Data_2Dspec1Q1Q,<span class="string">'Enable'</span>,<span class="string">'on'</span>);
+0306 guidata(hObject,handles);
+0307 <span class="comment">% --------------------------------------------------------------------</span>
+0308 <a name="_sub11" href="#_subfunctions" class="code">function Menu_phase_cycling_Callback(hObject, eventdata, handles)</a>
+0309 <span class="comment">% --------------------------------------------------------------------</span>
+0310 <a name="_sub12" href="#_subfunctions" class="code">function Menu_phase_cycling_phases_weights_calculator_Callback(hObject, eventdata, handles)</a>
+0311 <span class="comment">% hObject    handle to Menu_phase_cycling_phases_weights_calculator (see GCBO)</span>
+0312 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0313 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0314 <span class="keyword">if</span> ~isfield(handles,<span class="string">'pcdata'</span>)==1
+0315 handles.pcdata.all_phases={};
+0316 handles.pcdata.all_weights={};
+0317 handles.pcdata.all_names_of_scheme={};
+0318 <span class="keyword">end</span>
+0319 
+0320 <span class="keyword">if</span> ~isfield(handles,<span class="string">'structure'</span>)==1
+0321 handles.structure={};
+0322 <span class="keyword">end</span>
+0323 
+0324 [phases,weights,name_of_scheme]=<a href="../CMDSworld/subguis/pc_weights_calculator_gui.html" class="code" title="function varargout = pc_weights_calculator_gui(varargin)">pc_weights_calculator_gui</a>;
+0325 <span class="keyword">if</span> ~isempty(phases)
+0326     handles.pcdata.all_phases{end+1}=phases;
+0327     handles.pcdata.all_weights{end+1}=weights;
+0328     handles.pcdata.all_names_of_scheme{end+1}=name_of_scheme{1};
+0329     text=<span class="string">''</span>;
+0330     <span class="keyword">for</span> ii=1:length(handles.pcdata.all_names_of_scheme)
+0331     tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_pc_input_summary.html" class="code" title="function text=generate_text_pc_input_summary(weights,name_of_scheme)">generate_text_pc_input_summary</a>(handles.pcdata.all_weights{ii},handles.pcdata.all_names_of_scheme{ii});
+0332     text=char(text,tmp_text);   
+0333     <span class="keyword">end</span>
+0334 
+0335     set(handles.text_pc_input_summary,<span class="string">'Visible'</span>,<span class="string">'on'</span>,<span class="string">'String'</span>,text,<span class="string">'FontSize'</span>,10,<span class="keyword">...</span>
+0336         <span class="string">'HorizontalAlignment'</span>,<span class="string">'left'</span>);
+0337 <span class="keyword">end</span>
+0338 guidata(hObject,handles);
+0339 <span class="comment">% --------------------------------------------------------------------</span>
+0340 <a name="_sub13" href="#_subfunctions" class="code">function Data_Time_Domain_Calculations_Callback(hObject, eventdata, handles)</a>
+0341 <span class="comment">% hObject    handle to Data_Time_Domain_Calculations (see GCBO)</span>
+0342 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0343 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0344 [Output_TimeDomainData,Output_tau_vector,Output_T_vector,Output_t_vector,Output_variable_vector,Output_name]=<span class="keyword">...</span>
+0345     <a href="../CMDSworld/subguis/Time_Domain_Calculations.html" class="code" title="function varargout = Time_Domain_Calculations(varargin)">Time_Domain_Calculations</a>(handles.TDdata.TimeDomainData,handles.TDdata.tau_vector,handles.TDdata.T_vector,<span class="keyword">...</span>
+0346     handles.TDdata.t_vector,handles.TDdata.variable_vector,handles.TDdata.name_of_TD_dataset);
+0347 
+0348 handles.TDdata.name_of_TD_dataset{end+1}=Output_name{1};
+0349 handles.TDdata.TimeDomainData{end+1}=Output_TimeDomainData;
+0350 handles.TDdata.tau_vector{end+1}=Output_tau_vector;
+0351 handles.TDdata.T_vector{end+1}=Output_T_vector;
+0352 handles.TDdata.t_vector{end+1}=Output_t_vector;
+0353 <span class="keyword">if</span> isfield(handles.TDdata,<span class="string">'variable_vector'</span>)
+0354     handles.TDdata.variable_vector{end+1}=Output_variable_vector;
+0355 <span class="keyword">end</span>
+0356 text=<span class="string">''</span>;
+0357 <span class="keyword">for</span> ii=1:length(handles.TDdata.TimeDomainData)
+0358     <span class="keyword">if</span> isempty(handles.TDdata.variable_vector)
+0359     tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary.html" class="code" title="function text=generate_text_input_summary(filename,TimeDomainData, tau_vector, T_vector, t_vector,variable_vector)">generate_text_input_summary</a>(handles.TDdata.name_of_TD_dataset{ii},handles.TDdata.TimeDomainData{ii}, handles.TDdata.tau_vector{ii}, handles.TDdata.T_vector{ii}, handles.TDdata.t_vector{ii});
+0360     <span class="keyword">else</span>
+0361     tmp_text=<a href="../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_input_summary.html" class="code" title="function text=generate_text_input_summary(filename,TimeDomainData, tau_vector, T_vector, t_vector,variable_vector)">generate_text_input_summary</a>(handles.TDdata.name_of_TD_dataset{ii},handles.TDdata.TimeDomainData{ii}, handles.TDdata.tau_vector{ii}, handles.TDdata.T_vector{ii}, handles.TDdata.t_vector{ii},handles.TDdata.variable_vector{ii});
+0362     <span class="keyword">end</span>
+0363     text=char(text,tmp_text);
+0364 <span class="keyword">end</span>
+0365     set(handles.textbox_input_summary,<span class="string">'Visible'</span>,<span class="string">'on'</span>,<span class="string">'String'</span>,text,<span class="string">'HorizontalAlignment'</span>,<span class="string">'left'</span>,<span class="keyword">...</span>
+0366         <span class="string">'FontSize'</span>,10);
+0367 guidata(hObject,handles);</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

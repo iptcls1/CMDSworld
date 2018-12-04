@@ -1,0 +1,81 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration file="L:\Matlab Scripts\CMDSworld\CMDSworld.prj" location="L:\Matlab Scripts\CMDSworld" name="CMDSworld" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>CMDSworld</param.appname>
+    <param.authnamewatermark>Bernhard Huber</param.authnamewatermark>
+    <param.email>bernhard.huber@phys-chemie.uni-wuerzburg.de</param.email>
+    <param.company>IPTC Ak Brixner</param.company>
+    <param.summary>Program to analyze and plot 2D spectra</param.summary>
+    <param.description>Program to analyze and plot 2D spectra</param.description>
+    <param.screenshot>${PROJECT_ROOT}\CMDSworld_image_v2.png</param.screenshot>
+    <param.version>2.2</param.version>
+    <param.output>${PROJECT_ROOT}\CMDSworld.mltbx</param.output>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.guid>29e8199f-cec9-4ddd-88f2-2f4438205f88</param.guid>
+    <param.exclude.filters />
+    <param.examples />
+    <param.demosxml />
+    <param.apps />
+    <param.registered.apps />
+    <param.docs />
+    <param.getting.started.guide />
+    <param.matlabpath.excludes />
+    <param.javaclasspath.excludes />
+    <unset>
+      <param.output />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.exclude.filters />
+      <param.examples />
+      <param.demosxml />
+      <param.apps />
+      <param.registered.apps />
+      <param.docs />
+      <param.getting.started.guide />
+      <param.matlabpath.excludes />
+      <param.javaclasspath.excludes />
+    </unset>
+    <fileset.rootdir>
+      <file>L:\Matlab Scripts\CMDSworld</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\CMDSworld.fig</file>
+      <file>${PROJECT_ROOT}\CMDSworld.m</file>
+      <file>${PROJECT_ROOT}\CMDSworld_image_v2.png</file>
+      <file>${PROJECT_ROOT}\demo_arrays</file>
+      <file>${PROJECT_ROOT}\old_versions</file>
+      <file>${PROJECT_ROOT}\subfunctions</file>
+      <file>${PROJECT_ROOT}\subguis</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="L:\Matlab Scripts\CMDSworld" name="CMDSworld.mltbx" optional="false">L:\Matlab Scripts\CMDSworld\CMDSworld.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Anwendungen\Mess&amp;Auswert\Matlab R2017b</root>
+      <toolboxes />
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.1</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

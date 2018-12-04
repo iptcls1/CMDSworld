@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of Calculate_and_plot_1Q1Q</title>
+  <meta name="keywords" content="Calculate_and_plot_1Q1Q">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subguis</a> &gt; <a href="index.html">subfunctions_2D_spec_1Q1Q</a> &gt; Calculate_and_plot_1Q1Q.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis\subfunctions_2D_spec_1Q1Q&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>Calculate_and_plot_1Q1Q
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong></strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [figuredata]=Calculate_and_plot_1Q1Q(TimeDomainData,Domain,tau_vector,T_vector,t_vector,weights,axeshandle,PCpos,Tpos,operation,normalization,Units,XLabel,YLabel,Title,ZeropaddingImage,Contour,ZeropaddingContour,contour_isovalues,name_of_scheme,ROIdata,omega_center,gamma,Double_omega_tau,Double_omega_t,Flip_w_tau,Flip_w_t,Varpos,var_vector) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subfunctions/plot_functions/plotfunction_2D_spec_1Q1Q.html" class="code" title="function plotfunction_2D_spec_1Q1Q(SpecDomainData,w_tau_vector,T_vector,w_t_vector,Tpos,operation,Contour,SpecDomainData_contour,w_tau_contour,T_vector_contour,w_t_contour,contour_isovalues,Units,ROIdata)">plotfunction_2D_spec_1Q1Q</a>	</li><li><a href="../../../CMDSworld/subfunctions/plot_functions/plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>	this plot function plot Time Domain Maps tau vs t for T_increment of</li><li><a href="calc_omega_in_units.html" class="code" title="function [omega_axis_new_units]=calc_omega_in_units(object,units)">calc_omega_in_units</a>	</li><li><a href="calculate_2D_fouriertrafo.html" class="code" title="function SpecDomainData= calculate_2D_fouriertrafo(PC_TimeDomainData,tau_vector,T_vector,t_vector)">calculate_2D_fouriertrafo</a>	</li><li><a href="calculate_absorptive_2D_Spec.html" class="code" title="function [SpecDomainData_absorptive]=calculate_absorptive_2D_Spec(PC_time_data_rephasing,PC_time_data_nonrephasing,tau_vector,T_vector,t_vector)">calculate_absorptive_2D_Spec</a>	</li><li><a href="calculate_absorptive_time_data.html" class="code" title="function [phase_cycled_time_data_rephasing,phase_cycled_time_data_nonrephasing]=calculate_absorptive_time_data(TimeDomainData,weights,Zeropadding)">calculate_absorptive_time_data</a>	</li><li><a href="calculate_isovalues.html" class="code" title="function contour_isovalues=calculate_isovalues(input_data,contour_isovalues,operation,normalization)">calculate_isovalues</a>	</li><li><a href="generate_omega_vector.html" class="code" title="function [omega_vector_zp,time_vector_zp]=generate_omega_vector(time_vector,zeropadding,center_omega,gamma,Double_omega)">generate_omega_vector</a>	</li><li><a href="perform_phase_cycling.html" class="code" title="function phase_cycled_time_data=perform_phase_cycling(TimeDomainData,Weights,Zeropadding)">perform_phase_cycling</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subguis/TwoDspec1Q1Q.html" class="code" title="function varargout = TwoDspec1Q1Q(varargin)">TwoDspec1Q1Q</a>	TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig</li><li><a href="UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>	</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function [figuredata]=Calculate_and_plot_1Q1Q(TimeDomainData,Domain,tau_vector,T_vector,t_vector,weights,axeshandle,PCpos,Tpos,</a><span class="keyword">...</span>
+0002     operation,normalization,Units,XLabel,YLabel,Title,ZeropaddingImage,Contour,ZeropaddingContour,contour_isovalues,name_of_scheme,ROIdata,<span class="keyword">...</span>
+0003     omega_center,gamma,Double_omega_tau,Double_omega_t,Flip_w_tau,Flip_w_t,Varpos,var_vector)
+0004 <span class="keyword">if</span> ~iscell(weights)==1
+0005     temp{1}=weights;
+0006     weights=temp;
+0007 <span class="keyword">end</span>
+0008 <span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+0009 <span class="comment">%%%% Calculate omega axes and time axes %%%%%%</span>
+0010 <span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+0011 
+0012 <span class="comment">% calculate omega axes and time axes for image</span>
+0013 [w_tau_image, tau_vector_image]=<a href="generate_omega_vector.html" class="code" title="function [omega_vector_zp,time_vector_zp]=generate_omega_vector(time_vector,zeropadding,center_omega,gamma,Double_omega)">generate_omega_vector</a>(tau_vector,ZeropaddingImage,omega_center,gamma,Double_omega_tau);
+0014 [w_t_image, t_vector_image]=<a href="generate_omega_vector.html" class="code" title="function [omega_vector_zp,time_vector_zp]=generate_omega_vector(time_vector,zeropadding,center_omega,gamma,Double_omega)">generate_omega_vector</a>(t_vector,ZeropaddingImage, omega_center,gamma,Double_omega_t);
+0015 [w_tau_image]=<a href="calc_omega_in_units.html" class="code" title="function [omega_axis_new_units]=calc_omega_in_units(object,units)">calc_omega_in_units</a>(w_tau_image,Units);
+0016 [w_t_image]=<a href="calc_omega_in_units.html" class="code" title="function [omega_axis_new_units]=calc_omega_in_units(object,units)">calc_omega_in_units</a>(w_t_image,Units);
+0017 <span class="comment">% calculate omega axes and time axes for contour</span>
+0018 [w_tau_contour, tau_vector_contour]=<a href="generate_omega_vector.html" class="code" title="function [omega_vector_zp,time_vector_zp]=generate_omega_vector(time_vector,zeropadding,center_omega,gamma,Double_omega)">generate_omega_vector</a>(tau_vector,ZeropaddingContour,omega_center,gamma,Double_omega_tau);
+0019 [w_t_contour, t_vector_contour]=<a href="generate_omega_vector.html" class="code" title="function [omega_vector_zp,time_vector_zp]=generate_omega_vector(time_vector,zeropadding,center_omega,gamma,Double_omega)">generate_omega_vector</a>(t_vector,ZeropaddingContour,omega_center,gamma,Double_omega_t);
+0020 [w_tau_contour]=<a href="calc_omega_in_units.html" class="code" title="function [omega_axis_new_units]=calc_omega_in_units(object,units)">calc_omega_in_units</a>(w_tau_contour,Units);
+0021 [w_t_contour]=<a href="calc_omega_in_units.html" class="code" title="function [omega_axis_new_units]=calc_omega_in_units(object,units)">calc_omega_in_units</a>(w_t_contour,Units);
+0022 <span class="comment">% calculate raw omega axes and time axes without zero padding</span>
+0023 [w_tau_raw, ~]=<a href="generate_omega_vector.html" class="code" title="function [omega_vector_zp,time_vector_zp]=generate_omega_vector(time_vector,zeropadding,center_omega,gamma,Double_omega)">generate_omega_vector</a>(tau_vector,1, omega_center,gamma,Double_omega_tau);
+0024 [w_t_raw, ~]=<a href="generate_omega_vector.html" class="code" title="function [omega_vector_zp,time_vector_zp]=generate_omega_vector(time_vector,zeropadding,center_omega,gamma,Double_omega)">generate_omega_vector</a>(t_vector,1, omega_center,gamma,Double_omega_t);
+0025 [w_tau_raw]=<a href="calc_omega_in_units.html" class="code" title="function [omega_axis_new_units]=calc_omega_in_units(object,units)">calc_omega_in_units</a>(w_tau_raw,Units);
+0026 [w_t_raw]=<a href="calc_omega_in_units.html" class="code" title="function [omega_axis_new_units]=calc_omega_in_units(object,units)">calc_omega_in_units</a>(w_t_raw,Units);
+0027 
+0028 <span class="comment">% Cut Data at Varpos if Number of Dimensions is 5 or more</span>
+0029 <span class="keyword">if</span> length(Varpos)==1 &amp;&amp; ndims(TimeDomainData)==5
+0030     TimeDomainData_uncutted=TimeDomainData;
+0031     TimeDomainData_temp=TimeDomainData(:,:,:,:,Varpos);
+0032     TimeDomainData=TimeDomainData_temp;
+0033 <span class="comment">% elseif length(Varpos)==1 &amp;&amp; ndims(TimeDomainData)==4</span>
+0034 <span class="comment">%         TimeDomainData_temp=TimeDomainData(:,:,:,Varpos);</span>
+0035 <span class="comment">%     TimeDomainData=TimeDomainData_temp;</span>
+0036 <span class="keyword">elseif</span> length(Varpos)==2&amp;&amp; ndims(TimeDomainData)==6
+0037     TimeDomainData_uncutted=TimeDomainData;
+0038     TimeDomainData_temp=TimeDomainData(:,:,:,:,Varpos);
+0039     TimeDomainData=TimeDomainData_temp;
+0040 <span class="keyword">end</span>
+0041 
+0042 <span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+0043 <span class="comment">%%%%% Perform phase cycling and 2D FFT %%%%%%%</span>
+0044 <span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+0045 
+0046 <span class="comment">% perform phase cycling without zero padding and with Jakub method (raw data)</span>
+0047 PC_time_data_raw=<a href="perform_phase_cycling.html" class="code" title="function phase_cycled_time_data=perform_phase_cycling(TimeDomainData,Weights,Zeropadding)">perform_phase_cycling</a>(TimeDomainData,<span class="keyword">...</span>
+0048     weights{1},1);
+0049 <span class="comment">% calculate 2D Fourier transform (raw data)</span>
+0050 SpecDomainData_raw=<a href="calculate_2D_fouriertrafo.html" class="code" title="function SpecDomainData= calculate_2D_fouriertrafo(PC_TimeDomainData,tau_vector,T_vector,t_vector)">calculate_2D_fouriertrafo</a>(PC_time_data_raw,<span class="keyword">...</span>
+0051     tau_vector,<span class="keyword">...</span>
+0052     T_vector,<span class="keyword">...</span>
+0053     t_vector);
+0054 <span class="comment">% perform phase cycling with zero padding 'ZeropaddingImage' and Jakub method</span>
+0055 PC_time_data_Image=<a href="perform_phase_cycling.html" class="code" title="function phase_cycled_time_data=perform_phase_cycling(TimeDomainData,Weights,Zeropadding)">perform_phase_cycling</a>(TimeDomainData,<span class="keyword">...</span>
+0056     weights{1},ZeropaddingImage);
+0057 <span class="comment">% calculate 2D Fourier transform</span>
+0058 SpecDomainData_image=<a href="calculate_2D_fouriertrafo.html" class="code" title="function SpecDomainData= calculate_2D_fouriertrafo(PC_TimeDomainData,tau_vector,T_vector,t_vector)">calculate_2D_fouriertrafo</a>(PC_time_data_Image,<span class="keyword">...</span>
+0059     tau_vector_image,<span class="keyword">...</span>
+0060     T_vector,<span class="keyword">...</span>
+0061     t_vector_image);
+0062 
+0063 <span class="comment">% perform phase cycling with zero padding 'ZeropaddingContour' and Jakub method</span>
+0064 PC_time_data_contour=<a href="perform_phase_cycling.html" class="code" title="function phase_cycled_time_data=perform_phase_cycling(TimeDomainData,Weights,Zeropadding)">perform_phase_cycling</a>(TimeDomainData,<span class="keyword">...</span>
+0065     weights{1},ZeropaddingContour);
+0066 <span class="comment">% calculate 2D Fourier transform</span>
+0067 SpecDomainData_contour=<a href="calculate_2D_fouriertrafo.html" class="code" title="function SpecDomainData= calculate_2D_fouriertrafo(PC_TimeDomainData,tau_vector,T_vector,t_vector)">calculate_2D_fouriertrafo</a>(PC_time_data_Image,<span class="keyword">...</span>
+0068     tau_vector_contour,<span class="keyword">...</span>
+0069     T_vector,<span class="keyword">...</span>
+0070     t_vector_contour);
+0071 
+0072 <span class="keyword">switch</span> operation
+0073     <span class="keyword">case</span> <span class="string">'absolute'</span>
+0074         PC_time_data_Image=abs(PC_time_data_Image);
+0075         PC_time_data_contour=abs(PC_time_data_contour);
+0076         SpecDomainData_image=abs(SpecDomainData_image);
+0077         SpecDomainData_contour=abs(SpecDomainData_contour);
+0078     <span class="keyword">case</span> <span class="string">'realpart'</span>
+0079         PC_time_data_Image=real(PC_time_data_Image);
+0080         PC_time_data_contour=real(PC_time_data_contour);
+0081         SpecDomainData_image=real(SpecDomainData_image);
+0082         SpecDomainData_contour=real(SpecDomainData_contour);
+0083     <span class="keyword">case</span> <span class="string">'imagpart'</span>
+0084         PC_time_data_Image=imag(PC_time_data_Image);
+0085         PC_time_data_contour=imag(PC_time_data_contour);
+0086         SpecDomainData_image=imag(SpecDomainData_image);
+0087         SpecDomainData_contour=imag(SpecDomainData_contour);
+0088     <span class="keyword">case</span> <span class="string">'absorptive'</span>
+0089         [PC_time_data_raw_rephasing,PC_time_data_raw_nonrephasing]=<span class="keyword">...</span>
+0090             <a href="calculate_absorptive_time_data.html" class="code" title="function [phase_cycled_time_data_rephasing,phase_cycled_time_data_nonrephasing]=calculate_absorptive_time_data(TimeDomainData,weights,Zeropadding)">calculate_absorptive_time_data</a>(TimeDomainData,weights,1);
+0091         [PC_time_data_Image_rephasing,PC_time_data_Image_nonrephasing]=<span class="keyword">...</span>
+0092             <a href="calculate_absorptive_time_data.html" class="code" title="function [phase_cycled_time_data_rephasing,phase_cycled_time_data_nonrephasing]=calculate_absorptive_time_data(TimeDomainData,weights,Zeropadding)">calculate_absorptive_time_data</a>(TimeDomainData,weights,ZeropaddingImage);
+0093         [PC_time_data_Contour_rephasing,PC_time_data_Contour_nonrephasing]=<span class="keyword">...</span>
+0094             <a href="calculate_absorptive_time_data.html" class="code" title="function [phase_cycled_time_data_rephasing,phase_cycled_time_data_nonrephasing]=calculate_absorptive_time_data(TimeDomainData,weights,Zeropadding)">calculate_absorptive_time_data</a>(TimeDomainData,weights,ZeropaddingContour);
+0095         
+0096         [SpecDomainData_absorptive_raw]=<a href="calculate_absorptive_2D_Spec.html" class="code" title="function [SpecDomainData_absorptive]=calculate_absorptive_2D_Spec(PC_time_data_rephasing,PC_time_data_nonrephasing,tau_vector,T_vector,t_vector)">calculate_absorptive_2D_Spec</a>(PC_time_data_raw_rephasing,PC_time_data_raw_nonrephasing,<span class="keyword">...</span>
+0097                 tau_vector,T_vector,t_vector);
+0098         [SpecDomainData_absorptive_image]=<a href="calculate_absorptive_2D_Spec.html" class="code" title="function [SpecDomainData_absorptive]=calculate_absorptive_2D_Spec(PC_time_data_rephasing,PC_time_data_nonrephasing,tau_vector,T_vector,t_vector)">calculate_absorptive_2D_Spec</a>(PC_time_data_Image_rephasing,PC_time_data_Image_nonrephasing,<span class="keyword">...</span>
+0099                 tau_vector_image,T_vector,t_vector_image);
+0100         [SpecDomainData_absorptive_contour]=<a href="calculate_absorptive_2D_Spec.html" class="code" title="function [SpecDomainData_absorptive]=calculate_absorptive_2D_Spec(PC_time_data_rephasing,PC_time_data_nonrephasing,tau_vector,T_vector,t_vector)">calculate_absorptive_2D_Spec</a>(PC_time_data_Contour_rephasing,PC_time_data_Contour_nonrephasing,<span class="keyword">...</span>
+0101                 tau_vector_contour,T_vector,t_vector_contour);   
+0102 
+0103         SpecDomainData_raw=SpecDomainData_absorptive_raw;
+0104         SpecDomainData_image=SpecDomainData_absorptive_image;
+0105         SpecDomainData_contour=SpecDomainData_absorptive_contour;
+0106 <span class="keyword">end</span>
+0107 
+0108 <span class="keyword">switch</span> normalization
+0109     <span class="keyword">case</span> <span class="string">'No Normalization'</span>
+0110         <span class="comment">%SpecDomainData=SpecDomainData</span>
+0111     <span class="keyword">case</span> <span class="string">'Normalization'</span>
+0112         PC_time_data_Image=PC_time_data_Image/max(max(max(abs(PC_time_data_Image))));
+0113         PC_time_data_contour=PC_time_data_contour/max(max(max(abs(PC_time_data_contour))));
+0114         
+0115         SpecDomainData_image=SpecDomainData_image/max(max(max(abs(SpecDomainData_image))));
+0116         SpecDomainData_contour=SpecDomainData_contour/max(max(max(abs(SpecDomainData_contour))));
+0117 <span class="keyword">end</span>
+0118 
+0119 <span class="keyword">switch</span> Flip_w_tau
+0120     <span class="keyword">case</span> <span class="string">'off'</span>
+0121         <span class="comment">%do nothing</span>
+0122     <span class="keyword">case</span> <span class="string">'on'</span>
+0123         SpecDomainData_raw=flip(SpecDomainData_raw,1);
+0124         SpecDomainData_image=flip(SpecDomainData_image,1);
+0125         SpecDomainData_contour=flip(SpecDomainData_contour,1);
+0126         <span class="comment">% flip and shift if length of omega vector is even</span>
+0127             w_tau_raw=-flip(w_tau_raw);
+0128             w_tau_contour=-flip(w_tau_contour);
+0129             w_tau_image=-flip(w_tau_image);
+0130 <span class="keyword">end</span>
+0131 
+0132 <span class="keyword">switch</span> Flip_w_t
+0133     <span class="keyword">case</span> <span class="string">'off'</span>
+0134         <span class="comment">%do nothing</span>
+0135     <span class="keyword">case</span> <span class="string">'on'</span>
+0136         SpecDomainData_raw=flip(SpecDomainData_raw,3);
+0137         SpecDomainData_image=flip(SpecDomainData_image,3);
+0138         SpecDomainData_contour=flip(SpecDomainData_contour,3);
+0139         <span class="comment">% flip and shift if length of omega vector is even</span>
+0140             w_t_raw=-flip(w_t_raw);
+0141             w_t_contour=-flip(w_t_contour);
+0142             w_t_image=-flip(w_t_image);
+0143 <span class="keyword">end</span>
+0144 
+0145 <span class="keyword">switch</span> Domain
+0146     <span class="keyword">case</span> <span class="string">'TimeMap'</span>                    
+0147                 <span class="comment">% if necessary calculate isovalues</span>
+0148         <span class="keyword">if</span> length(contour_isovalues)==1 &amp;&amp; floor(contour_isovalues)==contour_isovalues
+0149             isuneven=mod(contour_isovalues,2);
+0150             contour_isovalues=<a href="calculate_isovalues.html" class="code" title="function contour_isovalues=calculate_isovalues(input_data,contour_isovalues,operation,normalization)">calculate_isovalues</a>(PC_time_data_contour,contour_isovalues,operation,normalization);  
+0151             <span class="comment">%if number of contour lines is uneven, set middle contour line</span>
+0152             <span class="comment">%exactly to zero</span>
+0153             <span class="keyword">if</span> isuneven==1
+0154                 contour_isovalues(ceil(end/2))=0;
+0155             <span class="keyword">end</span>
+0156          
+0157         <span class="keyword">end</span>   
+0158         axes(axeshandle);
+0159         cla(gca);                  
+0160         <a href="../../../CMDSworld/subfunctions/plot_functions/plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>(PC_time_data_Image,<span class="keyword">...</span>
+0161             tau_vector_image,<span class="keyword">...</span>
+0162             T_vector,<span class="keyword">...</span>
+0163             t_vector_image,<span class="keyword">...</span>
+0164             PCpos,<span class="keyword">...</span>
+0165             Tpos,<span class="keyword">...</span>
+0166             operation,<span class="keyword">...</span>
+0167             Contour,<span class="keyword">...</span>
+0168             PC_time_data_contour,<span class="keyword">...</span>
+0169             tau_vector_contour,<span class="keyword">...</span>
+0170             T_vector,<span class="keyword">...</span>
+0171             t_vector_contour,<span class="keyword">...</span>
+0172             contour_isovalues,<span class="keyword">...</span>
+0173             ROIdata);       
+0174     <span class="keyword">case</span> <span class="string">'2DSpectrum'</span>  
+0175                 <span class="comment">% if necessary calculate isovalues</span>
+0176         <span class="keyword">if</span> length(contour_isovalues)==1 &amp;&amp; floor(contour_isovalues)==contour_isovalues
+0177             isuneven=mod(contour_isovalues,2);
+0178             contour_isovalues=<a href="calculate_isovalues.html" class="code" title="function contour_isovalues=calculate_isovalues(input_data,contour_isovalues,operation,normalization)">calculate_isovalues</a>(SpecDomainData_contour,contour_isovalues,operation,normalization);  
+0179             <span class="keyword">if</span> isuneven==1
+0180                 contour_isovalues(ceil(end/2))=0;
+0181             <span class="keyword">end</span>
+0182         <span class="keyword">end</span>
+0183                 
+0184         axes(axeshandle);
+0185         cla(gca);
+0186         <span class="comment">% call plotfunction</span>
+0187         <a href="../../../CMDSworld/subfunctions/plot_functions/plotfunction_2D_spec_1Q1Q.html" class="code" title="function plotfunction_2D_spec_1Q1Q(SpecDomainData,w_tau_vector,T_vector,w_t_vector,Tpos,operation,Contour,SpecDomainData_contour,w_tau_contour,T_vector_contour,w_t_contour,contour_isovalues,Units,ROIdata)">plotfunction_2D_spec_1Q1Q</a>(SpecDomainData_image,<span class="keyword">...</span>
+0188             w_tau_image,<span class="keyword">...</span>
+0189             T_vector,<span class="keyword">...</span>
+0190             w_t_image,<span class="keyword">...</span>
+0191             Tpos,<span class="keyword">...</span>
+0192             operation,<span class="keyword">...</span>
+0193             Contour,<span class="keyword">...</span>
+0194             SpecDomainData_contour,<span class="keyword">...</span>
+0195             w_tau_contour,<span class="keyword">...</span>
+0196             T_vector,<span class="keyword">...</span>
+0197             w_t_contour,<span class="keyword">...</span>
+0198             contour_isovalues,<span class="keyword">...</span>
+0199             Units,<span class="keyword">...</span>
+0200             ROIdata);
+0201 <span class="keyword">end</span>
+0202 <span class="comment">%summary of figure data</span>
+0203 figuredata.TimeDomainData=TimeDomainData;
+0204 figuredata.tau_vector_raw=tau_vector;
+0205 figuredata.T_vector_raw=T_vector;
+0206 figuredata.t_vector_raw=t_vector;
+0207 figuredata.tau_vector_image=tau_vector_image;
+0208 figuredata.T_vector_image=T_vector;
+0209 figuredata.t_vector_image=t_vector_image;
+0210 figuredata.tau_vector_contour=tau_vector_contour;
+0211 figuredata.T_vector_contour=T_vector;
+0212 figuredata.t_vector_contour=t_vector_contour;
+0213 figuredata.w_tau_raw=w_tau_raw;
+0214 figuredata.w_t_raw=w_t_raw;
+0215 figuredata.w_tau_image=w_tau_image;
+0216 figuredata.w_t_image=w_t_image;
+0217 figuredata.w_tau_contour=w_tau_contour;
+0218 figuredata.w_t_contour=w_t_contour;
+0219 figuredata.weights=weights;
+0220 figuredata.PC_TimeData_Image=PC_time_data_Image;
+0221 figuredata.PC_SpecData_Image=SpecDomainData_image;
+0222 figuredata.PC_TimeData_Contour=PC_time_data_contour;
+0223 figuredata.PC_SpecData_Contour=SpecDomainData_contour;
+0224 figuredata.PC_TimeData_raw=PC_time_data_raw;
+0225 figuredata.PC_SpecData_raw=SpecDomainData_raw;
+0226 figuredata.Units=Units;
+0227 figuredata.Domain=Domain;
+0228 figuredata.PCpos=PCpos;
+0229 figuredata.Tpos=Tpos;
+0230 figuredata.operation=operation;
+0231 figuredata.normalization=normalization;
+0232 figuredata.Zeropadding_Image=ZeropaddingImage;
+0233 figuredata.XLabel=XLabel;
+0234 figuredata.YLabel=YLabel;
+0235 figuredata.Title=Title;
+0236 figuredata.Contour=Contour;
+0237 figuredata.Zeropadding_Contour=ZeropaddingContour;
+0238 figuredata.contour_isovalues=contour_isovalues;
+0239 figuredata.name_of_scheme=name_of_scheme;
+0240 figuredata.ROIdata=ROIdata;
+0241 figuredata.omega_center=omega_center;
+0242 figuredata.gamma=gamma;
+0243 figuredata.Double_omega_tau=Double_omega_tau;
+0244 figuredata.Double_omega_t=Double_omega_t;
+0245 figuredata.Flip_w_tau=Flip_w_tau;
+0246 figuredata.Flip_w_t=Flip_w_t;
+0247 figuredata.Varpos=Varpos;
+0248 <span class="keyword">if</span> exist(<span class="string">'var_vector'</span>,<span class="string">'var'</span>)==1
+0249     figuredata.variable_vector=var_vector;
+0250 <span class="keyword">end</span>
+0251 <span class="keyword">if</span> exist(<span class="string">'TimeDomainData_uncutted'</span>,<span class="string">'var'</span>)==1
+0252     figuredata.TimeDomainData_uncutted=TimeDomainData_uncutted;
+0253 <span class="keyword">end</span></pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

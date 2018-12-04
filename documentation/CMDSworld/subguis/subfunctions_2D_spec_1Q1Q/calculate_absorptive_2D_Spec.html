@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of calculate_absorptive_2D_Spec</title>
+  <meta name="keywords" content="calculate_absorptive_2D_Spec">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subguis</a> &gt; <a href="index.html">subfunctions_2D_spec_1Q1Q</a> &gt; calculate_absorptive_2D_Spec.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis\subfunctions_2D_spec_1Q1Q&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>calculate_absorptive_2D_Spec
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong></strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [SpecDomainData_absorptive]=calculate_absorptive_2D_Spec(PC_time_data_rephasing,PC_time_data_nonrephasing,tau_vector,T_vector,t_vector) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="Calculate_and_plot_1Q1Q.html" class="code" title="function [figuredata]=Calculate_and_plot_1Q1Q(TimeDomainData,Domain,tau_vector,T_vector,t_vector,weights,axeshandle,PCpos,Tpos,operation,normalization,Units,XLabel,YLabel,Title,ZeropaddingImage,Contour,ZeropaddingContour,contour_isovalues,name_of_scheme,ROIdata,omega_center,gamma,Double_omega_tau,Double_omega_t,Flip_w_tau,Flip_w_t,Varpos,var_vector)">Calculate_and_plot_1Q1Q</a>	</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function [SpecDomainData_absorptive]=calculate_absorptive_2D_Spec(PC_time_data_rephasing,PC_time_data_nonrephasing,tau_vector,T_vector,t_vector)</a>
+0002 SpecDomainData_rephasing=zeros(length(tau_vector),length(T_vector),length(t_vector));
+0003 SpecDomainData_nonrephasing=zeros(length(tau_vector),length(T_vector),length(t_vector));
+0004 SpecDomainData_absorptive=zeros(length(tau_vector),length(T_vector),length(t_vector));
+0005 <span class="comment">% calculate Rephasing</span>
+0006 <span class="keyword">for</span> ii=1:length(T_vector)
+0007 SpecDomainData_rephasing(:,ii,:) = fftshift(fft2(squeeze(PC_time_data_rephasing(:,ii,:)),length(tau_vector),length(t_vector)));
+0008 <span class="keyword">end</span>
+0009 
+0010 <span class="comment">% calculate Nonrephasing</span>
+0011 <span class="keyword">for</span> ii=1:length(T_vector)
+0012 SpecDomainData_nonrephasing(:,ii,:) = fftshift(fft2(squeeze(PC_time_data_nonrephasing(:,ii,:)),length(tau_vector),length(t_vector)));
+0013 <span class="keyword">end</span>
+0014 
+0015 <span class="comment">% calculate Absorptive</span>
+0016 
+0017 <span class="keyword">for</span> ii=1:length(T_vector)
+0018 <span class="comment">%SpecDomainData_absorptive(:,ii,:) = real(fliplr(squeeze(SpecDomainData_rephasing(:,ii,:)))+...</span>
+0019 <span class="comment">%        squeeze(SpecDomainData_nonrephasing(:,ii,:)));</span>
+0020     <span class="keyword">if</span> mod(length(tau_vector),2)==1 &amp;&amp; mod(length(t_vector),2)==1
+0021     SpecDomainData_absorptive(:,ii,:) = real(flip(squeeze(SpecDomainData_rephasing(:,ii,:)),1)+<span class="keyword">...</span>
+0022             squeeze(SpecDomainData_nonrephasing(:,ii,:)));
+0023     <span class="keyword">elseif</span> mod(length(tau_vector),2)==0 
+0024     <span class="comment">% in case of even number of tau_vector elements, the 0 freq is not in the</span>
+0025     <span class="comment">% center, hence, the position will change when the matrix is flipped. In</span>
+0026     <span class="comment">% order to match the zero positions of rephasing and nonrephasing</span>
+0027     <span class="comment">% contribution the matrix has to be shifted</span>
+0028     Flipped_rephasing=flip(squeeze(SpecDomainData_rephasing(:,ii,:)),1);
+0029     Shifted_rephasing=zeros(size(Flipped_rephasing));
+0030     Shifted_rephasing(2:<span class="keyword">end</span>,:)=Flipped_rephasing(1:end-1,:);
+0031 
+0032     SpecDomainData_absorptive(:,ii,:) = real(Shifted_rephasing+<span class="keyword">...</span>
+0033             squeeze(SpecDomainData_nonrephasing(:,ii,:)));     
+0034     SpecDomainData_absorptive(1,ii,:)=0;  
+0035     <span class="keyword">elseif</span> mod(length(tau_vector),2)==1 &amp;&amp; mod(length(t_vector),2)==0
+0036     SpecDomainData_absorptive(:,ii,:) = real(flip(squeeze(SpecDomainData_rephasing(:,ii,:)),1)+<span class="keyword">...</span>
+0037             squeeze(SpecDomainData_nonrephasing(:,ii,:)));
+0038     <span class="keyword">end</span>
+0039 
+0040 <span class="keyword">end</span>
+0041</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

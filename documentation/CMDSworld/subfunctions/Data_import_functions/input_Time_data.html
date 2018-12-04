@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of input_Time_data</title>
+  <meta name="keywords" content="input_Time_data">
+  <meta name="description" content="Get 4D Time Domain Data">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subfunctions</a> &gt; <a href="index.html">Data_import_functions</a> &gt; input_Time_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subfunctions\Data_import_functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>input_Time_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>Get 4D Time Domain Data</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [TimeDomainData, tau_vector, T_vector, t_vector, InputFolder, Time_Domain_Size,variable_vector,file_out]=input_Time_data </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> Get 4D Time Domain Data</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="define_Time_Domain_input_structure.html" class="code" title="function [Output_Time_Domain_Data, T_vector,NumDim]=define_Time_Domain_input_structure(Input_Time_Domain_Data)">define_Time_Domain_input_structure</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>	CMDSWORLD MATLAB code for CMDSworld.fig</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function [TimeDomainData, tau_vector, T_vector, t_vector, InputFolder, Time_Domain_Size,variable_vector,file_out]=input_Time_data</a>
+0002 <span class="comment">% Get 4D Time Domain Data</span>
+0003 [file,path] = uigetfile(<span class="string">'*.mat'</span>,<span class="string">'Input 3D, 4D or 5D Time Domain Data'</span>,<span class="string">'TimeDomainData'</span>);
+0004 <span class="keyword">if</span> isequal(file,0)
+0005    disp(<span class="string">'User selected Cancel'</span>);
+0006    error(<span class="string">'no input data!'</span>);
+0007 <span class="keyword">else</span>
+0008    TimeDomainData=struct2cell(load(fullfile(path,file)));
+0009    TimeDomainData=TimeDomainData{:,:,:,:};
+0010    InputFolder=path;
+0011 <span class="keyword">end</span>
+0012 file_out=file;
+0013 [TimeDomainData, T_vector,NumDim]=<a href="define_Time_Domain_input_structure.html" class="code" title="function [Output_Time_Domain_Data, T_vector,NumDim]=define_Time_Domain_input_structure(Input_Time_Domain_Data)">define_Time_Domain_input_structure</a>(TimeDomainData);
+0014 Time_Domain_Size=size(TimeDomainData);
+0015 <span class="comment">%input tau vector</span>
+0016 [file,path] = uigetfile(fullfile(InputFolder,<span class="string">'*.mat'</span>),<span class="string">'Input tau vector'</span>);
+0017 <span class="keyword">if</span> isequal(file,0)
+0018    disp(<span class="string">'User selected Cancel'</span>);
+0019 <span class="keyword">else</span>
+0020    tau_vector=struct2cell(load(fullfile(path,file)));
+0021    tau_vector=tau_vector{:};
+0022    <span class="comment">% check consistency with TimeDomainData</span>
+0023    <span class="keyword">if</span> length(tau_vector)~=Time_Domain_Size(1,2);
+0024        msgbox(<span class="string">'tau vector length is inconsistent to time domain dataset'</span>)
+0025    <span class="keyword">end</span>
+0026 <span class="keyword">end</span>
+0027 <span class="comment">% Check wether T axis consist of single or multiple elements</span>
+0028 <span class="comment">%input T vector</span>
+0029 <span class="keyword">if</span> isempty(T_vector)
+0030         [file,path] = uigetfile(fullfile(InputFolder,<span class="string">'*.mat'</span>),<span class="string">'Input T vector'</span>);
+0031     <span class="keyword">if</span> isequal(file,0)
+0032        disp(<span class="string">'User selected Cancel'</span>);
+0033     <span class="keyword">else</span>
+0034        T_vector=struct2cell(load(fullfile(path,file)));
+0035        T_vector=T_vector{:};
+0036                <span class="comment">% check consistency with TimeDomainData</span>
+0037            <span class="keyword">if</span> length(T_vector)~=Time_Domain_Size(1,3);
+0038                msgbox(<span class="string">'T vector length is inconsistent to time domain dataset'</span>)
+0039            <span class="keyword">end</span>
+0040     <span class="keyword">end</span>
+0041 <span class="keyword">end</span>
+0042 
+0043 <span class="comment">%input t vector</span>
+0044 [file,path] = uigetfile(fullfile(InputFolder,<span class="string">'*.mat'</span>),<span class="string">'Input t vector'</span>);
+0045 <span class="keyword">if</span> isequal(file,0)
+0046    disp(<span class="string">'User selected Cancel'</span>);
+0047 <span class="keyword">else</span>
+0048    t_vector=struct2cell(load(fullfile(path,file)));
+0049    t_vector=t_vector{:};
+0050        <span class="comment">% check consistency with TimeDomainData</span>
+0051            <span class="keyword">if</span> length(t_vector)~=Time_Domain_Size(1,4) &amp;&amp; NumDim&lt;5;
+0052                msgbox(<span class="string">'t vector length is inconsistent to time domain dataset'</span>)
+0053            <span class="keyword">end</span>
+0054 <span class="keyword">end</span>
+0055 variable_vector=[];
+0056 <span class="keyword">if</span> NumDim==5
+0057        [file,path] = uigetfile(fullfile(InputFolder,<span class="string">'*.mat'</span>),<span class="string">'Input variable vector'</span>);
+0058     <span class="keyword">if</span> isequal(file,0)
+0059        disp(<span class="string">'User selected Cancel'</span>);
+0060     <span class="keyword">else</span>
+0061        variable_vector=struct2cell(load(fullfile(path,file)));
+0062        variable_vector=variable_vector{:};
+0063            <span class="comment">% check consistency with TimeDomainData</span>
+0064                <span class="keyword">if</span> length(variable_vector)~=Time_Domain_Size(1,5);
+0065                    msgbox(<span class="string">'variable vector length is inconsistent to time domain dataset'</span>)
+0066                <span class="keyword">end</span>
+0067     <span class="keyword">end</span> 
+0068 <span class="keyword">end</span></pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

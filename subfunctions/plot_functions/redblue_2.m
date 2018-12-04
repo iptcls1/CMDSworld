@@ -1,0 +1,15 @@
+function colmap=redblue_2(m)
+n=m*4-3;
+colmap=zeros(n,3);
+colmap(1:m,1)=linspace(25,30,m)/255;
+colmap(1:m,2)=linspace(25,144,m)/255;
+colmap(1:m,3)=linspace(112,255,m)/255;
+colmap(m:2*m-1,1)=linspace(30,255,m)/255;
+colmap(m:2*m-1,2)=linspace(144,255,m)/255;
+colmap(m:2*m-1,3)=linspace(255,255,m)/255;
+colmap(2*m-1:3*m-2,1)=linspace(255,255,m)/255;
+colmap(2*m-1:3*m-2,2)=linspace(255,0,m)/255;
+colmap(2*m-1:3*m-2,3)=linspace(255,0,m)/255;
+colmap(3*m-2:4*m-3,1)=linspace(255,100,m)/255;
+colmap(3*m-2:4*m-3,2)=linspace(0,0,m)/255;
+colmap(3*m-2:4*m-3,3)=linspace(0,0,m)/255;

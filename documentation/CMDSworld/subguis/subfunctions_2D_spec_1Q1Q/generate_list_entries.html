@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of generate_list_entries</title>
+  <meta name="keywords" content="generate_list_entries">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subguis</a> &gt; <a href="index.html">subfunctions_2D_spec_1Q1Q</a> &gt; generate_list_entries.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis\subfunctions_2D_spec_1Q1Q&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>generate_list_entries
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong></strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function text=generate_list_entries(all_weights,all_names_of_scheme) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subguis/TwoDspec1Q1Q.html" class="code" title="function varargout = TwoDspec1Q1Q(varargin)">TwoDspec1Q1Q</a>	TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function text=generate_list_entries(all_weights,all_names_of_scheme)</a>
+0002 text=[];
+0003 
+0004 
+0005 <span class="keyword">for</span> ii=1:length(all_weights)
+0006   snipped_name=strsplit(all_names_of_scheme{ii},<span class="string">'.mat'</span>);
+0007   tmp_text=strvcat([<span class="string">'real - 2DSpec - '</span> snipped_name{1}],<span class="keyword">...</span>
+0008       [<span class="string">'imag - 2DSpec - '</span> snipped_name{1}],<span class="keyword">...</span>
+0009       [<span class="string">'abs - 2DSpec - '</span> snipped_name{1}],<span class="keyword">...</span>
+0010       [<span class="string">'real - TimeMap - '</span> snipped_name{1}],<span class="keyword">...</span>
+0011       [<span class="string">'imag - TimeMap - '</span> snipped_name{1}],<span class="keyword">...</span>
+0012       [<span class="string">'abs - TimeMap - '</span> snipped_name{1}]);  
+0013   text=char(text,tmp_text);
+0014 <span class="keyword">end</span>
+0015 
+0016 <span class="keyword">if</span> length(all_weights)&gt;1
+0017     text=char(text,<span class="string">'Absorptive - 2DSpec'</span>);
+0018 <span class="keyword">end</span>
+0019 
+0020 
+0021 
+0022 
+0023 
+0024 
+0025</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

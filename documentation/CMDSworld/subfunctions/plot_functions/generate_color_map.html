@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of generate_color_map</title>
+  <meta name="keywords" content="generate_color_map">
+  <meta name="description" content="Colormap">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subfunctions</a> &gt; <a href="index.html">plot_functions</a> &gt; generate_color_map.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subfunctions\plot_functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>generate_color_map
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>Colormap</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function plotcolor_fine=generate_color_map_positive_values(number_of_shades) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> Colormap</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>	this plot function plot Time Domain Maps tau vs t for T_increment of</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function plotcolor_fine=generate_color_map_positive_values(number_of_shades)</a>
+0002 <span class="comment">% Colormap</span>
+0003 
+0004 col_map=zeros(256,3);
+0005 col_map(:,1)=linspace(255,139,256)./255;
+0006 col_map(:,2)=linspace(255,0,256)./255;
+0007 col_map(:,3)=linspace(204,0,256)./255;
+0008 
+0009 <span class="comment">%plotcolor = [0 0 0.47869673371315;0 0 0.506133735179901;0 0 0.533570766448975;0 0 0.561007797718048;0 0 0.588444769382477;0 0 0.61588180065155;0 0 0.643318831920624;0 0 0.670755803585052;0 0 0.698192834854126;0 0 0.725629866123199;0 0 0.753066897392273;0 0 0.780503869056702;0 0 0.807940900325775;0 0 0.835377931594849;0 0 0.862814903259277;0 0 0.890251934528351;0 0 0.917688965797424;0 0 0.945125997066498;0 0 0.972562968730927;0 0 1;0.0472222231328487 0.0472222231328487 1;0.0944444462656975 0.0944444462656975 1;0.141666665673256 0.141666665673256 1;0.188888892531395 0.188888892531395 1;0.236111119389534 0.236111119389534 1;0.283333331346512 0.283333331346512 1;0.330555558204651 0.330555558204651 1;0.37777778506279 0.37777778506279 1;0.425000011920929 0.425000011920929 1;0.472222238779068 0.472222238779068 1;0.519444465637207 0.519444465637207 1;0.566666662693024 0.566666662693024 1;0.613888919353485 0.613888919353485 1;0.661111116409302 0.661111116409302 1;0.708333373069763 0.708333373069763 1;0.75555557012558 0.75555557012558 1;0.802777826786041 0.802777826786041 1;0.850000023841858 0.850000023841858 1;0.925000011920929 0.925000011920929 1;1 1 1;1 0.975000023841858 0.5;1 0.949999988079071 0;1 0.897222220897675 0;1 0.844444453716278 0;1 0.791666626930237 0;1 0.73888885974884 0;1 0.686111092567444 0;1 0.633333325386047 0;1 0.580555558204651 0;1 0.527777791023254 0;1 0.474999994039536 0;1 0.422222226858139 0;1 0.36944442987442 0;1 0.316666662693024 0;1 0.263888895511627 0;1 0.21111111342907 0;1 0.158333331346512 0;1 0.105555556714535 0;1 0.0527777783572674 0;1 0 0;0.965473711490631 0 0;0.930947363376617 0 0;0.896421074867249 0 0;0.861894726753235 0 0;0.827368438243866 0 0;0.792842090129852 0 0;0.758315801620483 0 0;0.72378945350647 0 0;0.689263164997101 0 0;0.654736876487732 0 0;0.620210528373718 0 0;0.585684239864349 0 0;0.551157891750336 0 0;0.516631603240967 0 0;0.482105284929276 0 0;0.447578966617584 0 0;0.413052648305893 0 0;0.378526329994202 0 0;0.34400001168251 0 0];</span>
+0010 <span class="comment">%plotcolor = [1 1 1;1 0.975000023841858 0.5;1 0.949999988079071 0;1 0.897222220897675 0;1 0.844444453716278 0;1 0.791666626930237 0;1 0.73888885974884 0;1 0.686111092567444 0;1 0.633333325386047 0;1 0.580555558204651 0;1 0.527777791023254 0;1 0.474999994039536 0;1 0.422222226858139 0;1 0.36944442987442 0;1 0.316666662693024 0;1 0.263888895511627 0;1 0.21111111342907 0;1 0.158333331346512 0;1 0.105555556714535 0;1 0.0527777783572674 0;1 0 0;0.965473711490631 0 0;0.930947363376617 0 0;0.896421074867249 0 0;0.861894726753235 0 0;0.827368438243866 0 0;0.792842090129852 0 0;0.758315801620483 0 0;0.72378945350647 0 0;0.689263164997101 0 0;0.654736876487732 0 0;0.620210528373718 0 0;0.585684239864349 0 0;0.551157891750336 0 0;0.516631603240967 0 0;0.482105284929276 0 0;0.447578966617584 0 0;0.413052648305893 0 0;0.378526329994202 0 0;0.34400001168251 0 0];</span>
+0011 plotcolor = [1 1 1;1 0.975000023841858 0.5;1 0.949999988079071 0;1 0.897222220897675 0;1 0.844444453716278 0;1 0.791666626930237 0;1 0.73888885974884 0;1 0.686111092567444 0;1 0.633333325386047 0;1 0.580555558204651 0;1 0.527777791023254 0;1 0.474999994039536 0;1 0.422222226858139 0;1 0.36944442987442 0;1 0.316666662693024 0;1 0.263888895511627 0;1 0.21111111342907 0;1 0.158333331346512 0;1 0.105555556714535 0;1 0.0527777783572674 0;1 0 0;0.965473711490631 0 0;0.930947363376617 0 0;0.896421074867249 0 0;0.861894726753235 0 0;0.827368438243866 0 0;0.792842090129852 0 0;0.758315801620483 0 0;0.72378945350647 0 0;0.689263164997101 0 0;0.654736876487732 0 0;0.620210528373718 0 0;0.585684239864349 0 0;0.551157891750336 0 0;0.516631603240967 0 0;0.482105284929276 0 0;0.447578966617584 0 0;0.413052648305893 0 0;0.378526329994202 0 0;0.34400001168251 0 0];
+0012 
+0013 <span class="comment">%data interpolation to refine plotcolor</span>
+0014 <span class="keyword">for</span> ii=1:3
+0015      plotcolor_fine(:,ii)=interp1(1:40,plotcolor(:,ii),linspace(1,40,number_of_shades));
+0016 <span class="keyword">end</span></pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

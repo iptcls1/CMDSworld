@@ -1,0 +1,1569 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of TwoDspec1Q1Q</title>
+  <meta name="keywords" content="TwoDspec1Q1Q">
+  <meta name="description" content="TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../index.html">Home</a> &gt;  <a href="../index.html">CMDSworld</a> &gt; <a href="index.html">subguis</a> &gt; TwoDspec1Q1Q.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../index.html"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+
+<h1>TwoDspec1Q1Q
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>function varargout = TwoDspec1Q1Q(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig
+      TWODSPEC1Q1Q, by itself, creates a new TWODSPEC1Q1Q or raises the existing
+      singleton*.
+
+      H = TWODSPEC1Q1Q returns the handle to a new TWODSPEC1Q1Q or the handle to
+      the existing singleton*.
+
+      TWODSPEC1Q1Q('CALLBACK',hObject,eventData,handles,...) calls the local
+      function named CALLBACK in TWODSPEC1Q1Q.M with the given input arguments.
+
+      TWODSPEC1Q1Q('Property','Value',...) creates a new TWODSPEC1Q1Q or raises the
+      existing singleton*.  Starting from the left, property value pairs are
+      applied to the GUI before TwoDspec1Q1Q_OpeningFcn gets called.  An
+      unrecognized property name or invalid value makes property application
+      stop.  All inputs are passed to TwoDspec1Q1Q_OpeningFcn via varargin.
+
+      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one
+      instance to run (singleton)&quot;.
+
+ See also: GUIDE, GUIDATA, GUIHANDLES</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>	CMDSWORLD MATLAB code for CMDSworld.fig</li><li><a href="T_scan_evaluation.html" class="code" title="function varargout = T_scan_evaluation(varargin)">T_scan_evaluation</a>	T_SCAN_EVALUATION MATLAB code for T_scan_evaluation.fig</li><li><a href="modal_exit_question.html" class="code" title="function varargout = modal_exit_question(varargin)">modal_exit_question</a>	MODAL_EXIT_QUESTION MATLAB code for modal_exit_question.fig</li><li><a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/Calculate_and_plot_1Q1Q.html" class="code" title="function [figuredata]=Calculate_and_plot_1Q1Q(TimeDomainData,Domain,tau_vector,T_vector,t_vector,weights,axeshandle,PCpos,Tpos,operation,normalization,Units,XLabel,YLabel,Title,ZeropaddingImage,Contour,ZeropaddingContour,contour_isovalues,name_of_scheme,ROIdata,omega_center,gamma,Double_omega_tau,Double_omega_t,Flip_w_tau,Flip_w_t,Varpos,var_vector)">Calculate_and_plot_1Q1Q</a>	</li><li><a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/TwoD_def_ROI.html" class="code" title="function [x,y,local_mask]=TwoD_def_ROI(type,activated_figure,Domain,tau_vector_image,t_vector_image,w_tau_vector_image,w_t_vector_image)">TwoD_def_ROI</a>	watch out: x axis in plot is t axis in plot</li><li><a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>	</li><li><a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/generate_list_entries.html" class="code" title="function text=generate_list_entries(all_weights,all_names_of_scheme)">generate_list_entries</a>	</li><li><a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/get_operation_from_list_entry.html" class="code" title="function [weights,TimeOrSpec,operation,name_of_scheme]=get_operation_from_list_entry(listentry,all_weights,all_names_of_scheme,value)">get_operation_from_list_entry</a>	</li><li><a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/setinvisible.html" class="code" title="function setinvisible(handles)">setinvisible</a>	</li><li><a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/check_input_data.html" class="code" title="function[outputboolean,Size_TimeDomainData]=check_input_data(TimeDomainData,tau_vector,T_vector,t_vector)">check_input_data</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>	CMDSWORLD MATLAB code for CMDSworld.fig</li></ul>
+<!-- crossreference -->
+
+<h2><a name="_subfunctions"></a>SUBFUNCTIONS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="#_sub1" class="code">function TwoDspec1Q1Q_OpeningFcn(hObject, eventdata, handles, varargin)</a></li><li><a href="#_sub2" class="code">function varargout = TwoDspec1Q1Q_OutputFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub3" class="code">function listbox_contribution_spec_plot1_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub4" class="code">function listbox_contribution_spec_plot1_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub5" class="code">function listbox_contribution_spec_plot2_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub6" class="code">function listbox_contribution_spec_plot2_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub7" class="code">function listbox_contribution_spec_plot3_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub8" class="code">function listbox_contribution_spec_plot3_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub9" class="code">function radio_normalization_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub10" class="code">function radio_normalization_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub11" class="code">function Menu_File_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub12" class="code">function Menu_Units_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub13" class="code">function Menu_file_fs_rad_fs_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub14" class="code">function Menu_file_fs_THz_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub15" class="code">function Menu_file_fs_eV_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub16" class="code">function Menu_file_fs_wavenumber_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub17" class="code">function Menu_file_copy_all_to_figures_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub18" class="code">function Menu_file_copy_selected_to_figure_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub19" class="code">function Menu_File_Save_All_Figure_and_Data_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub20" class="code">function Menu_File_Save_selected_figure_and_data_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub21" class="code">function Menu_Exit_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub22" class="code">function Menu_Data_Settings_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub23" class="code">function Menu_Data_Settings_Normalization_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub24" class="code">function edit_zero_padding_image_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub25" class="code">function edit_zero_padding_image_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub26" class="code">function Menu_Zero_Padding_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub27" class="code">function edit_zero_padding_contour_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub28" class="code">function edit_zero_padding_contour_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub29" class="code">function radiobutton_units_eV_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub30" class="code">function radiobutton_units_meV_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub31" class="code">function radiobutton_Units_Hz_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub32" class="code">function radiobutton_units_GHz_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub33" class="code">function radiobutton_Units_THz_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub34" class="code">function radiobutton_Units_PHz_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub35" class="code">function Menu_plot_settings_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub36" class="code">function radiobutton_plot_contour_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub37" class="code">function Menu_Plot_settings_countour_lines_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub38" class="code">function edit_number_of_lines_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub39" class="code">function edit_number_of_lines_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub40" class="code">function slider_T_scan_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub41" class="code">function slider_T_scan_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub42" class="code">function radiobutton_active_figure1_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub43" class="code">function radiobutton_active_figure1_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub44" class="code">function radiobutton_active_figure3_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub45" class="code">function radiobutton_active_figure2_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub46" class="code">function Menu_Data_Def_ROI_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub47" class="code">function pushbutton_add_ROI_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub48" class="code">function listbox_ROIs_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub49" class="code">function listbox_ROIs_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub50" class="code">function radiobutton_square_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub51" class="code">function radiobutton_manual_square_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub52" class="code">function radiobutton_fixed_size_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub53" class="code">function radiobutton_Polygon_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub54" class="code">function radiobutton_square_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub55" class="code">function pushbutton_delete_ROI_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub56" class="code">function pushbutton_calc_T_scan_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub57" class="code">function Menu_Data_Gamma_value_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub58" class="code">function edit_gamma_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub59" class="code">function edit_gamma_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub60" class="code">function edit_lambda0_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub61" class="code">function edit_lambda0_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub62" class="code">function slider_variable_scan_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub63" class="code">function slider_variable_scan_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub64" class="code">function text_variable_scan_2_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub65" class="code">function radiobutton_Double_omega_tau_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub66" class="code">function radiobutton_Double_omega_t_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub67" class="code">function radiobutton_spectrum_flip_w_tau_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub68" class="code">function radiobutton_spectrum_flip_w_t_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub69" class="code">function Menu_Plot_settings_flip_axes_Callback(hObject, eventdata, handles)</a></li></ul>
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function varargout = TwoDspec1Q1Q(varargin)</a>
+0002 <span class="comment">% TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig</span>
+0003 <span class="comment">%      TWODSPEC1Q1Q, by itself, creates a new TWODSPEC1Q1Q or raises the existing</span>
+0004 <span class="comment">%      singleton*.</span>
+0005 <span class="comment">%</span>
+0006 <span class="comment">%      H = TWODSPEC1Q1Q returns the handle to a new TWODSPEC1Q1Q or the handle to</span>
+0007 <span class="comment">%      the existing singleton*.</span>
+0008 <span class="comment">%</span>
+0009 <span class="comment">%      TWODSPEC1Q1Q('CALLBACK',hObject,eventData,handles,...) calls the local</span>
+0010 <span class="comment">%      function named CALLBACK in TWODSPEC1Q1Q.M with the given input arguments.</span>
+0011 <span class="comment">%</span>
+0012 <span class="comment">%      TWODSPEC1Q1Q('Property','Value',...) creates a new TWODSPEC1Q1Q or raises the</span>
+0013 <span class="comment">%      existing singleton*.  Starting from the left, property value pairs are</span>
+0014 <span class="comment">%      applied to the GUI before TwoDspec1Q1Q_OpeningFcn gets called.  An</span>
+0015 <span class="comment">%      unrecognized property name or invalid value makes property application</span>
+0016 <span class="comment">%      stop.  All inputs are passed to TwoDspec1Q1Q_OpeningFcn via varargin.</span>
+0017 <span class="comment">%</span>
+0018 <span class="comment">%      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one</span>
+0019 <span class="comment">%      instance to run (singleton)&quot;.</span>
+0020 <span class="comment">%</span>
+0021 <span class="comment">% See also: GUIDE, GUIDATA, GUIHANDLES</span>
+0022 
+0023 <span class="comment">% Edit the above text to modify the response to help TwoDspec1Q1Q</span>
+0024 
+0025 <span class="comment">% Last Modified by GUIDE v2.5 27-Nov-2018 16:57:56</span>
+0026 
+0027 <span class="comment">% Begin initialization code - DO NOT EDIT</span>
+0028 gui_Singleton = 1;
+0029 gui_State = struct(<span class="string">'gui_Name'</span>,       mfilename, <span class="keyword">...</span>
+0030                    <span class="string">'gui_Singleton'</span>,  gui_Singleton, <span class="keyword">...</span>
+0031                    <span class="string">'gui_OpeningFcn'</span>, @<a href="#_sub1" class="code" title="subfunction TwoDspec1Q1Q_OpeningFcn(hObject, eventdata, handles, varargin)">TwoDspec1Q1Q_OpeningFcn</a>, <span class="keyword">...</span>
+0032                    <span class="string">'gui_OutputFcn'</span>,  @<a href="#_sub2" class="code" title="subfunction varargout = TwoDspec1Q1Q_OutputFcn(hObject, eventdata, handles)">TwoDspec1Q1Q_OutputFcn</a>, <span class="keyword">...</span>
+0033                    <span class="string">'gui_LayoutFcn'</span>,  [] , <span class="keyword">...</span>
+0034                    <span class="string">'gui_Callback'</span>,   []);
+0035 <span class="keyword">if</span> nargin &amp;&amp; ischar(varargin{1})
+0036     gui_State.gui_Callback = str2func(varargin{1});
+0037 <span class="keyword">end</span>
+0038 
+0039 <span class="keyword">if</span> nargout
+0040     [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+0041 <span class="keyword">else</span>
+0042     gui_mainfcn(gui_State, varargin{:});
+0043 <span class="keyword">end</span>
+0044 <span class="comment">% End initialization code - DO NOT EDIT</span>
+0045 <span class="comment">% --- Executes just before TwoDspec1Q1Q is made visible.</span>
+0046 <a name="_sub1" href="#_subfunctions" class="code">function TwoDspec1Q1Q_OpeningFcn(hObject, eventdata, handles, varargin)</a>
+0047 <span class="comment">% This function has no output args, see OutputFcn.</span>
+0048 <span class="comment">% hObject    handle to figure</span>
+0049 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0050 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0051 <span class="comment">% varargin   command line arguments to TwoDspec1Q1Q (see VARARGIN)</span>
+0052 
+0053 <span class="comment">% Choose default command line output for TwoDspec1Q1Q</span>
+0054 handles.output = hObject;
+0055 <span class="comment">%get data from main gui</span>
+0056 maindata=varargin{1};
+0057 handles.maindata=maindata;
+0058 <span class="comment">%check data availability</span>
+0059 [checkavail,~]=<a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/check_input_data.html" class="code" title="function[outputboolean,Size_TimeDomainData]=check_input_data(TimeDomainData,tau_vector,T_vector,t_vector)">check_input_data</a>(maindata.TDdata.TimeDomainData,<span class="keyword">...</span>
+0060     maindata.TDdata.tau_vector,<span class="keyword">...</span>
+0061     maindata.TDdata.T_vector,<span class="keyword">...</span>
+0062     maindata.TDdata.t_vector);
+0063 <span class="keyword">if</span> ~isfield(maindata,<span class="string">'pcdata'</span>)
+0064     checkavail_phases=false;
+0065     msgbox(<span class="string">'No phase-cycling data available.'</span>)
+0066 <span class="keyword">elseif</span> isempty(maindata.pcdata)
+0067     checkavail_phases=false;
+0068     msgbox(<span class="string">'No phase-cycling data available.'</span>)
+0069 <span class="comment">% elseif length(maindata.pcdata.all_phases{1})~=sizeTD(1)</span>
+0070 <span class="comment">%     checkavail_phases=false;</span>
+0071 <span class="comment">%     msgbox('Phase-cycling data set is of incorrect length.')</span>
+0072 <span class="keyword">else</span>
+0073     checkavail_phases=true;
+0074     
+0075 <span class="keyword">end</span>
+0076 
+0077 <span class="keyword">if</span> checkavail==false
+0078     error(<span class="string">'Data not available!'</span>);
+0079 <span class="keyword">elseif</span> checkavail_phases==false
+0080     error(<span class="string">'Data not available!'</span>);
+0081 <span class="keyword">end</span>
+0082 <span class="comment">% check wether figure was loaded previously</span>
+0083 <span class="keyword">if</span> ~isfield(maindata,<span class="string">'figuredata'</span>)
+0084 <span class="comment">% default values</span>
+0085 handles.misc.number_isovalues=11;
+0086 handles.misc.xtitle=<span class="string">'auto'</span>;
+0087 handles.misc.Domain=<span class="string">'TimeMap'</span>;
+0088 handles.misc.operation=<span class="string">'absolute'</span>;
+0089 handles.misc.ytitle=<span class="string">'auto'</span>;
+0090 handles.misc.title=<span class="string">'auto'</span>;
+0091 handles.misc.Normalization=<span class="string">'No Normalization'</span>;
+0092 handles.misc.Units=<span class="string">'rad/fs'</span>;
+0093 handles.misc.ZeropaddingImage=1;
+0094 handles.misc.ZeropaddingContour=3;
+0095 handles.misc.Contour=<span class="string">'on'</span>;
+0096 handles.ROI.ROI_data_x={};
+0097 handles.ROI.ROI_data_y={};
+0098 handles.ROI.ROI_mask_data={};
+0099 Tpos=1;
+0100 PCpos=1;
+0101 name_of_scheme=<span class="string">'default'</span>;
+0102 handles.misc.omega_center=0;
+0103 handles.misc.gamma=0;
+0104 handles.misc.Double_omega_tau=<span class="string">'off'</span>;
+0105 handles.misc.Double_omega_t=<span class="string">'off'</span>;
+0106 handles.misc.Flip_w_tau=<span class="string">'off'</span>;
+0107 handles.misc.Flip_w_t=<span class="string">'off'</span>;
+0108 Varpos=1;
+0109 <span class="keyword">else</span>
+0110 handles.misc.number_isovalues=maindata.figuredata.contour_isovalues;
+0111 handles.misc.xtitle=maindata.figuredata.XLabel;
+0112 handles.misc.Domain=maindata.figuredata.Domain;
+0113 handles.misc.operation=maindata.figuredata.operation;
+0114 handles.misc.ytitle=maindata.figuredata.YLabel;
+0115 handles.misc.title=maindata.figuredata.Title;
+0116 handles.misc.Normalization=maindata.figuredata.normalization;
+0117 handles.misc.Units=maindata.figuredata.Units;
+0118 handles.misc.ZeropaddingImage=maindata.figuredata.Zeropadding_Image;
+0119 handles.misc.ZeropaddingContour=maindata.figuredata.Zeropadding_Contour;
+0120 handles.misc.Contour=maindata.figuredata.Contour;
+0121     <span class="keyword">if</span> isfield(maindata.figuredata.ROIdata,<span class="string">'ROI_data_x'</span>)
+0122         handles.ROI.ROI_data_x=maindata.figuredata.ROIdata.ROI_data_x;
+0123         handles.ROI.ROI_data_y=maindata.figuredata.ROIdata.ROI_data_y;
+0124         handles.ROI.ROI_mask_data=maindata.figuredata.ROIdata.ROI_mask_data;
+0125             cont={};
+0126             <span class="keyword">for</span> ii=1:length(handles.ROI.ROI_data_x)
+0127                     x=handles.ROI.ROI_data_x{ii};
+0128                     y=handles.ROI.ROI_data_y{ii};
+0129                     str=[<span class="string">'dX='</span> num2str([min(x), max(x)],<span class="string">' %.2f'</span>) <span class="string">' dY='</span> num2str([min(y), max(y)],<span class="string">' %.2f'</span>)];
+0130                     cont{end+1} = str;
+0131                     set(handles.listbox_ROIs,<span class="string">'String'</span>,cont);
+0132                     set(handles.listbox_ROIs,<span class="string">'Value'</span>,size(cont,1))
+0133             <span class="keyword">end</span>
+0134     <span class="keyword">else</span>
+0135         handles.ROI.ROI_data_x={};
+0136         handles.ROI.ROI_data_y={};
+0137         handles.ROI.ROI_mask_data={};
+0138     <span class="keyword">end</span>
+0139 Tpos=maindata.figuredata.Tpos;
+0140 PCpos=maindata.figuredata.PCpos;
+0141 name_of_scheme=maindata.figuredata.name_of_scheme;
+0142 handles.misc.omega_center=maindata.figuredata.omega_center;
+0143 handles.misc.gamma=maindata.figuredata.gamma;
+0144 handles.misc.Double_omega_tau=maindata.figuredata.Double_omega_tau;
+0145 handles.misc.Double_omega_t=maindata.figuredata.Double_omega_t;
+0146 <span class="keyword">if</span> isfield(maindata.figuredata,<span class="string">'Flip_w_tau'</span>) <span class="comment">%backward comp.</span>
+0147 handles.misc.Flip_w_tau=maindata.figuredata.Flip_w_tau;
+0148 handles.misc.Flip_w_t=maindata.figuredata.Flip_w_t;
+0149 <span class="keyword">else</span>
+0150 handles.misc.Flip_w_tau=<span class="string">'off'</span>;
+0151 handles.misc.Flip_w_t=<span class="string">'off'</span>;
+0152 <span class="keyword">end</span>
+0153 
+0154     <span class="keyword">if</span> ~isfield(maindata.figuredata,<span class="string">'Varpos'</span>)
+0155         Varpos=1;
+0156     <span class="keyword">else</span> Varpos=maindata.figuredata.Varpos;
+0157     <span class="keyword">end</span>
+0158 <span class="keyword">end</span>
+0159 
+0160 <span class="comment">% Perform Calculate and plot for left figure for the first time (constructor)</span>
+0161 
+0162 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/Calculate_and_plot_1Q1Q.html" class="code" title="function [figuredata]=Calculate_and_plot_1Q1Q(TimeDomainData,Domain,tau_vector,T_vector,t_vector,weights,axeshandle,PCpos,Tpos,operation,normalization,Units,XLabel,YLabel,Title,ZeropaddingImage,Contour,ZeropaddingContour,contour_isovalues,name_of_scheme,ROIdata,omega_center,gamma,Double_omega_tau,Double_omega_t,Flip_w_tau,Flip_w_t,Varpos,var_vector)">Calculate_and_plot_1Q1Q</a>(maindata.TDdata.TimeDomainData,<span class="keyword">...</span>
+0163     handles.misc.Domain,<span class="keyword">...</span>
+0164     maindata.TDdata.tau_vector,maindata.TDdata.T_vector,maindata.TDdata.t_vector,<span class="keyword">...</span>
+0165     maindata.pcdata.all_weights{end},<span class="keyword">...</span>
+0166     handles.TwoD_1Q1Q_Spectrum1,PCpos,Tpos,handles.misc.operation,<span class="keyword">...</span>
+0167     handles.misc.Normalization,handles.misc.Units,<span class="keyword">...</span>
+0168     handles.misc.xtitle,handles.misc.ytitle,<span class="string">'auto'</span>,handles.misc.ZeropaddingImage,<span class="string">'on'</span>,<span class="keyword">...</span>
+0169     handles.misc.ZeropaddingContour,handles.misc.number_isovalues,name_of_scheme,handles.ROI,<span class="keyword">...</span>
+0170     handles.misc.omega_center,handles.misc.gamma,<span class="keyword">...</span>
+0171     handles.misc.Double_omega_tau,<span class="keyword">...</span>
+0172     handles.misc.Double_omega_t,<span class="keyword">...</span>
+0173     handles.misc.Flip_w_tau,<span class="keyword">...</span>
+0174     handles.misc.Flip_w_t,<span class="keyword">...</span>
+0175     Varpos);
+0176 <span class="comment">% Perform Calculate and plot for middle figure for the first time</span>
+0177 axes(handles.TwoD_1Q1Q_Spectrum2);
+0178 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/Calculate_and_plot_1Q1Q.html" class="code" title="function [figuredata]=Calculate_and_plot_1Q1Q(TimeDomainData,Domain,tau_vector,T_vector,t_vector,weights,axeshandle,PCpos,Tpos,operation,normalization,Units,XLabel,YLabel,Title,ZeropaddingImage,Contour,ZeropaddingContour,contour_isovalues,name_of_scheme,ROIdata,omega_center,gamma,Double_omega_tau,Double_omega_t,Flip_w_tau,Flip_w_t,Varpos,var_vector)">Calculate_and_plot_1Q1Q</a>(maindata.TDdata.TimeDomainData,<span class="keyword">...</span>
+0179     handles.misc.Domain,<span class="keyword">...</span>
+0180     maindata.TDdata.tau_vector,maindata.TDdata.T_vector,maindata.TDdata.t_vector,<span class="keyword">...</span>
+0181     maindata.pcdata.all_weights{end},<span class="keyword">...</span>
+0182     handles.TwoD_1Q1Q_Spectrum2,PCpos,Tpos,handles.misc.operation,<span class="keyword">...</span>
+0183     handles.misc.Normalization,handles.misc.Units,<span class="keyword">...</span>
+0184     handles.misc.xtitle,handles.misc.ytitle,<span class="string">'auto'</span>,handles.misc.ZeropaddingImage,<span class="string">'on'</span>,<span class="keyword">...</span>
+0185     handles.misc.ZeropaddingContour,handles.misc.number_isovalues,name_of_scheme,handles.ROI,<span class="keyword">...</span>
+0186     handles.misc.omega_center,handles.misc.gamma,<span class="keyword">...</span>
+0187     handles.misc.Double_omega_tau,<span class="keyword">...</span>
+0188     handles.misc.Double_omega_t,<span class="keyword">...</span>
+0189     handles.misc.Flip_w_tau,<span class="keyword">...</span>
+0190     handles.misc.Flip_w_t,<span class="keyword">...</span>
+0191     Varpos);
+0192 <span class="comment">% Perform Calculate and plot for right figure for the first time</span>
+0193 axes(handles.TwoD_1Q1Q_Spectrum3);
+0194 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/Calculate_and_plot_1Q1Q.html" class="code" title="function [figuredata]=Calculate_and_plot_1Q1Q(TimeDomainData,Domain,tau_vector,T_vector,t_vector,weights,axeshandle,PCpos,Tpos,operation,normalization,Units,XLabel,YLabel,Title,ZeropaddingImage,Contour,ZeropaddingContour,contour_isovalues,name_of_scheme,ROIdata,omega_center,gamma,Double_omega_tau,Double_omega_t,Flip_w_tau,Flip_w_t,Varpos,var_vector)">Calculate_and_plot_1Q1Q</a>(maindata.TDdata.TimeDomainData,<span class="keyword">...</span>
+0195     handles.misc.Domain,<span class="keyword">...</span>
+0196     maindata.TDdata.tau_vector,maindata.TDdata.T_vector,maindata.TDdata.t_vector,<span class="keyword">...</span>
+0197     maindata.pcdata.all_weights{end},<span class="keyword">...</span>
+0198     handles.TwoD_1Q1Q_Spectrum3,PCpos,Tpos,handles.misc.operation,<span class="keyword">...</span>
+0199     handles.misc.Normalization,handles.misc.Units,<span class="keyword">...</span>
+0200     handles.misc.xtitle,handles.misc.ytitle,<span class="string">'auto'</span>,handles.misc.ZeropaddingImage,<span class="string">'on'</span>,<span class="keyword">...</span>
+0201     handles.misc.ZeropaddingContour,handles.misc.number_isovalues,name_of_scheme,handles.ROI,<span class="keyword">...</span>
+0202     handles.misc.omega_center,handles.misc.gamma,<span class="keyword">...</span>
+0203     handles.misc.Double_omega_tau,<span class="keyword">...</span>
+0204     handles.misc.Double_omega_t,<span class="keyword">...</span>
+0205     handles.misc.Flip_w_tau,<span class="keyword">...</span>
+0206     handles.misc.Flip_w_t,<span class="keyword">...</span>
+0207     Varpos);
+0208 
+0209   
+0210 
+0211 
+0212 <span class="comment">% set checkbolean for length(T)</span>
+0213 <span class="keyword">if</span> length(handles.maindata.TDdata.T_vector)&gt;1
+0214 handles.boleans.checkT=true;
+0215 <span class="keyword">else</span> handles.boleans.checkT=false;
+0216 <span class="keyword">end</span>
+0217 
+0218 <span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+0219 <span class="comment">% set all slider settings%%%%%%%%%%%%%%</span>
+0220 <span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+0221 
+0222 SizeTimeDomainData=size(handles.maindata.TDdata.TimeDomainData);
+0223 <span class="keyword">if</span> SizeTimeDomainData(1,3)==1
+0224 set(handles.slider_T_scan,<span class="string">'Value'</span>,0);
+0225 set(handles.slider_T_scan,<span class="string">'Visible'</span>,<span class="string">'off'</span>);
+0226 <span class="keyword">else</span>
+0227 set(handles.slider_T_scan,<span class="string">'Min'</span>,1)
+0228 set(handles.slider_T_scan,<span class="string">'Max'</span>,SizeTimeDomainData(1,3));
+0229 Max=get(handles.slider_T_scan,<span class="string">'Max'</span>);
+0230 set(handles.slider_T_scan,<span class="string">'SliderStep'</span>,[1/(Max-1) 1/(Max-1)]);
+0231 set(handles.slider_T_scan,<span class="string">'Value'</span>,1);
+0232 <span class="keyword">end</span>
+0233 
+0234 NumDim=ndims(handles.maindata.TDdata.TimeDomainData);
+0235 <span class="keyword">if</span> NumDim&lt;5
+0236 set(handles.slider_variable_scan,<span class="string">'Value'</span>,0);
+0237 set(handles.slider_variable_scan,<span class="string">'Visible'</span>,<span class="string">'off'</span>);
+0238 <span class="keyword">else</span>
+0239 set(handles.slider_variable_scan,<span class="string">'Visible'</span>,<span class="string">'on'</span>); 
+0240 set(handles.text_variable_scan_2,<span class="string">'Visible'</span>,<span class="string">'on'</span>);    
+0241 set(handles.slider_variable_scan,<span class="string">'Min'</span>,1)
+0242 set(handles.slider_variable_scan,<span class="string">'Max'</span>,SizeTimeDomainData(1,5));
+0243 Max=get(handles.slider_variable_scan,<span class="string">'Max'</span>);
+0244 set(handles.slider_variable_scan,<span class="string">'SliderStep'</span>,[1/(Max-1) 1/(Max-1)]);
+0245 set(handles.slider_variable_scan,<span class="string">'Value'</span>,1);
+0246 <span class="keyword">end</span>
+0247 
+0248 
+0249 
+0250 <span class="comment">% Update handles structure</span>
+0251 guidata(hObject, handles);
+0252 <span class="comment">% UIWAIT makes TwoDspec1Q1Q wait for user response (see UIRESUME)</span>
+0253 <span class="comment">% uiwait(handles.TwoD1Q1Q);</span>
+0254 <span class="comment">% --- Outputs from this function are returned to the command line.</span>
+0255 <a name="_sub2" href="#_subfunctions" class="code">function varargout = TwoDspec1Q1Q_OutputFcn(hObject, eventdata, handles) </a>
+0256 <span class="comment">% varargout  cell array for returning output args (see VARARGOUT);</span>
+0257 <span class="comment">% hObject    handle to figure</span>
+0258 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0259 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0260 
+0261 <span class="comment">% Get default command line output from handles structure</span>
+0262 varargout{1} = handles.output;
+0263 <span class="comment">% --- Executes on selection change in listbox_contribution_spec_plot1.</span>
+0264 <a name="_sub3" href="#_subfunctions" class="code">function listbox_contribution_spec_plot1_Callback(hObject, eventdata, handles)</a>
+0265 <span class="comment">% hObject    handle to listbox_contribution_spec_plot1 (see GCBO)</span>
+0266 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0267 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0268 
+0269 <span class="comment">% Hints: contents = cellstr(get(hObject,'String')) returns listbox_contribution_spec_plot1 contents as cell array</span>
+0270 <span class="comment">%        contents{get(hObject,'Value')} returns selected item from listbox_contribution_spec_plot1</span>
+0271 contents = cellstr(get(hObject,<span class="string">'String'</span>));
+0272 listentry=contents{get(hObject,<span class="string">'Value'</span>)};
+0273 <span class="keyword">if</span> ~isempty(listentry)
+0274 [weights1,Domain,operation,name_of_scheme]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/get_operation_from_list_entry.html" class="code" title="function [weights,TimeOrSpec,operation,name_of_scheme]=get_operation_from_list_entry(listentry,all_weights,all_names_of_scheme,value)">get_operation_from_list_entry</a>(listentry,<span class="keyword">...</span>
+0275     handles.maindata.pcdata.all_weights,<span class="keyword">...</span>
+0276     handles.maindata.pcdata.all_names_of_scheme);
+0277 handles.misc.fig1_name_of_scheme=name_of_scheme;
+0278 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0279     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0280     {<span class="string">'weights'</span> <span class="string">'Domain'</span> <span class="string">'operation'</span> <span class="string">'contour_isovalues'</span> <span class="string">'name_of_scheme'</span>},{weights1 Domain operation handles.misc.number_isovalues name_of_scheme});
+0281 <span class="keyword">end</span>
+0282 guidata(hObject,handles);
+0283 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0284 <a name="_sub4" href="#_subfunctions" class="code">function listbox_contribution_spec_plot1_CreateFcn(hObject, eventdata, handles)</a>
+0285 <span class="comment">% hObject    handle to listbox_contribution_spec_plot1 (see GCBO)</span>
+0286 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0287 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0288 
+0289 <span class="comment">% Hint: listbox controls usually have a white background on Windows.</span>
+0290 <span class="comment">%       See ISPC and COMPUTER.</span>
+0291 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0292     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0293 <span class="keyword">end</span>
+0294 <span class="comment">%get data from main gui</span>
+0295 maindata=guidata(<a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>);
+0296 handles.maindata=maindata;
+0297 text=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/generate_list_entries.html" class="code" title="function text=generate_list_entries(all_weights,all_names_of_scheme)">generate_list_entries</a>(maindata.pcdata.all_weights,maindata.pcdata.all_names_of_scheme);
+0298 set(hObject,<span class="string">'String'</span>,text);
+0299 handles.listbox_contribution_spec_plot1=text;
+0300 guidata(hObject,handles);
+0301 <span class="comment">% --- Executes on selection change in listbox_contribution_spec_plot2.</span>
+0302 <a name="_sub5" href="#_subfunctions" class="code">function listbox_contribution_spec_plot2_Callback(hObject, eventdata, handles)</a>
+0303 <span class="comment">% hObject    handle to listbox_contribution_spec_plot2 (see GCBO)</span>
+0304 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0305 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0306 
+0307 <span class="comment">% Hints: contents = cellstr(get(hObject,'String')) returns listbox_contribution_spec_plot2 contents as cell array</span>
+0308 <span class="comment">%        contents{get(hObject,'Value')} returns selected item from listbox_contribution_spec_plot2</span>
+0309 contents = cellstr(get(hObject,<span class="string">'String'</span>));
+0310 listentry=contents{get(hObject,<span class="string">'Value'</span>)};
+0311 <span class="keyword">if</span> ~isempty(listentry)
+0312 [weights1,Domain,operation,name_of_scheme]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/get_operation_from_list_entry.html" class="code" title="function [weights,TimeOrSpec,operation,name_of_scheme]=get_operation_from_list_entry(listentry,all_weights,all_names_of_scheme,value)">get_operation_from_list_entry</a>(listentry,<span class="keyword">...</span>
+0313     handles.maindata.pcdata.all_weights,<span class="keyword">...</span>
+0314     handles.maindata.pcdata.all_names_of_scheme);
+0315 handles.misc.fig2_name_of_scheme=name_of_scheme;
+0316 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0317     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0318     {<span class="string">'weights'</span> <span class="string">'Domain'</span> <span class="string">'operation'</span> <span class="string">'contour_isovalues'</span> <span class="string">'name_of_scheme'</span>},{weights1 Domain operation handles.misc.number_isovalues name_of_scheme});
+0319 
+0320 <span class="keyword">end</span>
+0321 guidata(hObject,handles);
+0322 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0323 <a name="_sub6" href="#_subfunctions" class="code">function listbox_contribution_spec_plot2_CreateFcn(hObject, eventdata, handles)</a>
+0324 <span class="comment">% hObject    handle to listbox_contribution_spec_plot2 (see GCBO)</span>
+0325 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0326 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0327 
+0328 <span class="comment">% Hint: listbox controls usually have a white background on Windows.</span>
+0329 <span class="comment">%       See ISPC and COMPUTER.</span>
+0330 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0331     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0332 <span class="keyword">end</span>
+0333 maindata=guidata(<a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>);
+0334 handles.maindata=maindata;
+0335 text=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/generate_list_entries.html" class="code" title="function text=generate_list_entries(all_weights,all_names_of_scheme)">generate_list_entries</a>(maindata.pcdata.all_weights,maindata.pcdata.all_names_of_scheme);
+0336 set(hObject,<span class="string">'String'</span>,text);
+0337 handles.listbox_contribution_spec_plot2=text;
+0338 guidata(hObject,handles);
+0339 <span class="comment">% --- Executes on selection change in listbox_contribution_spec_plot3.</span>
+0340 <a name="_sub7" href="#_subfunctions" class="code">function listbox_contribution_spec_plot3_Callback(hObject, eventdata, handles)</a>
+0341 <span class="comment">% hObject    handle to listbox_contribution_spec_plot3 (see GCBO)</span>
+0342 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0343 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0344 
+0345 <span class="comment">% Hints: contents = cellstr(get(hObject,'String')) returns listbox_contribution_spec_plot3 contents as cell array</span>
+0346 <span class="comment">%        contents{get(hObject,'Value')} returns selected item from listbox_contribution_spec_plot3</span>
+0347 contents = cellstr(get(hObject,<span class="string">'String'</span>));
+0348 listentry=contents{get(hObject,<span class="string">'Value'</span>)}; 
+0349 <span class="keyword">if</span> ~isempty(listentry)
+0350 [weights1,Domain,operation,name_of_scheme]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/get_operation_from_list_entry.html" class="code" title="function [weights,TimeOrSpec,operation,name_of_scheme]=get_operation_from_list_entry(listentry,all_weights,all_names_of_scheme,value)">get_operation_from_list_entry</a>(listentry,<span class="keyword">...</span>
+0351     handles.maindata.pcdata.all_weights,<span class="keyword">...</span>
+0352     handles.maindata.pcdata.all_names_of_scheme);
+0353 handles.misc.fig3_name_of_scheme=name_of_scheme;
+0354 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0355     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0356     {<span class="string">'weights'</span> <span class="string">'Domain'</span> <span class="string">'operation'</span> <span class="string">'contour_isovalues'</span> <span class="string">'name_of_scheme'</span>},{weights1 Domain operation handles.misc.number_isovalues name_of_scheme});
+0357 
+0358 <span class="keyword">end</span>
+0359 guidata(hObject,handles);
+0360 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0361 <a name="_sub8" href="#_subfunctions" class="code">function listbox_contribution_spec_plot3_CreateFcn(hObject, eventdata, handles)</a>
+0362 <span class="comment">% hObject    handle to listbox_contribution_spec_plot3 (see GCBO)</span>
+0363 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0364 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0365 
+0366 <span class="comment">% Hint: listbox controls usually have a white background on Windows.</span>
+0367 <span class="comment">%       See ISPC and COMPUTER.</span>
+0368 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0369     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0370 <span class="keyword">end</span>
+0371 maindata=guidata(<a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>);
+0372 handles.maindata=maindata;
+0373 text=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/generate_list_entries.html" class="code" title="function text=generate_list_entries(all_weights,all_names_of_scheme)">generate_list_entries</a>(maindata.pcdata.all_weights,maindata.pcdata.all_names_of_scheme);
+0374 set(hObject,<span class="string">'String'</span>,text);
+0375 handles.listbox_contribution_spec_plot3=text;
+0376 guidata(hObject,handles);
+0377 <span class="comment">% --- Executes on button press in radio_normalization.</span>
+0378 <a name="_sub9" href="#_subfunctions" class="code">function radio_normalization_Callback(hObject, eventdata, handles)</a>
+0379 <span class="comment">% hObject    handle to radio_normalization (see GCBO)</span>
+0380 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0381 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0382 
+0383 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of radio_normalization</span>
+0384 <span class="keyword">if</span> get(hObject,<span class="string">'Value'</span>)==0
+0385     handles.misc.normalization=<span class="string">'No Normalization'</span>;    
+0386 <span class="keyword">else</span>
+0387     handles.misc.normalization=<span class="string">'Normalization'</span>; 
+0388 <span class="keyword">end</span>
+0389 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0390     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0391     {<span class="string">'normalization'</span> <span class="string">'contour_isovalues'</span>},{handles.misc.normalization handles.misc.number_isovalues});
+0392 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0393     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0394     {<span class="string">'normalization'</span> <span class="string">'contour_isovalues'</span>},{handles.misc.normalization handles.misc.number_isovalues});
+0395 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0396     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0397     {<span class="string">'normalization'</span> <span class="string">'contour_isovalues'</span>},{handles.misc.normalization handles.misc.number_isovalues});
+0398 guidata(hObject,handles);
+0399 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0400 <a name="_sub10" href="#_subfunctions" class="code">function radio_normalization_CreateFcn(hObject, eventdata, handles)</a>
+0401 <span class="comment">% hObject    handle to radio_normalization (see GCBO)</span>
+0402 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0403 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0404 <span class="comment">% --------------------------------------------------------------------</span>
+0405 <a name="_sub11" href="#_subfunctions" class="code">function Menu_File_Callback(hObject, eventdata, handles)</a>
+0406 <span class="comment">% hObject    handle to Menu_File (see GCBO)</span>
+0407 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0408 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0409 <span class="comment">% --------------------------------------------------------------------</span>
+0410 <a name="_sub12" href="#_subfunctions" class="code">function Menu_Units_Callback(hObject, eventdata, handles)</a>
+0411 <span class="comment">% hObject    handle to Menu_Units (see GCBO)</span>
+0412 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0413 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0414 <span class="comment">% --------------------------------------------------------------------</span>
+0415 <a name="_sub13" href="#_subfunctions" class="code">function Menu_file_fs_rad_fs_Callback(hObject, eventdata, handles)</a>
+0416 <span class="comment">% hObject    handle to Menu_file_fs_rad_fs (see GCBO)</span>
+0417 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0418 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0419 set(handles.uipanel_Units,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0420 <a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/setinvisible.html" class="code" title="function setinvisible(handles)">setinvisible</a>({handles.uibuttongroup_Units_eV handles.uipanel_wavenumber handles.uibuttongroup_units_THz});
+0421 set(handles.uipanel_rad_fs,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0422 handles.misc.units=<span class="string">'rad/fs'</span>;
+0423 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0424     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0425     {<span class="string">'Units'</span>},{handles.misc.units});
+0426 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0427     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0428     {<span class="string">'Units'</span>},{handles.misc.units});
+0429 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0430     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0431     {<span class="string">'Units'</span>},{handles.misc.units});
+0432 
+0433 
+0434 
+0435 guidata(hObject,handles);
+0436 <span class="comment">% --------------------------------------------------------------------</span>
+0437 <a name="_sub14" href="#_subfunctions" class="code">function Menu_file_fs_THz_Callback(hObject, eventdata, handles)</a>
+0438 <span class="comment">% hObject    handle to Menu_file_fs_THz (see GCBO)</span>
+0439 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0440 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0441 set(handles.uipanel_Units,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0442 <a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/setinvisible.html" class="code" title="function setinvisible(handles)">setinvisible</a>({handles.uipanel_wavenumber handles.uipanel_rad_fs handles.uibuttongroup_Units_eV});
+0443 set(handles.uibuttongroup_units_THz,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0444 set(handles.radiobutton_Units_THz,<span class="string">'Value'</span>,1);
+0445 handles.misc.units=<span class="string">'THz'</span>;
+0446 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0447     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0448     {<span class="string">'Units'</span>},{handles.misc.units});
+0449 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0450     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0451     {<span class="string">'Units'</span>},{handles.misc.units});
+0452 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0453     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0454     {<span class="string">'Units'</span>},{handles.misc.units});
+0455 
+0456 guidata(hObject,handles);
+0457 <span class="comment">% --------------------------------------------------------------------</span>
+0458 <a name="_sub15" href="#_subfunctions" class="code">function Menu_file_fs_eV_Callback(hObject, eventdata, handles)</a>
+0459 <span class="comment">% hObject    handle to Menu_file_fs_eV (see GCBO)</span>
+0460 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0461 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0462 <span class="comment">%setinvisible({handles.}</span>
+0463 set(handles.uipanel_Units,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0464 <a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/setinvisible.html" class="code" title="function setinvisible(handles)">setinvisible</a>({handles.uipanel_wavenumber handles.uipanel_rad_fs handles.uibuttongroup_units_THz});
+0465 set(handles.uibuttongroup_Units_eV,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0466 set(handles.radiobutton_units_meV,<span class="string">'Value'</span>,1);
+0467 set(handles.radiobutton_units_eV,<span class="string">'Value'</span>,0);
+0468 handles.misc.units=<span class="string">'meV'</span>;
+0469 
+0470 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0471     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0472     {<span class="string">'Units'</span>},{handles.misc.units});
+0473 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0474     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0475     {<span class="string">'Units'</span>},{handles.misc.units});
+0476 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0477     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0478     {<span class="string">'Units'</span>},{handles.misc.units});
+0479 
+0480 
+0481 guidata(hObject,handles);
+0482 <span class="comment">% --------------------------------------------------------------------</span>
+0483 <a name="_sub16" href="#_subfunctions" class="code">function Menu_file_fs_wavenumber_Callback(hObject, eventdata, handles)</a>
+0484 <span class="comment">% hObject    handle to Menu_file_fs_wavenumber (see GCBO)</span>
+0485 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0486 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0487 set(handles.uipanel_Units,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0488 <a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/setinvisible.html" class="code" title="function setinvisible(handles)">setinvisible</a>({handles.uibuttongroup_Units_eV handles.uipanel_rad_fs handles.uibuttongroup_units_THz});
+0489 set(handles.uipanel_wavenumber,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0490 handles.misc.units=<span class="string">'wavenumber'</span>;
+0491 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0492     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0493     {<span class="string">'Units'</span>},{handles.misc.units});
+0494 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0495     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0496     {<span class="string">'Units'</span>},{handles.misc.units});
+0497 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0498     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0499     {<span class="string">'Units'</span>},{handles.misc.units});
+0500 
+0501 
+0502 guidata(hObject,handles);
+0503 <span class="comment">% --------------------------------------------------------------------</span>
+0504 <a name="_sub17" href="#_subfunctions" class="code">function Menu_file_copy_all_to_figures_Callback(hObject, eventdata, handles)</a>
+0505 <span class="comment">% hObject    handle to Menu_file_copy_all_to_figures (see GCBO)</span>
+0506 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0507 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0508 <span class="comment">% --------------------------------------------------------------------</span>
+0509 h1=figure(<span class="string">'Name'</span>,<span class="string">'1Q1Q Figure 1'</span>,<span class="string">'Position'</span>,[680   558   468   340]);
+0510 copyobj(handles.TwoD_1Q1Q_Spectrum1,h1);
+0511 colb=colorbar;
+0512 colb.LineWidth=1.5;
+0513 colb.TickDirection=<span class="string">'out'</span>;
+0514 colb.FontSize=16;
+0515 colb.FontName=<span class="string">'Arial'</span>;
+0516 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0517 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0518 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0519 
+0520 h2=figure(<span class="string">'Name'</span>,<span class="string">'1Q1Q Figure 2'</span>,<span class="string">'Position'</span>,[700   558   468   340]);
+0521 copyobj(handles.TwoD_1Q1Q_Spectrum2,h2);
+0522 colb=colorbar;
+0523 colb.LineWidth=1.5;
+0524 colb.TickDirection=<span class="string">'out'</span>;
+0525 colb.FontSize=16;
+0526 colb.FontName=<span class="string">'Arial'</span>;
+0527 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0528 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0529 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0530 
+0531 h3=figure(<span class="string">'Name'</span>,<span class="string">'1Q1Q Figure 3'</span>,<span class="string">'Position'</span>,[720   558   468   340]);
+0532 copyobj(handles.TwoD_1Q1Q_Spectrum3,h3);
+0533 colb=colorbar;
+0534 colb.LineWidth=1.5;
+0535 colb.TickDirection=<span class="string">'out'</span>;
+0536 colb.FontSize=16;
+0537 colb.FontName=<span class="string">'Arial'</span>;
+0538 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0539 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0540 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0541 <a name="_sub18" href="#_subfunctions" class="code">function Menu_file_copy_selected_to_figure_Callback(hObject, eventdata, handles)</a>
+0542 <span class="comment">% hObject    handle to Menu_file_copy_selected_to_figure (see GCBO)</span>
+0543 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0544 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0545 <span class="comment">% --------------------------------------------------------------------</span>
+0546 num=handles.misc.active_figure;
+0547 <span class="keyword">if</span> num==1
+0548 ax=handles.TwoD_1Q1Q_Spectrum1;
+0549 <span class="keyword">elseif</span> num==2
+0550 ax=handles.TwoD_1Q1Q_Spectrum2;
+0551 <span class="keyword">elseif</span> num==3
+0552 ax=handles.TwoD_1Q1Q_Spectrum3;
+0553 <span class="keyword">end</span>
+0554 h1=figure(<span class="string">'Name'</span>,[<span class="string">'1Q1Q Figure '</span> num2str(num)],<span class="string">'Position'</span>,[680   558   468   340]);
+0555 copyobj(ax,h1);
+0556 colb=colorbar;
+0557 colb.LineWidth=1.5;
+0558 colb.TickDirection=<span class="string">'out'</span>;
+0559 colb.FontSize=16;
+0560 colb.FontName=<span class="string">'Arial'</span>;
+0561 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0562 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0563 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0564 <a name="_sub19" href="#_subfunctions" class="code">function Menu_File_Save_All_Figure_and_Data_Callback(hObject, eventdata, handles)</a>
+0565 <span class="comment">% hObject    handle to Menu_File_Save_All_Figure_and_Data (see GCBO)</span>
+0566 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0567 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0568 <span class="comment">% --------------------------------------------------------------------</span>
+0569 save_dir=uigetdir(<span class="string">'M:\'</span>);
+0570 filename_out=inputdlg({<span class="string">'Set file name'</span>},<span class="string">''</span>,1,{<span class="string">''</span>});
+0571 filename_out=fullfile(save_dir,filename_out);
+0572 
+0573 
+0574 
+0575 h1=figure(<span class="string">'Name'</span>,<span class="string">'1Q1Q Figure 1'</span>,<span class="string">'Position'</span>,[680   558   468   340]);
+0576 copyobj(handles.TwoD_1Q1Q_Spectrum1,h1);
+0577 colb=colorbar;
+0578 colb.LineWidth=1.5;
+0579 colb.TickDirection=<span class="string">'out'</span>;
+0580 colb.FontSize=16;
+0581 colb.FontName=<span class="string">'Arial'</span>;
+0582 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0583 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0584 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0585 <span class="comment">%data are saved in UserData of figure</span>
+0586 h1.UserData=handles.figure_1_data;
+0587 
+0588 h2=figure(<span class="string">'Name'</span>,<span class="string">'1Q1Q Figure 2'</span>,<span class="string">'Position'</span>,[700   558   468   340]);
+0589 copyobj(handles.TwoD_1Q1Q_Spectrum2,h2);
+0590 colb=colorbar;
+0591 colb.LineWidth=1.5;
+0592 colb.TickDirection=<span class="string">'out'</span>;
+0593 colb.FontSize=16;
+0594 colb.FontName=<span class="string">'Arial'</span>;
+0595 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0596 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0597 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0598 <span class="comment">%data are saved in UserData of figure</span>
+0599 h2.UserData=handles.figure_2_data;
+0600 
+0601 h3=figure(<span class="string">'Name'</span>,<span class="string">'1Q1Q Figure 3'</span>,<span class="string">'Position'</span>,[720   558   468   340]);
+0602 copyobj(handles.TwoD_1Q1Q_Spectrum3,h3);
+0603 colb=colorbar;
+0604 colb.LineWidth=1.5;
+0605 colb.TickDirection=<span class="string">'out'</span>;
+0606 colb.FontSize=16;
+0607 colb.FontName=<span class="string">'Arial'</span>;
+0608 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0609 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0610 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0611 set(h1,<span class="string">'PaperPositionMode'</span>,<span class="string">'auto'</span>);
+0612 set(h2,<span class="string">'PaperPositionMode'</span>,<span class="string">'auto'</span>);
+0613 set(h3,<span class="string">'PaperPositionMode'</span>,<span class="string">'auto'</span>);
+0614 <span class="comment">%data are saved in UserData of figure</span>
+0615 h3.UserData=handles.figure_3_data;
+0616 
+0617 figure_data=handles.figure_1_data;
+0618 save([filename_out{1} <span class="string">'_1_CMDSfigure'</span>],<span class="string">'figure_data'</span>);
+0619 figure_data=handles.figure_2_data;
+0620 save([filename_out{1} <span class="string">'_2_CMDSfigure'</span>],<span class="string">'figure_data'</span>);
+0621 figure_data=handles.figure_3_data;
+0622 save([filename_out{1} <span class="string">'_3_CMDSfigure'</span>],<span class="string">'figure_data'</span>);
+0623 
+0624 <span class="comment">% printeps(get(h1,'Number'),[filename_out{1} '_1']);</span>
+0625 saveas(h1,[filename_out{1} <span class="string">'_1_CMDSfigure'</span> <span class="string">'.fig'</span>]);
+0626 saveas(h1,[filename_out{1} <span class="string">'_1_CMDSfigure'</span> <span class="string">'.pdf'</span>]);
+0627 saveas(h1,[filename_out{1} <span class="string">'_1_CMDSfigure'</span> <span class="string">'.png'</span>]);
+0628 
+0629 <span class="comment">% printeps(get(h2,'Number'),[filename_out{1} '_2']);</span>
+0630 saveas(h2,[filename_out{1} <span class="string">'_2_CMDSfigure'</span> <span class="string">'.fig'</span>]);
+0631 saveas(h2,[filename_out{1} <span class="string">'_2_CMDSfigure'</span> <span class="string">'.pdf'</span>]);
+0632 saveas(h2,[filename_out{1} <span class="string">'_2_CMDSfigure'</span> <span class="string">'.png'</span>]);
+0633 
+0634 <span class="comment">% printeps(get(h3,'Number'),[filename_out{1} '_3']);</span>
+0635 saveas(h3,[filename_out{1} <span class="string">'_3_CMDSfigure'</span> <span class="string">'.fig'</span>]);
+0636 saveas(h3,[filename_out{1} <span class="string">'_3_CMDSfigure'</span> <span class="string">'.pdf'</span>]);
+0637 saveas(h3,[filename_out{1} <span class="string">'_3_CMDSfigure'</span> <span class="string">'.png'</span>]);
+0638 <a name="_sub20" href="#_subfunctions" class="code">function Menu_File_Save_selected_figure_and_data_Callback(hObject, eventdata, handles)</a>
+0639 <span class="comment">% hObject    handle to Menu_File_Save_selected_figure_and_data (see GCBO)</span>
+0640 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0641 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0642 <span class="comment">% --------------------------------------------------------------------</span>
+0643 num=handles.misc.active_figure;
+0644 save_dir=uigetdir(<span class="string">'M:\'</span>);
+0645 filename_out=inputdlg({<span class="string">'Set file name'</span>},<span class="string">''</span>,1,{<span class="string">''</span>});
+0646 filename_out=fullfile(save_dir,filename_out);
+0647 
+0648 
+0649 <span class="keyword">if</span> num==1
+0650 ax=handles.TwoD_1Q1Q_Spectrum1;
+0651 figure_data=handles.figure_1_data;
+0652 <span class="keyword">elseif</span> num==2
+0653 ax=handles.TwoD_1Q1Q_Spectrum2;
+0654 figure_data=handles.figure_2_data;
+0655 <span class="keyword">elseif</span> num==3
+0656 ax=handles.TwoD_1Q1Q_Spectrum3;
+0657 figure_data=handles.figure_3_data;
+0658 <span class="keyword">end</span>
+0659 h1=figure(<span class="string">'Name'</span>,[<span class="string">'1Q1Q Figure '</span> num2str(num)],<span class="string">'Position'</span>,[680   558   468   340]);
+0660 copyobj(ax,h1);
+0661 colb=colorbar;
+0662 colb.LineWidth=1.5;
+0663 colb.TickDirection=<span class="string">'out'</span>;
+0664 colb.FontSize=16;
+0665 colb.FontName=<span class="string">'Arial'</span>;
+0666 set(gca,<span class="string">'ActivePositionProperty'</span>,<span class="string">'outerposition'</span>)
+0667 set(gca,<span class="string">'Units'</span>,<span class="string">'normalized'</span>)
+0668 set(gca,<span class="string">'OuterPosition'</span>,[0 0 1 1])
+0669 set(h1,<span class="string">'PaperPositionMode'</span>,<span class="string">'auto'</span>);
+0670 h1.UserData=figure_data;
+0671 
+0672 save([filename_out{1} num2str(num) <span class="string">'_CMDSfigure'</span>],<span class="string">'figure_data'</span>);
+0673 <span class="comment">% printeps(get(h1,'Number'),[filename_out{1} num2str(num) '_CMDSfigure']);</span>
+0674 saveas(h1,[filename_out{1} num2str(num) <span class="string">'_CMDSfigure.fig'</span>]);
+0675 saveas(h1,[filename_out{1} num2str(num) <span class="string">'_CMDSfigure.pdf'</span>]);
+0676 saveas(h1,[filename_out{1} num2str(num) <span class="string">'_CMDSfigure.png'</span>]);
+0677 <a name="_sub21" href="#_subfunctions" class="code">function Menu_Exit_Callback(hObject, eventdata, handles)</a>
+0678 <span class="comment">% hObject    handle to Menu_Exit (see GCBO)</span>
+0679 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0680 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0681 <span class="comment">% --------------------------------------------------------------------</span>
+0682 out=<a href="modal_exit_question.html" class="code" title="function varargout = modal_exit_question(varargin)">modal_exit_question</a>;
+0683 <span class="keyword">if</span> strcmp(out,<span class="string">'Yes'</span>)
+0684 delete(handles.TwoD1Q1Q);
+0685 <span class="keyword">else</span>
+0686 <span class="keyword">end</span>
+0687 <a name="_sub22" href="#_subfunctions" class="code">function Menu_Data_Settings_Callback(hObject, eventdata, handles)</a>
+0688 <span class="comment">% hObject    handle to Menu_Data_Settings (see GCBO)</span>
+0689 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0690 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0691 <span class="comment">% --------------------------------------------------------------------</span>
+0692 <a name="_sub23" href="#_subfunctions" class="code">function Menu_Data_Settings_Normalization_Callback(hObject, eventdata, handles)</a>
+0693 <span class="comment">% hObject    handle to Menu_Data_Settings_Normalization (see GCBO)</span>
+0694 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0695 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0696 set(handles.panel_data_settings,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0697 set(handles.radio_normalization,<span class="string">'Value'</span>,1);
+0698 handles.misc.normalization=<span class="string">'Normalization'</span>;
+0699 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0700     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0701     {<span class="string">'normalization'</span> <span class="string">'contour_isovalues'</span>},{handles.misc.normalization handles.misc.number_isovalues});
+0702 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0703     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0704     {<span class="string">'normalization'</span> <span class="string">'contour_isovalues'</span>},{handles.misc.normalization handles.misc.number_isovalues});
+0705 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0706     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0707     {<span class="string">'normalization'</span> <span class="string">'contour_isovalues'</span>},{handles.misc.normalization handles.misc.number_isovalues});
+0708 guidata(hObject,handles);
+0709 <a name="_sub24" href="#_subfunctions" class="code">function edit_zero_padding_image_Callback(hObject, eventdata, handles)</a>
+0710 <span class="comment">% hObject    handle to edit_zero_padding_image (see GCBO)</span>
+0711 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0712 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0713 
+0714 <span class="comment">% Hints: get(hObject,'String') returns contents of edit_zero_padding_image as text</span>
+0715 <span class="comment">%        str2double(get(hObject,'String')) returns contents of edit_zero_padding_image as a double</span>
+0716 handles.misc.zero_padding_image=str2double(get(hObject,<span class="string">'String'</span>));
+0717 <span class="comment">%check for integer</span>
+0718 <span class="keyword">if</span> floor(handles.misc.zero_padding_image)==handles.misc.zero_padding_image
+0719     
+0720   [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0721     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0722     {<span class="string">'Zeropadding_Image'</span>},{handles.misc.zero_padding_image});
+0723 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0724     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0725     {<span class="string">'Zeropadding_Image'</span>},{handles.misc.zero_padding_image});
+0726 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0727     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0728     {<span class="string">'Zeropadding_Image'</span>},{handles.misc.zero_padding_image});  
+0729 <span class="keyword">end</span>
+0730 guidata(hObject,handles);
+0731 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0732 <a name="_sub25" href="#_subfunctions" class="code">function edit_zero_padding_image_CreateFcn(hObject, eventdata, handles)</a>
+0733 <span class="comment">% hObject    handle to edit_zero_padding_image (see GCBO)</span>
+0734 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0735 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0736 
+0737 <span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+0738 <span class="comment">%       See ISPC and COMPUTER.</span>
+0739 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0740     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0741 <span class="keyword">end</span>
+0742 <span class="comment">% --------------------------------------------------------------------</span>
+0743 <a name="_sub26" href="#_subfunctions" class="code">function Menu_Zero_Padding_Callback(hObject, eventdata, handles)</a>
+0744 <span class="comment">% hObject    handle to Menu_Zero_Padding (see GCBO)</span>
+0745 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0746 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0747 set(handles.panel_data_settings,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0748 <a name="_sub27" href="#_subfunctions" class="code">function edit_zero_padding_contour_Callback(hObject, eventdata, handles)</a>
+0749 <span class="comment">% hObject    handle to edit_zero_padding_contour (see GCBO)</span>
+0750 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0751 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0752 
+0753 <span class="comment">% Hints: get(hObject,'String') returns contents of edit_zero_padding_contour as text</span>
+0754 <span class="comment">%        str2double(get(hObject,'String')) returns contents of edit_zero_padding_contour as a double</span>
+0755 handles.misc.zero_padding_contour=str2double(get(hObject,<span class="string">'String'</span>));
+0756 <span class="comment">%check for integer</span>
+0757 <span class="keyword">if</span> floor(handles.misc.zero_padding_contour)==handles.misc.zero_padding_contour
+0758     
+0759   [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0760     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0761     {<span class="string">'Zeropadding_Contour'</span>},{handles.misc.zero_padding_contour});
+0762 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0763     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0764     {<span class="string">'Zeropadding_Contour'</span>},{handles.misc.zero_padding_contour});
+0765 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0766     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0767     {<span class="string">'Zeropadding_Contour'</span>},{handles.misc.zero_padding_contour});  
+0768 <span class="keyword">end</span>
+0769 guidata(hObject,handles);
+0770 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0771 <a name="_sub28" href="#_subfunctions" class="code">function edit_zero_padding_contour_CreateFcn(hObject, eventdata, handles)</a>
+0772 <span class="comment">% hObject    handle to edit_zero_padding_contour (see GCBO)</span>
+0773 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0774 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0775 
+0776 <span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+0777 <span class="comment">%       See ISPC and COMPUTER.</span>
+0778 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0779     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0780 <span class="keyword">end</span>
+0781 <span class="comment">% --- Executes on button press in radiobutton_units_eV.</span>
+0782 <a name="_sub29" href="#_subfunctions" class="code">function radiobutton_units_eV_Callback(hObject, eventdata, handles)</a>
+0783 <span class="comment">% hObject    handle to radiobutton_units_eV (see GCBO)</span>
+0784 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0785 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0786 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of radiobutton_units_eV</span>
+0787 state=get(hObject,<span class="string">'Value'</span>);
+0788 <span class="keyword">if</span> state==1
+0789     handles.misc.units=<span class="string">'eV'</span>;
+0790 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0791     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0792     {<span class="string">'Units'</span>},{handles.misc.units});
+0793 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0794     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0795     {<span class="string">'Units'</span>},{handles.misc.units});
+0796 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0797     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0798     {<span class="string">'Units'</span>},{handles.misc.units});
+0799 
+0800 
+0801 <span class="keyword">end</span>
+0802 <span class="comment">% --- Executes on button press in radiobutton_units_eV.</span>
+0803 <a name="_sub30" href="#_subfunctions" class="code">function radiobutton_units_meV_Callback(hObject, eventdata, handles)</a>
+0804 <span class="comment">% hObject    handle to radiobutton_units_eV (see GCBO)</span>
+0805 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0806 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0807 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of radiobutton_units_eV</span>
+0808 state=get(hObject,<span class="string">'Value'</span>);
+0809 <span class="keyword">if</span> state==1
+0810     handles.misc.units=<span class="string">'meV'</span>;
+0811 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0812     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0813     {<span class="string">'Units'</span>},{handles.misc.units});
+0814 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0815     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0816     {<span class="string">'Units'</span>},{handles.misc.units});
+0817 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0818     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0819     {<span class="string">'Units'</span>},{handles.misc.units});
+0820 
+0821 
+0822 <span class="keyword">end</span>
+0823 <span class="comment">% --- Executes on button press in radiobutton_Units_Hz.</span>
+0824 <a name="_sub31" href="#_subfunctions" class="code">function radiobutton_Units_Hz_Callback(hObject, eventdata, handles)</a>
+0825 <span class="comment">% hObject    handle to radiobutton_Units_Hz (see GCBO)</span>
+0826 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0827 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0828 state=get(hObject,<span class="string">'Value'</span>);
+0829 <span class="keyword">if</span> state==1
+0830 handles.misc.units=<span class="string">'Hz'</span>;
+0831 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0832     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0833     {<span class="string">'Units'</span>},{handles.misc.units});
+0834 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0835     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0836     {<span class="string">'Units'</span>},{handles.misc.units});
+0837 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0838     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0839     {<span class="string">'Units'</span>},{handles.misc.units});
+0840 
+0841 
+0842 <span class="keyword">end</span>
+0843 guidata(hObject,handles);
+0844 <span class="comment">% --- Executes on button press in radiobutton_units_GHz.</span>
+0845 <a name="_sub32" href="#_subfunctions" class="code">function radiobutton_units_GHz_Callback(hObject, eventdata, handles)</a>
+0846 <span class="comment">% hObject    handle to radiobutton_units_GHz (see GCBO)</span>
+0847 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0848 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0849 
+0850 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of radiobutton_units_GHz</span>
+0851 state=get(hObject,<span class="string">'Value'</span>);
+0852 <span class="keyword">if</span> state==1
+0853 handles.misc.units=<span class="string">'GHz'</span>;
+0854 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0855     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0856     {<span class="string">'Units'</span>},{handles.misc.units});
+0857 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0858     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0859     {<span class="string">'Units'</span>},{handles.misc.units});
+0860 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0861     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0862     {<span class="string">'Units'</span>},{handles.misc.units});
+0863 
+0864 <span class="keyword">end</span>
+0865 guidata(hObject,handles);
+0866 <span class="comment">% --- Executes on button press in radiobutton_Units_THz.</span>
+0867 <a name="_sub33" href="#_subfunctions" class="code">function radiobutton_Units_THz_Callback(hObject, eventdata, handles)</a>
+0868 <span class="comment">% hObject    handle to radiobutton_Units_THz (see GCBO)</span>
+0869 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0870 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0871 
+0872 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of radiobutton_Units_THz</span>
+0873 state=get(hObject,<span class="string">'Value'</span>);
+0874 <span class="keyword">if</span> state==1
+0875 handles.misc.units=<span class="string">'THz'</span>;
+0876 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0877     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0878     {<span class="string">'Units'</span>},{handles.misc.units});
+0879 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0880     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0881     {<span class="string">'Units'</span>},{handles.misc.units});
+0882 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0883     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0884     {<span class="string">'Units'</span>},{handles.misc.units});
+0885 
+0886 
+0887 <span class="keyword">end</span>
+0888 guidata(hObject,handles);
+0889 <span class="comment">% --- Executes on button press in radiobutton_Units_PHz.</span>
+0890 <a name="_sub34" href="#_subfunctions" class="code">function radiobutton_Units_PHz_Callback(hObject, eventdata, handles)</a>
+0891 <span class="comment">% hObject    handle to radiobutton_Units_PHz (see GCBO)</span>
+0892 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0893 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0894 
+0895 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of radiobutton_Units_PHz</span>
+0896 state=get(hObject,<span class="string">'Value'</span>);
+0897 <span class="keyword">if</span> state==1
+0898 handles.misc.units=<span class="string">'PHz'</span>;
+0899 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0900     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0901     {<span class="string">'Units'</span>},{handles.misc.units});
+0902 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0903     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0904     {<span class="string">'Units'</span>},{handles.misc.units});
+0905 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0906     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0907     {<span class="string">'Units'</span>},{handles.misc.units});
+0908 
+0909 <span class="keyword">end</span>
+0910 guidata(hObject,handles);
+0911 <span class="comment">% --------------------------------------------------------------------</span>
+0912 <a name="_sub35" href="#_subfunctions" class="code">function Menu_plot_settings_Callback(hObject, eventdata, handles)</a>
+0913 <span class="comment">% hObject    handle to Menu_plot_settings (see GCBO)</span>
+0914 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0915 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0916 set(handles.uipanel_plot_settings,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0917 <span class="comment">% --- Executes on button press in radiobutton_plot_contour.</span>
+0918 <a name="_sub36" href="#_subfunctions" class="code">function radiobutton_plot_contour_Callback(hObject, eventdata, handles)</a>
+0919 <span class="comment">% hObject    handle to radiobutton_plot_contour (see GCBO)</span>
+0920 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0921 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0922 state=get(hObject,<span class="string">'Value'</span>);
+0923 <span class="keyword">if</span> state==1
+0924     handles.misc.contour=<span class="string">'on'</span>;
+0925 <span class="keyword">elseif</span> state==0
+0926     handles.misc.contour=<span class="string">'off'</span>;
+0927 <span class="keyword">end</span>
+0928 
+0929 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0930     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0931     {<span class="string">'Contour'</span>},{handles.misc.contour});
+0932 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0933     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0934     {<span class="string">'Contour'</span>},{handles.misc.contour});
+0935 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0936     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0937     {<span class="string">'Contour'</span>},{handles.misc.contour});
+0938 guidata(hObject,handles);
+0939 <span class="comment">% --------------------------------------------------------------------</span>
+0940 <a name="_sub37" href="#_subfunctions" class="code">function Menu_Plot_settings_countour_lines_Callback(hObject, eventdata, handles)</a>
+0941 <span class="comment">% hObject    handle to Menu_Plot_settings_countour_lines (see GCBO)</span>
+0942 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0943 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0944 set(handles.radiobutton_plot_contour,<span class="string">'Value'</span>,1);
+0945 handles.misc.contour=<span class="string">'on'</span>;
+0946 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0947     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0948     {<span class="string">'Contour'</span>},{handles.misc.contour});
+0949 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0950     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0951     {<span class="string">'Contour'</span>},{handles.misc.contour});
+0952 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0953     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0954     {<span class="string">'Contour'</span>},{handles.misc.contour});
+0955 guidata(hObject,handles);
+0956 <a name="_sub38" href="#_subfunctions" class="code">function edit_number_of_lines_Callback(hObject, eventdata, handles)</a>
+0957 <span class="comment">% hObject    handle to edit_number_of_lines (see GCBO)</span>
+0958 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0959 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0960 
+0961 <span class="comment">% Hints: get(hObject,'String') returns contents of edit_number_of_lines as text</span>
+0962 <span class="comment">%        str2double(get(hObject,'String')) returns contents of edit_number_of_lines as a double</span>
+0963 num_isovalues=str2double(get(hObject,<span class="string">'String'</span>));
+0964 <span class="keyword">if</span> floor(num_isovalues)==num_isovalues
+0965     handles.misc.number_isovalues=num_isovalues;
+0966     [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+0967         handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+0968         {<span class="string">'contour_isovalues'</span>},{handles.misc.number_isovalues});
+0969     [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+0970         handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+0971         {<span class="string">'contour_isovalues'</span>},{handles.misc.number_isovalues});
+0972     [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+0973         handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+0974         {<span class="string">'contour_isovalues'</span>},{handles.misc.number_isovalues});
+0975 <span class="keyword">end</span>
+0976 guidata(hObject,handles);
+0977 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0978 <a name="_sub39" href="#_subfunctions" class="code">function edit_number_of_lines_CreateFcn(hObject, eventdata, handles)</a>
+0979 <span class="comment">% hObject    handle to edit_number_of_lines (see GCBO)</span>
+0980 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0981 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0982 
+0983 <span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+0984 <span class="comment">%       See ISPC and COMPUTER.</span>
+0985 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0986     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0987 <span class="keyword">end</span>
+0988 <span class="comment">% --- Executes on slider movement.</span>
+0989 <a name="_sub40" href="#_subfunctions" class="code">function slider_T_scan_Callback(hObject, eventdata, handles)</a>
+0990 <span class="comment">% hObject    handle to slider_T_scan (see GCBO)</span>
+0991 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0992 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0993 
+0994 <span class="comment">% Hints: get(hObject,'Value') returns position of slider</span>
+0995 <span class="comment">%        get(hObject,'Min') and get(hObject,'Max') to determine range of slider</span>
+0996 SizeTimeDomainData=size(handles.maindata.TDdata.TimeDomainData);
+0997 set(hObject,<span class="string">'Min'</span>,1)
+0998 set(hObject,<span class="string">'Max'</span>,SizeTimeDomainData(1,3));
+0999 Max=get(hObject,<span class="string">'Max'</span>);
+1000 set(hObject,<span class="string">'SliderStep'</span>,[1/(Max-1) 1/(Max-1)]);
+1001 Tpos=get(hObject,<span class="string">'Value'</span>);
+1002 handles.TDdata.Tpos=round(Tpos);
+1003 round(Tpos)
+1004 set(handles.text_T_scan,<span class="string">'String'</span>,[<span class="string">'T = '</span> num2str(handles.maindata.TDdata.T_vector(handles.TDdata.Tpos)) <span class="string">' fs'</span>]);
+1005 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1006         handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1007         {<span class="string">'Tpos'</span>},{handles.TDdata.Tpos});
+1008     [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1009         handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1010         {<span class="string">'Tpos'</span>},{handles.TDdata.Tpos});
+1011     [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1012         handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1013         {<span class="string">'Tpos'</span>},{handles.TDdata.Tpos});
+1014 guidata(hObject,handles);
+1015 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+1016 <a name="_sub41" href="#_subfunctions" class="code">function slider_T_scan_CreateFcn(hObject, eventdata, handles)</a>
+1017 <span class="comment">% hObject    handle to slider_T_scan (see GCBO)</span>
+1018 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1019 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+1020 
+1021 <span class="comment">% Hint: slider controls usually have a light gray background.</span>
+1022 <span class="keyword">if</span> isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+1023     set(hObject,<span class="string">'BackgroundColor'</span>,[.9 .9 .9]);
+1024 <span class="keyword">end</span>
+1025 
+1026 
+1027 guidata(hObject,handles);   
+1028 <span class="comment">% --- Executes on button press in radiobutton_active_figure1.</span>
+1029 <a name="_sub42" href="#_subfunctions" class="code">function radiobutton_active_figure1_Callback(hObject, eventdata, handles)</a>
+1030 <span class="comment">% hObject    handle to radiobutton_active_figure1 (see GCBO)</span>
+1031 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1032 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1033 
+1034 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of radiobutton_active_figure1</span>
+1035 state=get(hObject,<span class="string">'Value'</span>);
+1036 <span class="keyword">if</span> state==0;
+1037 set(hObject,<span class="string">'Value'</span>,1);
+1038 <span class="keyword">end</span>
+1039 handles.misc.active_figure=1;
+1040 set(handles.radiobutton_active_figure3,<span class="string">'Value'</span>,0)
+1041 set(handles.radiobutton_active_figure2,<span class="string">'Value'</span>,0)
+1042 guidata(hObject,handles);
+1043 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+1044 <a name="_sub43" href="#_subfunctions" class="code">function radiobutton_active_figure1_CreateFcn(hObject, eventdata, handles)</a>
+1045 <span class="comment">% hObject    handle to radiobutton_active_figure1 (see GCBO)</span>
+1046 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1047 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+1048 <span class="comment">% --- Executes on button press in radiobutton_active_figure3.</span>
+1049 handles.misc.active_figure=1;
+1050 guidata(hObject,handles);
+1051 <a name="_sub44" href="#_subfunctions" class="code">function radiobutton_active_figure3_Callback(hObject, eventdata, handles)</a>
+1052 <span class="comment">% hObject    handle to radiobutton_active_figure3 (see GCBO)</span>
+1053 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1054 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1055 state=get(hObject,<span class="string">'Value'</span>);
+1056 <span class="keyword">if</span> state==0;
+1057 set(hObject,<span class="string">'Value'</span>,1);
+1058 <span class="keyword">end</span>
+1059 handles.misc.active_figure=3;
+1060 set(handles.radiobutton_active_figure2,<span class="string">'Value'</span>,0)
+1061 set(handles.radiobutton_active_figure1,<span class="string">'Value'</span>,0)
+1062 guidata(hObject,handles);
+1063 <span class="comment">% --- Executes on button press in radiobutton_active_figure2.</span>
+1064 <a name="_sub45" href="#_subfunctions" class="code">function radiobutton_active_figure2_Callback(hObject, eventdata, handles)</a>
+1065 <span class="comment">% hObject    handle to radiobutton_active_figure2 (see GCBO)</span>
+1066 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1067 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1068 state=get(hObject,<span class="string">'Value'</span>);
+1069 <span class="keyword">if</span> state==0;
+1070 set(hObject,<span class="string">'Value'</span>,1);
+1071 <span class="keyword">end</span>
+1072 handles.misc.active_figure=2;
+1073 set(handles.radiobutton_active_figure3,<span class="string">'Value'</span>,0)
+1074 set(handles.radiobutton_active_figure1,<span class="string">'Value'</span>,0)
+1075 guidata(hObject,handles);
+1076 <span class="comment">% --------------------------------------------------------------------</span>
+1077 <a name="_sub46" href="#_subfunctions" class="code">function Menu_Data_Def_ROI_Callback(hObject, eventdata, handles)</a>
+1078 <span class="comment">% hObject    handle to Menu_Data_Def_ROI (see GCBO)</span>
+1079 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1080 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1081 <span class="comment">%add ROI to Roi list in listbox</span>
+1082 set(handles.panel_data_settings,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+1083 
+1084 guidata(hObject,handles);
+1085 <span class="comment">% --- Executes on button press in pushbutton_add_ROI.</span>
+1086 <a name="_sub47" href="#_subfunctions" class="code">function pushbutton_add_ROI_Callback(hObject, eventdata, handles)</a>
+1087 <span class="comment">% hObject    handle to pushbutton_add_ROI (see GCBO)</span>
+1088 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1089 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1090 type=handles.ROI.type;
+1091 <span class="keyword">if</span> handles.misc.active_figure==1
+1092 dat=handles.figure_1_data;
+1093 ax=handles.TwoD_1Q1Q_Spectrum1;
+1094 <span class="keyword">elseif</span> handles.misc.active_figure==2
+1095 dat=handles.figure_2_data;
+1096 ax=handles.TwoD_1Q1Q_Spectrum2;
+1097 <span class="keyword">elseif</span> handles.misc.active_figure==3
+1098 dat=handles.figure_3_data;
+1099 ax=handles.TwoD_1Q1Q_Spectrum3;
+1100 <span class="keyword">end</span>
+1101 
+1102 [x,y,local_mask]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/TwoD_def_ROI.html" class="code" title="function [x,y,local_mask]=TwoD_def_ROI(type,activated_figure,Domain,tau_vector_image,t_vector_image,w_tau_vector_image,w_t_vector_image)">TwoD_def_ROI</a>(type,ax,dat.Domain,dat.tau_vector_image,<span class="keyword">...</span>
+1103     dat.t_vector_image,dat.w_tau_image,dat.w_t_image);
+1104 str=[<span class="string">'dX='</span> num2str([min(x), max(x)],<span class="string">' %.2f'</span>) <span class="string">' dY='</span> num2str([min(y), max(y)],<span class="string">' %.2f'</span>)];
+1105 contents = get(handles.listbox_ROIs,<span class="string">'String'</span>);
+1106 contents{end+1} = str;
+1107 set(handles.listbox_ROIs,<span class="string">'String'</span>,contents);
+1108 set(handles.listbox_ROIs,<span class="string">'Value'</span>,size(contents,1))
+1109 <span class="comment">%add ROI in ROI data list</span>
+1110 <span class="keyword">if</span> isempty( handles.ROI.ROI_data_x)
+1111     handles.ROI.ROI_data_x{1}=x;
+1112     handles.ROI.ROI_data_y{1}=y;
+1113     <span class="comment">%add ROI mask to ROI mask data list+</span>
+1114     handles.ROI.ROI_mask_data{1}=local_mask;
+1115 <span class="keyword">else</span>
+1116     handles.ROI.ROI_data_x{end+1}=x;
+1117     handles.ROI.ROI_data_y{end+1}=y;
+1118     <span class="comment">%add ROI mask to ROI mask data list+</span>
+1119     handles.ROI.ROI_mask_data{end+1}=local_mask;
+1120 <span class="keyword">end</span>
+1121 
+1122 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1123     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1124     {<span class="string">'ROIdata'</span>},{handles.ROI});
+1125 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1126     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1127     {<span class="string">'ROIdata'</span>},{handles.ROI});
+1128 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1129     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1130     {<span class="string">'ROIdata'</span>},{handles.ROI});
+1131 guidata(hObject,handles);
+1132 <span class="comment">% --- Executes on selection change in listbox_ROIs.</span>
+1133 <a name="_sub48" href="#_subfunctions" class="code">function listbox_ROIs_Callback(hObject, eventdata, handles)</a>
+1134 <span class="comment">% hObject    handle to listbox_ROIs (see GCBO)</span>
+1135 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1136 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1137 
+1138 <span class="comment">% Hints: contents = cellstr(get(hObject,'String')) returns listbox_ROIs contents as cell array</span>
+1139 <span class="comment">%        contents{get(hObject,'Value')} returns selected item from listbox_ROIs</span>
+1140 contents = cellstr(get(hObject,<span class="string">'String'</span>));
+1141 handles.ROI.selected_ROI=contents{get(hObject,<span class="string">'Value'</span>)};
+1142 guidata(hObject,handles);
+1143 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+1144 <a name="_sub49" href="#_subfunctions" class="code">function listbox_ROIs_CreateFcn(hObject, eventdata, handles)</a>
+1145 <span class="comment">% hObject    handle to listbox_ROIs (see GCBO)</span>
+1146 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1147 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+1148 
+1149 <span class="comment">% Hint: listbox controls usually have a white background on Windows.</span>
+1150 <span class="comment">%       See ISPC and COMPUTER.</span>
+1151 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+1152     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+1153 <span class="keyword">end</span>
+1154 <span class="comment">% --- Executes on button press in radiobutton_square.</span>
+1155 <a name="_sub50" href="#_subfunctions" class="code">function radiobutton_square_Callback(hObject, eventdata, handles)</a>
+1156 <span class="comment">% hObject    handle to radiobutton_square (see GCBO)</span>
+1157 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1158 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1159 state=get(hObject,<span class="string">'Value'</span>);
+1160 <span class="keyword">if</span> state==0
+1161 set(hObject,<span class="string">'Value'</span>,1);
+1162 <span class="keyword">end</span>
+1163 set(handles.radiobutton_manual_square,<span class="string">'Value'</span>,0);
+1164 set(handles.radiobutton_Polygon,<span class="string">'Value'</span>,0);
+1165 set(handles.radiobutton_fixed_size,<span class="string">'Value'</span>,0);
+1166 handles.ROI.type=<span class="string">'2 point input'</span>;
+1167 guidata(hObject,handles);
+1168 <span class="comment">% --- Executes on button press in radiobutton_manual_square.</span>
+1169 <a name="_sub51" href="#_subfunctions" class="code">function radiobutton_manual_square_Callback(hObject, eventdata, handles)</a>
+1170 <span class="comment">% hObject    handle to radiobutton_manual_square (see GCBO)</span>
+1171 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1172 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1173 state=get(hObject,<span class="string">'Value'</span>);
+1174 <span class="keyword">if</span> state==0
+1175 set(hObject,<span class="string">'Value'</span>,1);
+1176 <span class="keyword">end</span>
+1177 set(handles.radiobutton_square,<span class="string">'Value'</span>,0);
+1178 set(handles.radiobutton_Polygon,<span class="string">'Value'</span>,0);
+1179 set(handles.radiobutton_fixed_size,<span class="string">'Value'</span>,0);
+1180 handles.ROI.type=<span class="string">'manual input'</span>;
+1181 guidata(hObject,handles);
+1182 <span class="comment">% --- Executes on button press in radiobutton_fixed_size.</span>
+1183 <a name="_sub52" href="#_subfunctions" class="code">function radiobutton_fixed_size_Callback(hObject, eventdata, handles)</a>
+1184 <span class="comment">% hObject    handle to radiobutton_fixed_size (see GCBO)</span>
+1185 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1186 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1187 state=get(hObject,<span class="string">'Value'</span>);
+1188 <span class="keyword">if</span> state==0
+1189 set(hObject,<span class="string">'Value'</span>,1);
+1190 <span class="keyword">end</span>
+1191 set(handles.radiobutton_square,<span class="string">'Value'</span>,0);
+1192 set(handles.radiobutton_Polygon,<span class="string">'Value'</span>,0);
+1193 set(handles.radiobutton_manual_square,<span class="string">'Value'</span>,0);
+1194 handles.ROI.type=<span class="string">'fixed size'</span>;
+1195 guidata(hObject,handles);
+1196 <span class="comment">% --- Executes on button press in radiobutton_Polygon.</span>
+1197 <a name="_sub53" href="#_subfunctions" class="code">function radiobutton_Polygon_Callback(hObject, eventdata, handles)</a>
+1198 <span class="comment">% hObject    handle to radiobutton_Polygon (see GCBO)</span>
+1199 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1200 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1201 state=get(hObject,<span class="string">'Value'</span>);
+1202 <span class="keyword">if</span> state==0
+1203 set(hObject,<span class="string">'Value'</span>,1);
+1204 <span class="keyword">end</span>
+1205 set(handles.radiobutton_square,<span class="string">'Value'</span>,0);
+1206 set(handles.radiobutton_fixed_size,<span class="string">'Value'</span>,0);
+1207 set(handles.radiobutton_manual_square,<span class="string">'Value'</span>,0);
+1208 handles.ROI.type=<span class="string">'polygon'</span>;
+1209 guidata(hObject,handles);
+1210 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+1211 <a name="_sub54" href="#_subfunctions" class="code">function radiobutton_square_CreateFcn(hObject, eventdata, handles)</a>
+1212 <span class="comment">% hObject    handle to radiobutton_square (see GCBO)</span>
+1213 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1214 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+1215 handles.ROI.type=<span class="string">'2 point input'</span>;
+1216 guidata(hObject,handles);
+1217 <span class="comment">% --- Executes on button press in pushbutton_delete_ROI.</span>
+1218 <a name="_sub55" href="#_subfunctions" class="code">function pushbutton_delete_ROI_Callback(hObject, eventdata, handles)</a>
+1219 <span class="comment">% hObject    handle to pushbutton_delete_ROI (see GCBO)</span>
+1220 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1221 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1222 
+1223 <span class="comment">%Current ROI list content</span>
+1224 contents = get(handles.listbox_ROIs,<span class="string">'String'</span>);
+1225 <span class="comment">%Current selected ROI is handles.selected_ROI, if no ROI has been selected,</span>
+1226 <span class="comment">%use first item</span>
+1227    truefalse=isfield(handles.ROI,<span class="string">'selected_ROI'</span>);
+1228   <span class="keyword">if</span> truefalse==0
+1229       
+1230       warndlg(<span class="string">'You have to create a ROI first or click on the ROI you want to delete.'</span>);
+1231       error(<span class="string">'You have to create a ROI first or click on the ROI you want to delete.'</span>);
+1232   <span class="keyword">end</span>
+1233 <span class="comment">%Nasty fix that deleting the last entry will not destroy everything...</span>
+1234 row=get(handles.listbox_ROIs,<span class="string">'Value'</span>);
+1235   
+1236 contents(row,:)=[];
+1237 <span class="comment">%Write new ROI_list</span>
+1238 set(handles.listbox_ROIs,<span class="string">'String'</span>,contents);
+1239 <span class="keyword">if</span> size(handles.listbox_ROIs,1)&gt;0
+1240     set(handles.listbox_ROIs,<span class="string">'Value'</span>,size(handles.listbox_ROIs,1));
+1241 <span class="keyword">end</span>    
+1242 
+1243 
+1244 <span class="comment">%update ROI_data_x and ROI_data_y</span>
+1245 handles.ROI.ROI_data_x(row)=[];
+1246 handles.ROI.ROI_data_y(row)=[];
+1247 <span class="comment">%update mask cell array</span>
+1248 handles.ROI.ROI_mask_data(row)=[];
+1249 
+1250 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1251     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1252     {<span class="string">'ROIdata'</span>},{handles.ROI});
+1253 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1254     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1255     {<span class="string">'ROIdata'</span>},{handles.ROI});
+1256 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1257     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1258     {<span class="string">'ROIdata'</span>},{handles.ROI});
+1259 
+1260 guidata(hObject,handles);
+1261 <span class="comment">% --- Executes on button press in pushbutton_calc_T_scan.</span>
+1262 <a name="_sub56" href="#_subfunctions" class="code">function pushbutton_calc_T_scan_Callback(hObject, eventdata, handles)</a>
+1263 <span class="comment">% hObject    handle to pushbutton_calc_T_scan (see GCBO)</span>
+1264 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1265 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1266 <span class="keyword">if</span> handles.misc.active_figure==1
+1267 dat=handles.figure_1_data;
+1268 ax=handles.TwoD_1Q1Q_Spectrum1;
+1269 <span class="keyword">elseif</span> handles.misc.active_figure==2
+1270 dat=handles.figure_2_data;
+1271 ax=handles.TwoD_1Q1Q_Spectrum2;
+1272 <span class="keyword">elseif</span> handles.misc.active_figure==3
+1273 dat=handles.figure_3_data;
+1274 ax=handles.TwoD_1Q1Q_Spectrum3;
+1275 <span class="keyword">end</span>
+1276 
+1277 <a href="T_scan_evaluation.html" class="code" title="function varargout = T_scan_evaluation(varargin)">T_scan_evaluation</a>(dat);
+1278 guidata(hObject,handles);
+1279 <span class="comment">% --------------------------------------------------------------------</span>
+1280 <a name="_sub57" href="#_subfunctions" class="code">function Menu_Data_Gamma_value_Callback(hObject, eventdata, handles)</a>
+1281 <span class="comment">% hObject    handle to Menu_Data_Gamma_value (see GCBO)</span>
+1282 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1283 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1284 set(handles.panel_data_settings,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+1285 guidata(hObject,handles);
+1286 <a name="_sub58" href="#_subfunctions" class="code">function edit_gamma_Callback(hObject, eventdata, handles)</a>
+1287 <span class="comment">% hObject    handle to edit_gamma (see GCBO)</span>
+1288 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1289 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1290 
+1291 <span class="comment">% Hints: get(hObject,'String') returns contents of edit_gamma as text</span>
+1292 <span class="comment">%        str2double(get(hObject,'String')) returns contents of edit_gamma as a double</span>
+1293 handles.misc.gamma=str2double(get(hObject,<span class="string">'String'</span>));
+1294 <span class="keyword">if</span> handles.misc.gamma&lt;0 || 1&lt;handles.misc.gamma
+1295     msgbox(<span class="string">'Gamma must be between 0 and 1!'</span>);
+1296     handles.misc.gamma=0;
+1297 <span class="keyword">end</span>
+1298 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1299     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1300     {<span class="string">'gamma'</span>},{handles.misc.gamma});
+1301 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1302     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1303     {<span class="string">'gamma'</span>},{handles.misc.gamma});
+1304 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1305     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1306     {<span class="string">'gamma'</span>},{handles.misc.gamma});
+1307 
+1308 
+1309 guidata(hObject,handles);
+1310 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+1311 <a name="_sub59" href="#_subfunctions" class="code">function edit_gamma_CreateFcn(hObject, eventdata, handles)</a>
+1312 <span class="comment">% hObject    handle to edit_gamma (see GCBO)</span>
+1313 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1314 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+1315 
+1316 <span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+1317 <span class="comment">%       See ISPC and COMPUTER.</span>
+1318 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+1319     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+1320 <span class="keyword">end</span>
+1321 <a name="_sub60" href="#_subfunctions" class="code">function edit_lambda0_Callback(hObject, eventdata, handles)</a>
+1322 <span class="comment">% hObject    handle to edit_lambda0 (see GCBO)</span>
+1323 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1324 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1325 
+1326 <span class="comment">% Hints: get(hObject,'String') returns contents of edit_lambda0 as text</span>
+1327 <span class="comment">%        str2double(get(hObject,'String')) returns contents of edit_lambda0 as a double</span>
+1328 handles.misc.centerwavelength= str2double(get(hObject,<span class="string">'String'</span>));
+1329 handles.misc.center_w=2*pi*299792458/(handles.misc.centerwavelength*1e-9)*1e-15;
+1330 
+1331 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1332     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1333     {<span class="string">'omega_center'</span>},{handles.misc.center_w});
+1334 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1335     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1336     {<span class="string">'omega_center'</span>},{handles.misc.center_w});
+1337 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1338     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1339     {<span class="string">'omega_center'</span>},{handles.misc.center_w});
+1340 
+1341 guidata(hObject,handles);
+1342 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+1343 <a name="_sub61" href="#_subfunctions" class="code">function edit_lambda0_CreateFcn(hObject, eventdata, handles)</a>
+1344 <span class="comment">% hObject    handle to edit_lambda0 (see GCBO)</span>
+1345 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1346 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+1347 
+1348 <span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+1349 <span class="comment">%       See ISPC and COMPUTER.</span>
+1350 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+1351     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+1352 <span class="keyword">end</span>
+1353 <span class="comment">% --- Executes on slider movement.</span>
+1354 <a name="_sub62" href="#_subfunctions" class="code">function slider_variable_scan_Callback(hObject, eventdata, handles)</a>
+1355 <span class="comment">% hObject    handle to slider_variable_scan (see GCBO)</span>
+1356 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1357 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1358 
+1359 <span class="comment">% Hints: get(hObject,'Value') returns position of slider</span>
+1360 <span class="comment">%        get(hObject,'Min') and get(hObject,'Max') to determine range of slider</span>
+1361 <span class="comment">%SizeTimeDomainData=size(handles.maindata.TDdata.TimeDomainData);</span>
+1362 <span class="comment">% set(hObject,'Min',1)</span>
+1363 <span class="comment">% set(hObject,'Max',SizeTimeDomainData(1,3));</span>
+1364 <span class="comment">% Max=get(hObject,'Max');</span>
+1365 <span class="comment">% set(hObject,'SliderStep',[1/(Max-1) 1/(Max-1)]);</span>
+1366 Varpos=get(hObject,<span class="string">'Value'</span>);
+1367 handles.TDdata.Varpos(1)=round(Varpos);
+1368 set(handles.text_variable_scan_2,<span class="string">'String'</span>,[<span class="string">'Variable = '</span> num2str(handles.maindata.TDdata.variable_vector(handles.TDdata.Varpos(1))) <span class="string">' [arb.u.]'</span>]);
+1369 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1370         handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1371         {<span class="string">'TimeDomainData'</span>,<span class="string">'Varpos'</span>},{handles.maindata.TDdata.TimeDomainData, handles.TDdata.Varpos(1)});
+1372     [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1373         handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1374         {<span class="string">'TimeDomainData'</span>,<span class="string">'Varpos'</span>},{handles.maindata.TDdata.TimeDomainData,handles.TDdata.Varpos(1)});
+1375     [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1376         handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1377         {<span class="string">'TimeDomainData'</span>,<span class="string">'Varpos'</span>},{handles.maindata.TDdata.TimeDomainData,handles.TDdata.Varpos});
+1378 guidata(hObject,handles);
+1379 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+1380 <a name="_sub63" href="#_subfunctions" class="code">function slider_variable_scan_CreateFcn(hObject, eventdata, handles)</a>
+1381 <span class="comment">% hObject    handle to slider_variable_scan (see GCBO)</span>
+1382 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1383 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+1384 
+1385 <span class="comment">% Hint: slider controls usually have a light gray background.</span>
+1386 <span class="keyword">if</span> isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+1387     set(hObject,<span class="string">'BackgroundColor'</span>,[.9 .9 .9]);
+1388 <span class="keyword">end</span>
+1389 
+1390 
+1391 guidata(hObject,handles);  
+1392 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+1393 <a name="_sub64" href="#_subfunctions" class="code">function text_variable_scan_2_CreateFcn(hObject, eventdata, handles)</a>
+1394 <span class="comment">% hObject    handle to text_variable_scan_2 (see GCBO)</span>
+1395 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1396 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+1397 maindata=guidata(<a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>);
+1398 
+1399 handles.maindata=maindata;
+1400 NumDim=ndims(handles.maindata.TDdata.TimeDomainData);
+1401 <span class="keyword">if</span> NumDim&gt;=5
+1402     set(hObject,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+1403     set(hObject,<span class="string">'String'</span>,[<span class="string">'Variable = '</span> num2str(maindata.TDdata.variable_vector(1)) <span class="string">' [arb.u.]'</span>]);
+1404 <span class="keyword">end</span>
+1405 <span class="comment">% --- Executes on button press in radiobutton_Double_omega_tau.</span>
+1406 <a name="_sub65" href="#_subfunctions" class="code">function radiobutton_Double_omega_tau_Callback(hObject, eventdata, handles)</a>
+1407 <span class="comment">% hObject    handle to radiobutton_Double_omega_tau (see GCBO)</span>
+1408 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1409 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1410 state=get(hObject,<span class="string">'Value'</span>);
+1411 <span class="keyword">if</span> state==1;
+1412     Double_omega_tau=<span class="string">'on'</span>;
+1413 <span class="keyword">elseif</span> state==0
+1414     Double_omega_tau=<span class="string">'off'</span>;  
+1415 <span class="keyword">end</span>
+1416 
+1417     [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1418         handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1419         {<span class="string">'Double_omega_tau'</span>},{Double_omega_tau});
+1420     [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1421         handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1422         {<span class="string">'Double_omega_tau'</span>},{Double_omega_tau});
+1423     [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1424         handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1425         {<span class="string">'Double_omega_tau'</span>},{Double_omega_tau});
+1426 guidata(hObject,handles);
+1427 <span class="comment">% --- Executes on button press in radiobutton_Double_omega_t.</span>
+1428 <a name="_sub66" href="#_subfunctions" class="code">function radiobutton_Double_omega_t_Callback(hObject, eventdata, handles)</a>
+1429 <span class="comment">% hObject    handle to radiobutton_Double_omega_t (see GCBO)</span>
+1430 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1431 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1432 state=get(hObject,<span class="string">'Value'</span>);
+1433 <span class="keyword">if</span> state==1;
+1434     Double_omega_t=<span class="string">'on'</span>;
+1435 <span class="keyword">elseif</span> state==0
+1436     Double_omega_t=<span class="string">'off'</span>;  
+1437 <span class="keyword">end</span>
+1438 
+1439     [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1440         handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1441         {<span class="string">'Double_omega_t'</span>},{Double_omega_t});
+1442     [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1443         handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1444         {<span class="string">'Double_omega_t'</span>},{Double_omega_t});
+1445     [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1446         handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1447         {<span class="string">'Double_omega_t'</span>},{Double_omega_t});
+1448 guidata(hObject,handles);
+1449 <span class="comment">% --- Executes on button press in radiobutton_spectrum_flip_w_tau.</span>
+1450 <a name="_sub67" href="#_subfunctions" class="code">function radiobutton_spectrum_flip_w_tau_Callback(hObject, eventdata, handles)</a>
+1451 state= get(hObject,<span class="string">'Value'</span>); <span class="comment">% returns toggle state of radiobutton_spectrum_flip_w_tau</span>
+1452 <span class="keyword">if</span> state==1
+1453    handles.misc.Flip_w_tau=<span class="string">'on'</span>;
+1454 <span class="keyword">elseif</span> state==0
+1455    handles.misc.Flip_w_tau=<span class="string">'off'</span>;
+1456 <span class="keyword">end</span>
+1457 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1458     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1459     {<span class="string">'Flip_w_tau'</span>},{handles.misc.Flip_w_tau});
+1460 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1461     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1462     {<span class="string">'Flip_w_tau'</span>},{handles.misc.Flip_w_tau});
+1463 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1464     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1465     {<span class="string">'Flip_w_tau'</span>},{handles.misc.Flip_w_tau});
+1466 guidata(hObject,handles);
+1467 
+1468 
+1469 
+1470 <span class="comment">% --- Executes on button press in radiobutton_spectrum_flip_w_t.</span>
+1471 <a name="_sub68" href="#_subfunctions" class="code">function radiobutton_spectrum_flip_w_t_Callback(hObject, eventdata, handles)</a>
+1472 <span class="comment">% hObject    handle to radiobutton_spectrum_flip_w_t (see GCBO)</span>
+1473 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1474 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1475 state= get(hObject,<span class="string">'Value'</span>); <span class="comment">% returns toggle state of radiobutton_spectrum_flip_w_tau</span>
+1476 <span class="keyword">if</span> state==1
+1477    handles.misc.Flip_w_t=<span class="string">'on'</span>;
+1478 <span class="keyword">elseif</span> state==0
+1479    handles.misc.Flip_w_t=<span class="string">'off'</span>;
+1480 <span class="keyword">end</span>
+1481 [handles.figure_1_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_1_data,<span class="keyword">...</span>
+1482     handles.TwoD_1Q1Q_Spectrum1,<span class="keyword">...</span>
+1483     {<span class="string">'Flip_w_t'</span>},{handles.misc.Flip_w_t});
+1484 [handles.figure_2_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_2_data,<span class="keyword">...</span>
+1485     handles.TwoD_1Q1Q_Spectrum2,<span class="keyword">...</span>
+1486     {<span class="string">'Flip_w_t'</span>},{handles.misc.Flip_w_t});
+1487 [handles.figure_3_data]=<a href="../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/UpdateFigure.html" class="code" title="function [figuredata]=UpdateFigure(figuredata,axeshandle,Names,newvalues)">UpdateFigure</a>(handles.figure_3_data,<span class="keyword">...</span>
+1488     handles.TwoD_1Q1Q_Spectrum3,<span class="keyword">...</span>
+1489     {<span class="string">'Flip_w_t'</span>},{handles.misc.Flip_w_t});
+1490 guidata(hObject,handles);
+1491 
+1492 
+1493 <span class="comment">% --------------------------------------------------------------------</span>
+1494 <a name="_sub69" href="#_subfunctions" class="code">function Menu_Plot_settings_flip_axes_Callback(hObject, eventdata, handles)</a>
+1495 <span class="comment">% hObject    handle to Menu_Plot_settings_flip_axes (see GCBO)</span>
+1496 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+1497 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+1498 set(handles.uipanel_plot_settings,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+1499 
+1500 
+1501</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

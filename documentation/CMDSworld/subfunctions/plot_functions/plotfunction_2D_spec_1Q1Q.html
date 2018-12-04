@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of plotfunction_2D_spec_1Q1Q</title>
+  <meta name="keywords" content="plotfunction_2D_spec_1Q1Q">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subfunctions</a> &gt; <a href="index.html">plot_functions</a> &gt; plotfunction_2D_spec_1Q1Q.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subfunctions\plot_functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>plotfunction_2D_spec_1Q1Q
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong></strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function plotfunction_2D_spec_1Q1Q(SpecDomainData,w_tau_vector,T_vector,w_t_vector,Tpos,operation,Contour,SpecDomainData_contour,w_tau_contour,T_vector_contour,w_t_contour,contour_isovalues,Units,ROIdata) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="build_title_1Q1Q.html" class="code" title="function titlestring= build_title_1Q1Q(operation,Tpos,T_vector)">build_title_1Q1Q</a>	</li><li><a href="build_xylabel_specdomain.html" class="code" title="function [ xlabel,ylabel ] = build_xylabel_specdomain(option,Units)">build_xylabel_specdomain</a>	</li><li><a href="generate_color_map_positive_negative_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_negative_values(~)">generate_color_map_positive_negative_values</a>	Colormap</li><li><a href="generate_color_map_positive_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_values(number_of_shades)">generate_color_map_positive_values</a>	Colormap</li><li><a href="plot_point.html" class="code" title="function plot_point(X,Y,Color)">plot_point</a>	</li><li><a href="plot_polygon.html" class="code" title="function plot_polygon(X,Y,Color)">plot_polygon</a>	</li><li><a href="plot_square.html" class="code" title="function plot_square(X,Y,Color)">plot_square</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subguis/T_scan_evaluation.html" class="code" title="function varargout = T_scan_evaluation(varargin)">T_scan_evaluation</a>	T_SCAN_EVALUATION MATLAB code for T_scan_evaluation.fig</li><li><a href="../../../CMDSworld/subguis/subfunctions_2D_spec_1Q1Q/Calculate_and_plot_1Q1Q.html" class="code" title="function [figuredata]=Calculate_and_plot_1Q1Q(TimeDomainData,Domain,tau_vector,T_vector,t_vector,weights,axeshandle,PCpos,Tpos,operation,normalization,Units,XLabel,YLabel,Title,ZeropaddingImage,Contour,ZeropaddingContour,contour_isovalues,name_of_scheme,ROIdata,omega_center,gamma,Double_omega_tau,Double_omega_t,Flip_w_tau,Flip_w_t,Varpos,var_vector)">Calculate_and_plot_1Q1Q</a>	</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function plotfunction_2D_spec_1Q1Q(SpecDomainData,w_tau_vector,T_vector,w_t_vector,Tpos,operation,</a><span class="keyword">...</span>
+0002         Contour,<span class="keyword">...</span>
+0003         SpecDomainData_contour,<span class="keyword">...</span>
+0004         w_tau_contour,<span class="keyword">...</span>
+0005         T_vector_contour,<span class="keyword">...</span>
+0006         w_t_contour,<span class="keyword">...</span>
+0007         contour_isovalues,<span class="keyword">...</span>
+0008         Units,<span class="keyword">...</span>
+0009         ROIdata)
+0010 
+0011 <span class="keyword">switch</span> operation
+0012     <span class="keyword">case</span> <span class="string">'absolute'</span> 
+0013         plotcolor_fine=<a href="generate_color_map_positive_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_values(number_of_shades)">generate_color_map_positive_values</a>(1000);
+0014     <span class="keyword">case</span> <span class="string">'realpart'</span>
+0015         plotcolor_fine=<a href="generate_color_map_positive_negative_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_negative_values(~)">generate_color_map_positive_negative_values</a>(1000);
+0016     <span class="keyword">case</span> <span class="string">'imagpart'</span>
+0017         plotcolor_fine=<a href="generate_color_map_positive_negative_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_negative_values(~)">generate_color_map_positive_negative_values</a>(1000);
+0018     <span class="keyword">case</span> <span class="string">'absorptive'</span>
+0019         plotcolor_fine=<a href="generate_color_map_positive_negative_values.html" class="code" title="function plotcolor_fine=generate_color_map_positive_negative_values(~)">generate_color_map_positive_negative_values</a>(1000);
+0020 <span class="keyword">end</span>
+0021          
+0022 
+0023 <span class="comment">%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;actual plotting: remember that SpecDomainData is plotted as matrix, hence</span>
+0024 <span class="comment">%the first index is rows, which corresponds to the y axis of a cartesian coordinate</span>
+0025 <span class="comment">%system. This is fixed by transposing the Specdomaindata&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+0026 imagesc(w_tau_vector,w_t_vector,squeeze(SpecDomainData(:,Tpos,:))');
+0027 
+0028 
+0029 axis xy;
+0030 box on
+0031 ax=gca;
+0032 [ xlabelstring,ylabelstring ] = <a href="build_xylabel_specdomain.html" class="code" title="function [ xlabel,ylabel ] = build_xylabel_specdomain(option,Units)">build_xylabel_specdomain</a>(<span class="string">'option1'</span>,Units);
+0033 xlabel(xlabelstring, <span class="string">'Interpreter'</span>, <span class="string">'latex'</span>);
+0034 ylabel(ylabelstring, <span class="string">'Interpreter'</span>, <span class="string">'latex'</span>);
+0035 titlestring=<a href="build_title_1Q1Q.html" class="code" title="function titlestring= build_title_1Q1Q(operation,Tpos,T_vector)">build_title_1Q1Q</a>(operation,Tpos,T_vector);
+0036 title(titlestring);
+0037 ax.XLim=[min(w_tau_vector) max(w_tau_vector)];
+0038 ax.YLim=[min(w_t_vector) max(w_t_vector)];
+0039 ax.BoxStyle=<span class="string">'full'</span>;
+0040 ax.LineWidth=1.5;
+0041 ax.FontSize=14;
+0042 ax.GridAlpha=.1;
+0043 ax.FontName=<span class="string">'Arial'</span>;
+0044 set(ax,<span class="string">'dataaspectratio'</span>,[1 1 1]);
+0045 colormap(ax,plotcolor_fine);
+0046 <span class="comment">%ax.YTick=ax.XTick;</span>
+0047 <span class="comment">%colorbar</span>
+0048 colb=colorbar;
+0049 colb.LineWidth=1.5;
+0050 colb.TickDirection=<span class="string">'out'</span>;
+0051 colb.FontSize=16;
+0052 colb.FontName=<span class="string">'Arial'</span>;
+0053 axis tight;
+0054 <span class="keyword">switch</span> operation
+0055     <span class="keyword">case</span> <span class="string">'realpart'</span>
+0056         set(ax,<span class="string">'Clim'</span>,[-max(max(max(abs(SpecDomainData)))) max(max(max(abs(SpecDomainData))))]);
+0057         set(colb,<span class="string">'Limits'</span>,[-max(max(max(abs(SpecDomainData)))) max(max(max(abs(SpecDomainData))))]);
+0058     <span class="keyword">case</span> <span class="string">'imagpart'</span>
+0059         set(ax,<span class="string">'Clim'</span>,[-max(max(max(abs(SpecDomainData)))) max(max(max(abs(SpecDomainData))))]);
+0060         set(colb,<span class="string">'Limits'</span>,[-max(max(max(abs(SpecDomainData)))) max(max(max(abs(SpecDomainData))))]);
+0061     <span class="keyword">case</span> <span class="string">'absolute'</span>
+0062         set(ax,<span class="string">'Clim'</span>,[min(min(min(SpecDomainData))) max(max(max(SpecDomainData)))]);
+0063         set(colb,<span class="string">'Limits'</span>,[min(min(min(SpecDomainData))) max(max(max(SpecDomainData)))]);
+0064     <span class="keyword">case</span> <span class="string">'absorptive'</span>
+0065         set(ax,<span class="string">'Clim'</span>,[-max(max(max(abs(SpecDomainData)))) max(max(max(abs(SpecDomainData))))]);
+0066         set(colb,<span class="string">'Limits'</span>,[-max(max(max(abs(SpecDomainData)))) max(max(max(abs(SpecDomainData))))]);    
+0067 <span class="keyword">end</span>
+0068 
+0069 <span class="keyword">if</span> nargin &gt; 7        
+0070     <span class="keyword">switch</span> Contour
+0071         <span class="keyword">case</span> <span class="string">'off'</span>
+0072             <span class="comment">%do nothing</span>
+0073         <span class="keyword">case</span> <span class="string">'on'</span>
+0074             hold on
+0075             <span class="keyword">if</span> all(contour_isovalues&gt;=0)
+0076             contour(w_tau_contour,w_t_contour,<span class="keyword">...</span>
+0077                 squeeze(permute(SpecDomainData_contour(:,Tpos,:),[3 2 1])),<span class="keyword">...</span>
+0078                 <span class="string">'-k'</span>, <span class="string">'LevelList'</span>, contour_isovalues,<span class="keyword">...</span>
+0079                 <span class="string">'LineWidth'</span>,1);
+0080             <span class="keyword">else</span> 
+0081             contour_isovalues_positive=contour_isovalues(contour_isovalues&gt;=0);
+0082             contour_isovalues_negative=contour_isovalues(contour_isovalues&lt; 0);
+0083             contour(w_tau_contour,w_t_contour,<span class="keyword">...</span>
+0084                 squeeze(permute(SpecDomainData_contour(:,Tpos,:),[3 2 1])),<span class="keyword">...</span>
+0085                 <span class="string">'-k'</span>, <span class="string">'LevelList'</span>, contour_isovalues_positive,<span class="keyword">...</span>
+0086                 <span class="string">'LineWidth'</span>,1);
+0087             contour(w_tau_contour,w_t_contour,<span class="keyword">...</span>
+0088                 squeeze(permute(SpecDomainData_contour(:,Tpos,:),[3 2 1])),<span class="keyword">...</span>
+0089                 <span class="string">'-.k'</span>, <span class="string">'LevelList'</span>, contour_isovalues_negative,<span class="keyword">...</span>
+0090                 <span class="string">'LineWidth'</span>,1);
+0091             
+0092             <span class="keyword">end</span>
+0093             hold off
+0094     <span class="keyword">end</span>
+0095     
+0096 <span class="keyword">end</span>        
+0097 
+0098 <span class="keyword">if</span> exist(<span class="string">'ROIdata'</span>,<span class="string">'var'</span>)==1 &amp;&amp; ~isempty(ROIdata)==1
+0099         ColorOrder=lines(10);
+0100         ColorOrder=flipud(ColorOrder);
+0101   <span class="keyword">for</span> nn=1:length(ROIdata.ROI_data_x)
+0102 
+0103         <span class="comment">%check for polygon or rectangles</span>
+0104         <span class="keyword">if</span> length(ROIdata.ROI_data_x{nn})==2
+0105            <span class="keyword">if</span> sum(sum(ROIdata.ROI_mask_data{nn}))&gt;1;
+0106            <a href="plot_square.html" class="code" title="function plot_square(X,Y,Color)">plot_square</a>(ROIdata.ROI_data_x{nn},ROIdata.ROI_data_y{nn},ColorOrder(nn,:));
+0107            <span class="keyword">else</span>
+0108            <a href="plot_point.html" class="code" title="function plot_point(X,Y,Color)">plot_point</a>(ROIdata.ROI_data_x{nn}(1,1),ROIdata.ROI_data_y{nn}(1,1),ColorOrder(nn,:));    
+0109            <span class="keyword">end</span>
+0110         <span class="keyword">else</span>
+0111            <span class="keyword">if</span> sum(sum(ROIdata.ROI_mask_data{nn}))&gt;1;
+0112            <a href="plot_polygon.html" class="code" title="function plot_polygon(X,Y,Color)">plot_polygon</a>(ROIdata.ROI_data_x{nn},ROIdata.ROI_data_y{nn},ColorOrder(nn,:));
+0113            <span class="keyword">else</span>
+0114            <a href="plot_point.html" class="code" title="function plot_point(X,Y,Color)">plot_point</a>(ROIdata.ROI_data_x{nn},ROIdata.ROI_data_y{nn},ColorOrder(nn,:));    
+0115            <span class="keyword">end</span>
+0116         <span class="keyword">end</span>
+0117   <span class="keyword">end</span>
+0118 <span class="keyword">end</span>
+0119 
+0120 <span class="keyword">end</span>
+0121</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

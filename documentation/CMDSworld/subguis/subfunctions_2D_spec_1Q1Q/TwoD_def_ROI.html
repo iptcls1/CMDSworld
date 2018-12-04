@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of TwoD_def_ROI</title>
+  <meta name="keywords" content="TwoD_def_ROI">
+  <meta name="description" content="watch out: x axis in plot is t axis in plot">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subguis</a> &gt; <a href="index.html">subfunctions_2D_spec_1Q1Q</a> &gt; TwoD_def_ROI.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis\subfunctions_2D_spec_1Q1Q&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>TwoD_def_ROI
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>watch out: x axis in plot is t axis in plot</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [x,y,local_mask]=TwoD_def_ROI(type,activated_figure,Domain,tau_vector_image,t_vector_image,w_tau_vector_image,w_t_vector_image) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> watch out: x axis in plot is t axis in plot
+ watch out: y axis in plot is tau axis in plot</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subfunctions/plot_functions/plot_square.html" class="code" title="function plot_square(X,Y,Color)">plot_square</a>	</li><li><a href="generate_Polymask_2D.html" class="code" title="function [xvalues,yvalues,mask_local]=generate_Polymask_2D(xPoly,yPoly,ZeroMask)">generate_Polymask_2D</a>	round to integer pixel</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subguis/TwoDspec1Q1Q.html" class="code" title="function varargout = TwoDspec1Q1Q(varargin)">TwoDspec1Q1Q</a>	TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function [x,y,local_mask]=TwoD_def_ROI(type,activated_figure,Domain,tau_vector_image,t_vector_image,w_tau_vector_image,w_t_vector_image)</a>
+0002 <span class="comment">% watch out: x axis in plot is t axis in plot</span>
+0003 <span class="comment">% watch out: y axis in plot is tau axis in plot</span>
+0004 axes(activated_figure);
+0005 local_mask=zeros(length(t_vector_image),length(tau_vector_image));
+0006 
+0007 <span class="keyword">switch</span> type
+0008  <span class="keyword">case</span> <span class="string">'2 point input'</span>
+0009     [x,y] = ginput(2);
+0010  
+0011     <span class="keyword">if</span> x(1) &gt; x(2)
+0012     x_dummy = x(1);
+0013     x(1) = x(2);
+0014     x(2) = x_dummy;
+0015     <span class="keyword">end</span>  
+0016     <span class="keyword">if</span> y(1) &gt; y(2)
+0017     y_dummy = y(1);
+0018     y(1) = y(2);
+0019     y(2) =  y_dummy;
+0020     <span class="keyword">end</span>
+0021  <span class="keyword">case</span> <span class="string">'manual input'</span>
+0022      str_ROI_values=inputdlg({<span class="string">'x_min value of ROI'</span>,<span class="string">'x_max value of ROI'</span>,<span class="string">'y_min value of ROI'</span>,<span class="string">'y_max value of ROI'</span>},<span class="string">'Manual definition of the ROI'</span>,1,{<span class="string">'1'</span>,<span class="string">'20'</span>,<span class="string">'1'</span>,<span class="string">'20'</span>});
+0023      x(1)=str2double(str_ROI_values(1));
+0024      x(2)=str2double(str_ROI_values(2));
+0025      y(1)=str2double(str_ROI_values(3));
+0026      y(2)=str2double(str_ROI_values(4));
+0027 
+0028     <span class="keyword">if</span> x(1) &gt; x(2)
+0029     x_dummy = x(1);
+0030     x(1) = x(2);
+0031     x(2) = x_dummy;
+0032     <span class="keyword">end</span>  
+0033     <span class="keyword">if</span> y(1) &gt; y(2)
+0034     y_dummy = y(1);
+0035     y(1) = y(2);
+0036     y(2) =  y_dummy;
+0037     <span class="keyword">end</span>
+0038     
+0039  <span class="keyword">case</span> <span class="string">'fixed size'</span>
+0040     str_ROI_values=inputdlg({<span class="string">'Size of ROI in X dim'</span>,<span class="string">'Size of ROI in Y dim'</span>},<span class="string">'Definition of fixed area ROI'</span>,1,{<span class="string">'1'</span>,<span class="string">'1'</span>});
+0041     Xdim=str2double(str_ROI_values(1));
+0042     Ydim=str2double(str_ROI_values(2));
+0043     
+0044     [xcenter,ycenter] = ginput(1);
+0045     x(1)=xcenter-Xdim/2;
+0046     x(2)=xcenter+Xdim/2;
+0047     y(1)=ycenter-Ydim/2;
+0048     y(2)=ycenter+Ydim/2;      
+0049     <span class="keyword">if</span> x(1) &gt; x(2)
+0050     x_dummy = x(1);
+0051     x(1) = x(2);
+0052     x(2) = x_dummy;
+0053     <span class="keyword">end</span>  
+0054     <span class="keyword">if</span> y(1) &gt; y(2)
+0055     y_dummy = y(1);
+0056     y(1) = y(2);
+0057     y(2) =  y_dummy;
+0058     <span class="keyword">end</span>
+0059     <a href="../../../CMDSworld/subfunctions/plot_functions/plot_square.html" class="code" title="function plot_square(X,Y,Color)">plot_square</a>(x,y);
+0060     
+0061   <span class="keyword">case</span> <span class="string">'polygon'</span>
+0062     [x, y] = ginput; <span class="comment">%polygon points, you have to select them</span>
+0063     <span class="comment">%generate Polygon mask</span>
+0064 
+0065     <span class="comment">%plot_polygon(x,y);</span>
+0066 <span class="keyword">end</span>
+0067 
+0068 <span class="keyword">switch</span> Domain
+0069     <span class="keyword">case</span> <span class="string">'TimeMap'</span>
+0070         <span class="keyword">if</span> strcmp(type,<span class="string">'polygon'</span>)==0;
+0071             [c, index_x1] = min(abs(t_vector_image-x(1)));
+0072             x(1)= t_vector_image(index_x1);
+0073             [c, index_x2] = min(abs(t_vector_image-x(2)));
+0074             x(2)= t_vector_image(index_x2);
+0075             [c, index_y1] = min(abs(tau_vector_image-y(1)));
+0076             y(1)= tau_vector_image(index_y1);
+0077             [c, index_y2] = min(abs(tau_vector_image-y(2)));
+0078             y(2)= t_vector_image(index_y2);
+0079             local_mask(index_y1:index_y2,index_x1:index_x2)=1;
+0080         <span class="keyword">else</span>
+0081             <span class="keyword">for</span> ii=1:length(x)
+0082             [c, index_x(ii)]= min(abs(t_vector_image-x(ii)));
+0083                 x(ii)= t_vector_image(index_x(ii));
+0084             [c, index_y(ii)]= min(abs(tau_vector_image-y(ii)));
+0085                 y(ii)= tau_vector_image(index_y(ii));
+0086             <span class="keyword">end</span>
+0087             [xRect,yRect,local_mask]=<a href="generate_Polymask_2D.html" class="code" title="function [xvalues,yvalues,mask_local]=generate_Polymask_2D(xPoly,yPoly,ZeroMask)">generate_Polymask_2D</a>(index_x,index_y,local_mask);
+0088             
+0089         <span class="keyword">end</span>
+0090     <span class="keyword">case</span> <span class="string">'2DSpectrum'</span>
+0091 
+0092         <span class="keyword">if</span> strcmp(type,<span class="string">'polygon'</span>)==0;
+0093             [c, index_x1] = min(abs(w_t_vector_image-x(1)));
+0094             x(1)= w_t_vector_image(index_x1);
+0095             [c, index_x2] = min(abs(w_t_vector_image-x(2)));
+0096             x(2)= w_t_vector_image(index_x2);
+0097             [c, index_y1] = min(abs(w_tau_vector_image-y(1)));
+0098             y(1)= w_tau_vector_image(index_y1);
+0099             [c, index_y2] = min(abs(w_tau_vector_image-y(2)));
+0100             y(2)= w_tau_vector_image(index_y2);
+0101             local_mask(index_y1:index_y2,index_x1:index_x2)=1;
+0102         <span class="keyword">else</span>
+0103             <span class="keyword">for</span> ii=1:length(x)
+0104             [c, index_x(ii)]= min(abs(w_t_vector_image-x(ii)));
+0105                 x(ii)= w_t_vector_image(index_x(ii));
+0106             [c, index_y(ii)]= min(abs(w_tau_vector_image-y(ii)));
+0107                 y(ii)= w_tau_vector_image(index_y(ii));
+0108             
+0109             
+0110             <span class="keyword">end</span>
+0111             [xRect,yRect,local_mask]=<a href="generate_Polymask_2D.html" class="code" title="function [xvalues,yvalues,mask_local]=generate_Polymask_2D(xPoly,yPoly,ZeroMask)">generate_Polymask_2D</a>(index_x,index_y,local_mask);
+0112         <span class="keyword">end</span>
+0113 
+0114 
+0115 <span class="keyword">end</span>
+0116 
+0117 
+0118 
+0119</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of Time_domain_calculator</title>
+  <meta name="keywords" content="Time_domain_calculator">
+  <meta name="description" content="check dimensions">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subguis</a> &gt; <a href="index.html">subfunctions_time_domain_calculations</a> &gt; Time_domain_calculator.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis\subfunctions_time_domain_calculations&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>Time_domain_calculator
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>check dimensions</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function OutputTimeDomainMap=Time_domain_calculator(TimeDomainMap1,TimeDomainMap2,operation) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">check dimensions
+ in this version operation is only possible if all dimensions are equal</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subguis/Time_Domain_Calculations.html" class="code" title="function varargout = Time_Domain_Calculations(varargin)">Time_Domain_Calculations</a>	TIME_DOMAIN_CALCULATIONS MATLAB code for Time_Domain_Calculations.fig</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function OutputTimeDomainMap=Time_domain_calculator(TimeDomainMap1,TimeDomainMap2,operation)</a>
+0002 <span class="comment">%check dimensions</span>
+0003 <span class="comment">% in this version operation is only possible if all dimensions are equal</span>
+0004 
+0005 <span class="keyword">if</span> isequal(size(TimeDomainMap1),size(TimeDomainMap2))==0
+0006     msgbox(<span class="string">'Dimensions of Time Maps are not equal. Calculation not possible!'</span>);
+0007     error(<span class="string">'Dimensions of Time Maps are not equal. Calculation not possible!'</span>);
+0008 <span class="keyword">else</span>
+0009     TDsize=size(TimeDomainMap1);
+0010     OutputTimeDomainMap=zeros(TDsize);
+0011    <span class="keyword">switch</span> operation
+0012        <span class="keyword">case</span> <span class="string">'ADD     '</span> 
+0013            
+0014            <span class="keyword">for</span> ii=1:TDsize(1) <span class="comment">%for all pc steps</span>
+0015             <span class="keyword">if</span> ndims(TimeDomainMap1)==4   
+0016             OutputTimeDomainMap(ii,:,:,:)=squeeze(TimeDomainMap1(ii,:,:,:))+squeeze(TimeDomainMap2(ii,:,:,:));
+0017             <span class="keyword">elseif</span> ndims(TimeDomainMap1)==5
+0018             OutputTimeDomainMap(ii,:,:,:,:)=squeeze(TimeDomainMap1(ii,:,:,:,:))+squeeze(TimeDomainMap2(ii,:,:,:,:));
+0019             <span class="keyword">end</span>
+0020            <span class="keyword">end</span>
+0021        <span class="keyword">case</span> <span class="string">'SUBTRACT'</span>
+0022                       
+0023            <span class="keyword">for</span> ii=1:TDsize(1) <span class="comment">%for all pc steps</span>
+0024             <span class="keyword">if</span> ndims(TimeDomainMap1)==4   
+0025             OutputTimeDomainMap(ii,:,:,:)=squeeze(TimeDomainMap1(ii,:,:,:))-squeeze(TimeDomainMap2(ii,:,:,:));
+0026             <span class="keyword">elseif</span> ndims(TimeDomainMap1)==5
+0027             OutputTimeDomainMap(ii,:,:,:,:)=squeeze(TimeDomainMap1(ii,:,:,:,:))-squeeze(TimeDomainMap2(ii,:,:,:,:));
+0028             <span class="keyword">end</span>
+0029            <span class="keyword">end</span>
+0030    <span class="keyword">end</span>
+0031 <span class="keyword">end</span></pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

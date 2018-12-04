@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of get_operation_from_list_entry</title>
+  <meta name="keywords" content="get_operation_from_list_entry">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subguis</a> &gt; <a href="index.html">subfunctions_2D_spec_1Q1Q</a> &gt; get_operation_from_list_entry.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis\subfunctions_2D_spec_1Q1Q&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>get_operation_from_list_entry
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong></strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [weights,TimeOrSpec,operation,name_of_scheme]=get_operation_from_list_entry(listentry,all_weights,all_names_of_scheme,value) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subguis/define_rephasing_nonrephasing.html" class="code" title="function varargout = define_rephasing_nonrephasing(varargin)">define_rephasing_nonrephasing</a>	DEFINE_REPHASING_NONREPHASING MATLAB code for define_rephasing_nonrephasing.fig</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="../../../CMDSworld/subguis/TwoDspec1Q1Q.html" class="code" title="function varargout = TwoDspec1Q1Q(varargin)">TwoDspec1Q1Q</a>	TWODSPEC1Q1Q MATLAB code for TwoDspec1Q1Q.fig</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function [weights,TimeOrSpec,operation,name_of_scheme]=get_operation_from_list_entry(listentry,all_weights,all_names_of_scheme,value)</a>
+0002 snipped_text=strsplit(listentry,<span class="string">' '</span>);
+0003 <span class="keyword">switch</span> snipped_text{1}
+0004     <span class="keyword">case</span> <span class="string">'real'</span>
+0005         operation=<span class="string">'realpart'</span>;
+0006     <span class="keyword">case</span> <span class="string">'imag'</span>
+0007         operation=<span class="string">'imagpart'</span>;
+0008     <span class="keyword">case</span> <span class="string">'abs'</span>
+0009         operation=<span class="string">'absolute'</span>;
+0010     <span class="keyword">case</span> <span class="string">'Absorptive'</span>;
+0011         operation=<span class="string">'absorptive'</span>;
+0012 <span class="keyword">end</span>
+0013 <span class="keyword">switch</span> snipped_text{3}
+0014     <span class="keyword">case</span> <span class="string">'2DSpec'</span>
+0015         TimeOrSpec=<span class="string">'2DSpectrum'</span>;
+0016     <span class="keyword">case</span> <span class="string">'TimeMap'</span>
+0017         TimeOrSpec=<span class="string">'TimeMap'</span>;
+0018 <span class="keyword">end</span>
+0019 
+0020 logical=0;
+0021 loc=0;
+0022 ii=1;
+0023 <span class="keyword">if</span> strcmp(operation,<span class="string">'absorptive'</span>)==0 
+0024     name_of_scheme=[snipped_text{5} <span class="string">'.mat'</span>];
+0025     <span class="keyword">while</span> logical==0
+0026     <span class="keyword">if</span> strcmp(<span class="string">'default.mat'</span>,name_of_scheme)==1;
+0027         loc=1;
+0028         logical=1;
+0029     <span class="keyword">else</span>
+0030     logical=strcmp(all_names_of_scheme{ii},name_of_scheme);
+0031     loc=loc+1;
+0032     ii=ii+1;
+0033     <span class="keyword">end</span>
+0034     weights=all_weights{loc};
+0035     <span class="keyword">end</span>
+0036 <span class="keyword">elseif</span> strcmp(operation,<span class="string">'absorptive'</span>)==1 
+0037     [outweights, outnames]=<a href="../../../CMDSworld/subguis/define_rephasing_nonrephasing.html" class="code" title="function varargout = define_rephasing_nonrephasing(varargin)">define_rephasing_nonrephasing</a>(all_names_of_scheme,all_weights);
+0038     <span class="keyword">if</span> isempty(outweights)==0
+0039         weights=outweights;
+0040         name_of_scheme=outnames;
+0041     <span class="keyword">else</span>
+0042         weights=all_weights{1};
+0043         operation=<span class="string">'abs'</span>;
+0044     <span class="keyword">end</span>
+0045         
+0046 <span class="keyword">end</span></pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

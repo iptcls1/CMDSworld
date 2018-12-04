@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of define_TimeDomain_dataset</title>
+  <meta name="keywords" content="define_TimeDomain_dataset">
+  <meta name="description" content="DEFINE_TIMEDOMAIN_DATASET M-file for define_TimeDomain_dataset.fig">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../index.html">Home</a> &gt;  <a href="../index.html">CMDSworld</a> &gt; <a href="index.html">subfunctions</a> &gt; define_TimeDomain_dataset.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../index.html"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subfunctions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+
+<h1>define_TimeDomain_dataset
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>DEFINE_TIMEDOMAIN_DATASET M-file for define_TimeDomain_dataset.fig</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>function varargout = define_TimeDomain_dataset(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">DEFINE_TIMEDOMAIN_DATASET M-file for define_TimeDomain_dataset.fig
+      DEFINE_TIMEDOMAIN_DATASET, by itself, creates a new DEFINE_TIMEDOMAIN_DATASET or raises the existing
+      singleton*.
+
+      H = DEFINE_TIMEDOMAIN_DATASET returns the handle to a new DEFINE_TIMEDOMAIN_DATASET or the handle to
+      the existing singleton*.
+
+      DEFINE_TIMEDOMAIN_DATASET('Property','Value',...) creates a new DEFINE_TIMEDOMAIN_DATASET using the
+      given property value pairs. Unrecognized properties are passed via
+      varargin to define_TimeDomain_dataset_OpeningFcn.  This calling syntax produces a
+      warning when there is an existing singleton*.
+
+      DEFINE_TIMEDOMAIN_DATASET('CALLBACK') and DEFINE_TIMEDOMAIN_DATASET('CALLBACK',hObject,...) call the
+      local function named CALLBACK in DEFINE_TIMEDOMAIN_DATASET.M with the given input
+      arguments.
+
+      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one
+      instance to run (singleton)&quot;.
+
+ See also: GUIDE, GUIDATA, GUIHANDLES</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../CMDSworld/subguis/subfunctions_define_time_domain_maps/define_list_entries_time_domain_datasets.html" class="code" title="function text=define_list_entries_time_domain_datasets(names)">define_list_entries_time_domain_datasets</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>	CMDSWORLD MATLAB code for CMDSworld.fig</li></ul>
+<!-- crossreference -->
+
+<h2><a name="_subfunctions"></a>SUBFUNCTIONS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="#_sub1" class="code">function define_TimeDomain_dataset_OpeningFcn(hObject, eventdata, handles, varargin)</a></li><li><a href="#_sub2" class="code">function varargout = define_TimeDomain_dataset_OutputFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub3" class="code">function list_TD_maps_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub4" class="code">function list_TD_maps_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub5" class="code">function push_ok_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub6" class="code">function push_cancel_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub7" class="code">function define_TD_dataset_CloseRequestFcn(hObject, eventdata, handles)</a></li></ul>
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function varargout = define_TimeDomain_dataset(varargin)</a>
+0002 <span class="comment">%DEFINE_TIMEDOMAIN_DATASET M-file for define_TimeDomain_dataset.fig</span>
+0003 <span class="comment">%      DEFINE_TIMEDOMAIN_DATASET, by itself, creates a new DEFINE_TIMEDOMAIN_DATASET or raises the existing</span>
+0004 <span class="comment">%      singleton*.</span>
+0005 <span class="comment">%</span>
+0006 <span class="comment">%      H = DEFINE_TIMEDOMAIN_DATASET returns the handle to a new DEFINE_TIMEDOMAIN_DATASET or the handle to</span>
+0007 <span class="comment">%      the existing singleton*.</span>
+0008 <span class="comment">%</span>
+0009 <span class="comment">%      DEFINE_TIMEDOMAIN_DATASET('Property','Value',...) creates a new DEFINE_TIMEDOMAIN_DATASET using the</span>
+0010 <span class="comment">%      given property value pairs. Unrecognized properties are passed via</span>
+0011 <span class="comment">%      varargin to define_TimeDomain_dataset_OpeningFcn.  This calling syntax produces a</span>
+0012 <span class="comment">%      warning when there is an existing singleton*.</span>
+0013 <span class="comment">%</span>
+0014 <span class="comment">%      DEFINE_TIMEDOMAIN_DATASET('CALLBACK') and DEFINE_TIMEDOMAIN_DATASET('CALLBACK',hObject,...) call the</span>
+0015 <span class="comment">%      local function named CALLBACK in DEFINE_TIMEDOMAIN_DATASET.M with the given input</span>
+0016 <span class="comment">%      arguments.</span>
+0017 <span class="comment">%</span>
+0018 <span class="comment">%      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one</span>
+0019 <span class="comment">%      instance to run (singleton)&quot;.</span>
+0020 <span class="comment">%</span>
+0021 <span class="comment">% See also: GUIDE, GUIDATA, GUIHANDLES</span>
+0022 
+0023 <span class="comment">% Edit the above text to modify the response to help define_TimeDomain_dataset</span>
+0024 
+0025 <span class="comment">% Last Modified by GUIDE v2.5 09-Aug-2018 15:57:28</span>
+0026 
+0027 <span class="comment">% Begin initialization code - DO NOT EDIT</span>
+0028 gui_Singleton = 1;
+0029 gui_State = struct(<span class="string">'gui_Name'</span>,       mfilename, <span class="keyword">...</span>
+0030                    <span class="string">'gui_Singleton'</span>,  gui_Singleton, <span class="keyword">...</span>
+0031                    <span class="string">'gui_OpeningFcn'</span>, @<a href="#_sub1" class="code" title="subfunction define_TimeDomain_dataset_OpeningFcn(hObject, eventdata, handles, varargin)">define_TimeDomain_dataset_OpeningFcn</a>, <span class="keyword">...</span>
+0032                    <span class="string">'gui_OutputFcn'</span>,  @<a href="#_sub2" class="code" title="subfunction varargout = define_TimeDomain_dataset_OutputFcn(hObject, eventdata, handles)">define_TimeDomain_dataset_OutputFcn</a>, <span class="keyword">...</span>
+0033                    <span class="string">'gui_LayoutFcn'</span>,  [], <span class="keyword">...</span>
+0034                    <span class="string">'gui_Callback'</span>,   []);
+0035 <span class="keyword">if</span> nargin &amp;&amp; ischar(varargin{1})
+0036    gui_State.gui_Callback = str2func(varargin{1});
+0037 <span class="keyword">end</span>
+0038 
+0039 <span class="keyword">if</span> nargout
+0040     [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+0041 <span class="keyword">else</span>
+0042     gui_mainfcn(gui_State, varargin{:});
+0043 <span class="keyword">end</span>
+0044 <span class="comment">% End initialization code - DO NOT EDIT</span>
+0045 
+0046 
+0047 <span class="comment">% --- Executes just before define_TimeDomain_dataset is made visible.</span>
+0048 <a name="_sub1" href="#_subfunctions" class="code">function define_TimeDomain_dataset_OpeningFcn(hObject, eventdata, handles, varargin)</a>
+0049 <span class="comment">% This function has no output args, see OutputFcn.</span>
+0050 <span class="comment">% hObject    handle to figure</span>
+0051 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0052 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0053 <span class="comment">% varargin   unrecognized PropertyName/PropertyValue pairs from the</span>
+0054 <span class="comment">%            command line (see VARARGIN)</span>
+0055 
+0056 <span class="comment">% Choose default command line output for define_TimeDomain_dataset</span>
+0057 handles.output = hObject;
+0058 handles.input.all_names_of_time_domain_datasets=varargin{1};
+0059 
+0060 text=<a href="../../CMDSworld/subguis/subfunctions_define_time_domain_maps/define_list_entries_time_domain_datasets.html" class="code" title="function text=define_list_entries_time_domain_datasets(names)">define_list_entries_time_domain_datasets</a>(handles.input.all_names_of_time_domain_datasets);
+0061 set(handles.list_TD_maps,<span class="string">'String'</span>,text);
+0062 <span class="comment">% Update handles structure</span>
+0063 guidata(hObject, handles);
+0064 
+0065 <span class="comment">% UIWAIT makes define_TimeDomain_dataset wait for user response (see UIRESUME)</span>
+0066  uiwait(handles.define_TD_dataset);
+0067 
+0068 
+0069 <span class="comment">% --- Outputs from this function are returned to the command line.</span>
+0070 <a name="_sub2" href="#_subfunctions" class="code">function varargout = define_TimeDomain_dataset_OutputFcn(hObject, eventdata, handles)</a>
+0071 <span class="comment">% varargout  cell array for returning output args (see VARARGOUT);</span>
+0072 <span class="comment">% hObject    handle to figure</span>
+0073 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0074 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0075 name_out={handles.name};
+0076 number_out={handles.number};
+0077 <span class="comment">% Get default command line output from handles structure</span>
+0078 varargout{1} = name_out;
+0079 varargout{2}= number_out;
+0080 delete(handles.define_TD_dataset);
+0081 
+0082 
+0083 
+0084 <span class="comment">% --- Executes on selection change in list_TD_maps.</span>
+0085 <a name="_sub3" href="#_subfunctions" class="code">function list_TD_maps_Callback(hObject, eventdata, handles)</a>
+0086 <span class="comment">% hObject    handle to list_TD_maps (see GCBO)</span>
+0087 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0088 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0089 contents = cellstr(get(hObject,<span class="string">'String'</span>));
+0090 name=contents{get(hObject,<span class="string">'Value'</span>)};
+0091 
+0092 logical=0;
+0093 loc=0;
+0094 ii=1;
+0095 <span class="keyword">while</span> logical==0 
+0096 logical=strcmp(contents{ii},name);
+0097 loc=loc+1;
+0098 ii=ii+1;
+0099 <span class="keyword">end</span>
+0100 handles.name=name;
+0101 handles.number=loc;
+0102 guidata(hObject,handles);
+0103 
+0104 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0105 <a name="_sub4" href="#_subfunctions" class="code">function list_TD_maps_CreateFcn(hObject, eventdata, handles)</a>
+0106 <span class="comment">% hObject    handle to list_TD_maps (see GCBO)</span>
+0107 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0108 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0109 
+0110 <span class="comment">% Hint: listbox controls usually have a white background on Windows.</span>
+0111 <span class="comment">%       See ISPC and COMPUTER.</span>
+0112 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0113     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0114 <span class="keyword">end</span>
+0115 
+0116 
+0117 <span class="comment">% --- Executes on button press in push_ok.</span>
+0118 <a name="_sub5" href="#_subfunctions" class="code">function push_ok_Callback(hObject, eventdata, handles)</a>
+0119 <span class="comment">% hObject    handle to push_ok (see GCBO)</span>
+0120 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0121 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0122 <span class="keyword">if</span> isfield(handles,<span class="string">'name'</span>) &amp;&amp; isfield(handles,<span class="string">'number'</span>)
+0123 guidata(hObject,handles);
+0124 
+0125 uiresume(handles.define_TD_dataset);
+0126 <span class="keyword">else</span>
+0127 guidata(hObject,handles);    
+0128 <span class="keyword">end</span>
+0129 
+0130 <span class="comment">% --- Executes on button press in push_cancel.</span>
+0131 <a name="_sub6" href="#_subfunctions" class="code">function push_cancel_Callback(hObject, eventdata, handles)</a>
+0132 <span class="comment">% hObject    handle to push_cancel (see GCBO)</span>
+0133 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0134 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0135 handles.name=[];
+0136 handles.number=[];
+0137 guidata(hObject,handles);
+0138 uiresume(handles.define_TD_dataset);
+0139 
+0140 
+0141 <span class="comment">% --- Executes when user attempts to close define_TD_dataset.</span>
+0142 <a name="_sub7" href="#_subfunctions" class="code">function define_TD_dataset_CloseRequestFcn(hObject, eventdata, handles)</a>
+0143 <span class="comment">% hObject    handle to define_TD_dataset (see GCBO)</span>
+0144 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0145 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0146 <span class="keyword">if</span> isequal(get(hObject,<span class="string">'waitstatus'</span>),<span class="string">'waiting'</span>)
+0147 
+0148     guidata(hObject,handles);
+0149     uiresume(hObject);
+0150 <span class="keyword">else</span>
+0151 delete(hObject);
+0152 <span class="keyword">end</span>
+0153</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

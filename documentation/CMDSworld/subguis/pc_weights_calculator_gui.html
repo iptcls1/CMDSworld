@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of pc_weights_calculator_gui</title>
+  <meta name="keywords" content="pc_weights_calculator_gui">
+  <meta name="description" content="PC_WEIGHTS_CALCULATOR_GUI MATLAB code for pc_weights_calculator_gui.fig">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../index.html">Home</a> &gt;  <a href="../index.html">CMDSworld</a> &gt; <a href="index.html">subguis</a> &gt; pc_weights_calculator_gui.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../index.html"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+
+<h1>pc_weights_calculator_gui
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>PC_WEIGHTS_CALCULATOR_GUI MATLAB code for pc_weights_calculator_gui.fig</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>function varargout = pc_weights_calculator_gui(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> PC_WEIGHTS_CALCULATOR_GUI MATLAB code for pc_weights_calculator_gui.fig
+      PC_WEIGHTS_CALCULATOR_GUI, by itself, creates a new PC_WEIGHTS_CALCULATOR_GUI or raises the existing
+      singleton*.
+
+      H = PC_WEIGHTS_CALCULATOR_GUI returns the handle to a new PC_WEIGHTS_CALCULATOR_GUI or the handle to
+      the existing singleton*.
+
+      PC_WEIGHTS_CALCULATOR_GUI('CALLBACK',hObject,eventData,handles,...) calls the local
+      function named CALLBACK in PC_WEIGHTS_CALCULATOR_GUI.M with the given input arguments.
+
+      PC_WEIGHTS_CALCULATOR_GUI('Property','Value',...) creates a new PC_WEIGHTS_CALCULATOR_GUI or raises the
+      existing singleton*.  Starting from the left, property value pairs are
+      applied to the GUI before pc_weights_calculator_gui_OpeningFcn gets called.  An
+      unrecognized property name or invalid value makes property application
+      stop.  All inputs are passed to pc_weights_calculator_gui_OpeningFcn via varargin.
+
+      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one
+      instance to run (singleton)&quot;.
+
+ See also: GUIDE, GUIDATA, GUIHANDLES</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_phases.html" class="code" title="function textout=generate_text_phases(phases)">generate_text_phases</a>	textarray</li><li><a href="../../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_weights.html" class="code" title="function textout=generate_text_weights(weights,pc_scheme)">generate_text_weights</a>	</li><li><a href="../../CMDSworld/subguis/pc_weights_calculator/pc_weights_calculator.html" class="code" title="function [phases, weights]=pc_weights_calculator(contribution,phase_cycling_scheme)">pc_weights_calculator</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>	CMDSWORLD MATLAB code for CMDSworld.fig</li></ul>
+<!-- crossreference -->
+
+<h2><a name="_subfunctions"></a>SUBFUNCTIONS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="#_sub1" class="code">function pc_weights_calculator_gui_OpeningFcn(hObject, eventdata, handles, varargin)</a></li><li><a href="#_sub2" class="code">function varargout = pc_weights_calculator_gui_OutputFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub3" class="code">function edit_contribution_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub4" class="code">function edit_contribution_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub5" class="code">function edit_pc_scheme_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub6" class="code">function edit_pc_scheme_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub7" class="code">function pushbutton_add_to_session_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub8" class="code">function pushbutton_save_to_file_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub9" class="code">function pushbutton_cancel_Callback(hObject, eventdata, handles)</a></li></ul>
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function varargout = pc_weights_calculator_gui(varargin)</a>
+0002 <span class="comment">% PC_WEIGHTS_CALCULATOR_GUI MATLAB code for pc_weights_calculator_gui.fig</span>
+0003 <span class="comment">%      PC_WEIGHTS_CALCULATOR_GUI, by itself, creates a new PC_WEIGHTS_CALCULATOR_GUI or raises the existing</span>
+0004 <span class="comment">%      singleton*.</span>
+0005 <span class="comment">%</span>
+0006 <span class="comment">%      H = PC_WEIGHTS_CALCULATOR_GUI returns the handle to a new PC_WEIGHTS_CALCULATOR_GUI or the handle to</span>
+0007 <span class="comment">%      the existing singleton*.</span>
+0008 <span class="comment">%</span>
+0009 <span class="comment">%      PC_WEIGHTS_CALCULATOR_GUI('CALLBACK',hObject,eventData,handles,...) calls the local</span>
+0010 <span class="comment">%      function named CALLBACK in PC_WEIGHTS_CALCULATOR_GUI.M with the given input arguments.</span>
+0011 <span class="comment">%</span>
+0012 <span class="comment">%      PC_WEIGHTS_CALCULATOR_GUI('Property','Value',...) creates a new PC_WEIGHTS_CALCULATOR_GUI or raises the</span>
+0013 <span class="comment">%      existing singleton*.  Starting from the left, property value pairs are</span>
+0014 <span class="comment">%      applied to the GUI before pc_weights_calculator_gui_OpeningFcn gets called.  An</span>
+0015 <span class="comment">%      unrecognized property name or invalid value makes property application</span>
+0016 <span class="comment">%      stop.  All inputs are passed to pc_weights_calculator_gui_OpeningFcn via varargin.</span>
+0017 <span class="comment">%</span>
+0018 <span class="comment">%      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one</span>
+0019 <span class="comment">%      instance to run (singleton)&quot;.</span>
+0020 <span class="comment">%</span>
+0021 <span class="comment">% See also: GUIDE, GUIDATA, GUIHANDLES</span>
+0022 
+0023 <span class="comment">% Edit the above text to modify the response to help pc_weights_calculator_gui</span>
+0024 
+0025 <span class="comment">% Last Modified by GUIDE v2.5 26-Jun-2018 14:07:36</span>
+0026 
+0027 <span class="comment">% Begin initialization code - DO NOT EDIT</span>
+0028 gui_Singleton = 1;
+0029 gui_State = struct(<span class="string">'gui_Name'</span>,       mfilename, <span class="keyword">...</span>
+0030                    <span class="string">'gui_Singleton'</span>,  gui_Singleton, <span class="keyword">...</span>
+0031                    <span class="string">'gui_OpeningFcn'</span>, @<a href="#_sub1" class="code" title="subfunction pc_weights_calculator_gui_OpeningFcn(hObject, eventdata, handles, varargin)">pc_weights_calculator_gui_OpeningFcn</a>, <span class="keyword">...</span>
+0032                    <span class="string">'gui_OutputFcn'</span>,  @<a href="#_sub2" class="code" title="subfunction varargout = pc_weights_calculator_gui_OutputFcn(hObject, eventdata, handles)">pc_weights_calculator_gui_OutputFcn</a>, <span class="keyword">...</span>
+0033                    <span class="string">'gui_LayoutFcn'</span>,  [] , <span class="keyword">...</span>
+0034                    <span class="string">'gui_Callback'</span>,   []);
+0035 <span class="keyword">if</span> nargin &amp;&amp; ischar(varargin{1})
+0036     gui_State.gui_Callback = str2func(varargin{1});
+0037 <span class="keyword">end</span>
+0038 
+0039 <span class="keyword">if</span> nargout
+0040     [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+0041 <span class="keyword">else</span>
+0042     gui_mainfcn(gui_State, varargin{:});
+0043 <span class="keyword">end</span>
+0044 <span class="comment">% End initialization code - DO NOT EDIT</span>
+0045 
+0046 
+0047 <span class="comment">% --- Executes just before pc_weights_calculator_gui is made visible.</span>
+0048 <a name="_sub1" href="#_subfunctions" class="code">function pc_weights_calculator_gui_OpeningFcn(hObject, eventdata, handles, varargin)</a>
+0049 <span class="comment">% This function has no output args, see OutputFcn.</span>
+0050 <span class="comment">% hObject    handle to figure</span>
+0051 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0052 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0053 <span class="comment">% varargin   command line arguments to pc_weights_calculator_gui (see VARARGIN)</span>
+0054 
+0055 <span class="comment">% Choose default command line output for pc_weights_calculator_gui</span>
+0056 handles.output = hObject;
+0057 
+0058 <span class="comment">% Update handles structure</span>
+0059 guidata(hObject, handles);
+0060 
+0061 <span class="comment">% UIWAIT makes pc_weights_calculator_gui wait for user response (see UIRESUME)</span>
+0062 uiwait(handles.pc_weights_calculator);
+0063 
+0064 
+0065 <span class="comment">% --- Outputs from this function are returned to the command line.</span>
+0066 <a name="_sub2" href="#_subfunctions" class="code">function varargout = pc_weights_calculator_gui_OutputFcn(hObject, eventdata, handles) </a>
+0067 <span class="comment">% varargout  cell array for returning output args (see VARARGOUT);</span>
+0068 <span class="comment">% hObject    handle to figure</span>
+0069 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0070 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0071 
+0072 <span class="comment">%Get default command line output from handles structure</span>
+0073 varargout{1} = handles.phases;
+0074 varargout{2} = handles.weights;
+0075 varargout{3} = handles.name_of_scheme;
+0076 varargout{4} = handles.contribution;
+0077 varargout{5} = handles.pc_scheme;
+0078 
+0079 delete(handles.pc_weights_calculator);
+0080 
+0081 
+0082 <a name="_sub3" href="#_subfunctions" class="code">function edit_contribution_Callback(hObject, eventdata, handles)</a>
+0083 <span class="comment">% hObject    handle to edit_contribution (see GCBO)</span>
+0084 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0085 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0086 
+0087 <span class="comment">% Hints: get(hObject,'String') returns contents of edit_contribution as text</span>
+0088 <span class="comment">%        str2double(get(hObject,'String')) returns contents of edit_contribution as a double</span>
+0089 outstring=(get(hObject,<span class="string">'String'</span>));
+0090 
+0091 Cutted_strings = strsplit(outstring,<span class="string">','</span>);
+0092 handles.contribution=[];
+0093 <span class="keyword">for</span> ii=1:length(Cutted_strings)
+0094     temp=str2double(Cutted_strings{1,ii});
+0095     handles.contribution(ii)=temp;
+0096 <span class="keyword">end</span>
+0097 
+0098 <span class="keyword">if</span> ~isempty(handles.pc_scheme) &amp;&amp; size(handles.pc_scheme,2)==size(handles.contribution,2)
+0099     [handles.phases,handles.weights]=<a href="../../CMDSworld/subguis/pc_weights_calculator/pc_weights_calculator.html" class="code" title="function [phases, weights]=pc_weights_calculator(contribution,phase_cycling_scheme)">pc_weights_calculator</a>(handles.contribution,handles.pc_scheme);
+0100     textarrayphases=<a href="../../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_phases.html" class="code" title="function textout=generate_text_phases(phases)">generate_text_phases</a>(handles.phases);    
+0101     set(handles.text_list_phases,<span class="string">'String'</span>,textarrayphases);
+0102     textarrayweights=<a href="../../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_weights.html" class="code" title="function textout=generate_text_weights(weights,pc_scheme)">generate_text_weights</a>(handles.weights,handles.pc_scheme);
+0103     set(handles.text_list_weights,<span class="string">'String'</span>,textarrayweights);
+0104     set(handles.text_weights,<span class="string">'String'</span>,[<span class="string">'Weights [1/'</span> num2str(prod(handles.pc_scheme)) <span class="string">']'</span>]); 
+0105     set(handles.pushbutton_add_to_session,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0106     set(handles.pushbutton_save_to_file,<span class="string">'Visible'</span>,<span class="string">'on'</span>);    
+0107  
+0108 <span class="keyword">elseif</span> ~isempty(handles.pc_scheme)
+0109     text=<span class="string">'Contribution and scheme must be of same size!'</span>;
+0110     set(handles.text_list_phases,<span class="string">'String'</span>,text);
+0111     set(handles.text_list_weights,<span class="string">'String'</span>,<span class="string">''</span>);
+0112 <span class="keyword">end</span>
+0113 
+0114 guidata(hObject,handles);
+0115 
+0116 
+0117 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0118 <a name="_sub4" href="#_subfunctions" class="code">function edit_contribution_CreateFcn(hObject, eventdata, handles)</a>
+0119 <span class="comment">% hObject    handle to edit_contribution (see GCBO)</span>
+0120 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0121 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0122 
+0123 <span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+0124 <span class="comment">%       See ISPC and COMPUTER.</span>
+0125 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0126     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0127 <span class="keyword">end</span>
+0128 handles.contribution=[];
+0129 guidata(hObject,handles);
+0130 
+0131 
+0132 <a name="_sub5" href="#_subfunctions" class="code">function edit_pc_scheme_Callback(hObject, eventdata, handles)</a>
+0133 <span class="comment">% hObject    handle to edit_pc_scheme (see GCBO)</span>
+0134 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0135 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0136 
+0137 <span class="comment">% Hints: get(hObject,'String') returns contents of edit_pc_scheme as text</span>
+0138 <span class="comment">%        str2double(get(hObject,'String')) returns contents of edit_pc_scheme as a double</span>
+0139 outstring=(get(hObject,<span class="string">'String'</span>));
+0140 Cutted_strings = strsplit(outstring,<span class="string">'x'</span>);
+0141 handles.pc_scheme=[];
+0142 <span class="keyword">for</span> ii=1:length(Cutted_strings)
+0143     temp=str2double(Cutted_strings{1,ii});
+0144     handles.pc_scheme(ii)=temp;
+0145 <span class="keyword">end</span>
+0146 
+0147 <span class="keyword">if</span> ~isempty(handles.contribution) &amp;&amp; size(handles.pc_scheme,2)==size(handles.contribution,2)
+0148     [handles.phases,handles.weights]=<a href="../../CMDSworld/subguis/pc_weights_calculator/pc_weights_calculator.html" class="code" title="function [phases, weights]=pc_weights_calculator(contribution,phase_cycling_scheme)">pc_weights_calculator</a>(handles.contribution,handles.pc_scheme);
+0149     textarray=<a href="../../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_phases.html" class="code" title="function textout=generate_text_phases(phases)">generate_text_phases</a>(handles.phases);
+0150     set(handles.text_list_phases,<span class="string">'String'</span>,textarray);
+0151     textarrayweights=<a href="../../CMDSworld/subfunctions/Textbox_writing_functions/generate_text_weights.html" class="code" title="function textout=generate_text_weights(weights,pc_scheme)">generate_text_weights</a>(handles.weights,handles.pc_scheme);    
+0152     set(handles.text_list_weights,<span class="string">'String'</span>,textarrayweights);
+0153     set(handles.text_weights,<span class="string">'String'</span>,[<span class="string">'Weights [1/'</span> num2str(prod(handles.pc_scheme)) <span class="string">']'</span>]); 
+0154     set(handles.pushbutton_add_to_session,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0155     set(handles.pushbutton_save_to_file,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0156 <span class="keyword">elseif</span> ~isempty(handles.pc_scheme)
+0157     text=<span class="string">'Contribution and scheme must be of same size!'</span>;
+0158     set(handles.text_list_phases,<span class="string">'String'</span>,text);
+0159     set(handles.text_list_weights,<span class="string">'String'</span>,<span class="string">''</span>);
+0160 <span class="keyword">end</span>
+0161 
+0162 guidata(hObject,handles);
+0163 
+0164 
+0165 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0166 <a name="_sub6" href="#_subfunctions" class="code">function edit_pc_scheme_CreateFcn(hObject, eventdata, handles)</a>
+0167 <span class="comment">% hObject    handle to edit_pc_scheme (see GCBO)</span>
+0168 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0169 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0170 
+0171 <span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+0172 <span class="comment">%       See ISPC and COMPUTER.</span>
+0173 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0174     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0175 <span class="keyword">end</span>
+0176 handles.pc_scheme=[];
+0177 guidata(hObject,handles);
+0178 
+0179 
+0180 <span class="comment">% --- Executes on button press in pushbutton_add_to_session.</span>
+0181 <a name="_sub7" href="#_subfunctions" class="code">function pushbutton_add_to_session_Callback(hObject, eventdata, handles)</a>
+0182 <span class="comment">% hObject    handle to pushbutton_add_to_session (see GCBO)</span>
+0183 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0184 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0185 filename_out=inputdlg({<span class="string">'Set pc scheme name'</span>},<span class="string">''</span>,1,{<span class="string">''</span>});
+0186 handles.name_of_scheme=strcat(filename_out, <span class="string">'.mat'</span>);
+0187 guidata(hObject,handles);
+0188 uiresume(handles.pc_weights_calculator);
+0189 
+0190 
+0191 <span class="comment">% --- Executes on button press in pushbutton_save_to_file.</span>
+0192 <a name="_sub8" href="#_subfunctions" class="code">function pushbutton_save_to_file_Callback(hObject, eventdata, handles)</a>
+0193 <span class="comment">% hObject    handle to pushbutton_save_to_file (see GCBO)</span>
+0194 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0195 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0196 save_dir=uigetdir(<span class="string">'M:\'</span>);
+0197 filename_out=inputdlg({<span class="string">'Set file name'</span>},<span class="string">''</span>,1,{<span class="string">''</span>});
+0198 filename_out=fullfile(save_dir,filename_out);
+0199 phases=handles.phases;
+0200 weights=handles.weights;
+0201 save([filename_out{1} <span class="string">'.mat'</span>],<span class="string">'phases'</span>,<span class="string">'weights'</span>);
+0202 guidata(hObject,handles);
+0203 
+0204 
+0205 
+0206 
+0207 <span class="comment">% --- Executes on button press in pushbutton_cancel.</span>
+0208 <a name="_sub9" href="#_subfunctions" class="code">function pushbutton_cancel_Callback(hObject, eventdata, handles)</a>
+0209 <span class="comment">% hObject    handle to pushbutton_cancel (see GCBO)</span>
+0210 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0211 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0212 handles.contribution=[];
+0213 handles.pc_scheme=[];
+0214 handles.phases=[];
+0215 handles.weights=[];
+0216 handles.name_of_scheme=[];
+0217 guidata(hObject,handles);
+0218 uiresume(handles.pc_weights_calculator);</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

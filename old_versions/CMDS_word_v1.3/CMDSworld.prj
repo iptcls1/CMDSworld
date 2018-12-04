@@ -1,0 +1,75 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration build-checksum="1259871563" file="L:\Matlab Scripts\CMDSworld\CMDSworld.prj" location="L:\Matlab Scripts\CMDSworld" name="CMDSworld" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>CMDSworld</param.appname>
+    <param.authnamewatermark>Bernhard Huber</param.authnamewatermark>
+    <param.email>bernhard.huber@phys-chemie.uni-wuerzburg.d</param.email>
+    <param.company>IPTC LS1 University of Wuerzburg</param.company>
+    <param.summary>Program to analyze and plot 2D spectra</param.summary>
+    <param.description>Program to analyze and plot 2D spectra</param.description>
+    <param.screenshot>${PROJECT_ROOT}\CMDSworld_image.png</param.screenshot>
+    <param.version>1.3</param.version>
+    <param.output>${PROJECT_ROOT}\CMDSworld.mltbx</param.output>
+    <param.products.name>
+      <item>MATLAB</item>
+    </param.products.name>
+    <param.products.id>
+      <item>1</item>
+    </param.products.id>
+    <param.products.version>
+      <item>8.5</item>
+    </param.products.version>
+    <param.platforms />
+    <param.guid>6cc1fbae-169d-44ec-8e6a-1274bc2122d7</param.guid>
+    <param.exclude.filters />
+    <param.examples>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;examples/&gt;</param.examples>
+    <param.demosxml />
+    <param.apps />
+    <param.docs />
+    <unset>
+      <param.output />
+      <param.platforms />
+      <param.exclude.filters />
+      <param.demosxml />
+      <param.apps />
+      <param.docs />
+    </unset>
+    <fileset.rootdir>
+      <file>L:\Matlab Scripts\CMDSworld</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\CMDSworld.fig</file>
+      <file>${PROJECT_ROOT}\CMDSworld.m</file>
+      <file>${PROJECT_ROOT}\CMDSworld_image.png</file>
+      <file>${PROJECT_ROOT}\demo_arrays</file>
+      <file>${PROJECT_ROOT}\subfunctions</file>
+      <file>${PROJECT_ROOT}\subguis</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="L:\Matlab Scripts\CMDSworld" name="CMDSworld.mltbx" optional="false">L:\Matlab Scripts\CMDSworld\CMDSworld.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Anwendungen\Mess&amp;Auswert\Matlab R2015a</root>
+      <toolboxes />
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.1</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of printeps</title>
+  <meta name="keywords" content="printeps">
+  <meta name="description" content="printeps(fignum, figname)">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subguis</a> &gt; <a href="index.html">subfunctions_2D_spec_1Q1Q</a> &gt; printeps.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis\subfunctions_2D_spec_1Q1Q&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>printeps
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>printeps(fignum, figname)</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function printeps(fignum, figname) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> printeps(fignum, figname)
+ this is a simple function that overrides Matlab's desire to call all
+ fonts 'Helvetica' in an exported .eps file. This is particularly annoying
+ if you import your file into Illustrator and find that not only do you
+ NOT have 'Helvetica', but that in substituting for it, your subscripts 
+ have moved a mile away and things otherwise just don't look 'right.'
+ It is suggested that you set your default font in a
+ startup file to something that you actually have on your system. For
+ instance, if you purchased the Helvetica family straight from Adobe,
+ set(0, 'DefaultAxesFontName', 'HelveticaLTStd-Roman'); 
+ the whole point of this is that when you generate a figure in Matlab,
+ you'd like your exported file to be as close a representation of that
+ figure as possible. 
+ J. Aumentado
+ 4/20/05
+ Note: This is a global change of font in the file. That is, any text you
+ add via text() and title() commands will end up in the default axes font.
+ this is because there is no easy way to parse out the fonts of these
+ objects in the .eps file for replacement.
+
+
+ EXAMPLE:
+ set(0, 'DefaultAxesFontName', 'Arial');   %replace fontname with something
+                                           %you have
+ figure(1);clf;fplot(@tanh,[-5,5]);        %plot something
+ printeps(1,'test');                       %print the contents of figure 1
+                                           %to test.eps.</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function printeps(fignum, figname)</a>
+0002 <span class="comment">% printeps(fignum, figname)</span>
+0003 <span class="comment">% this is a simple function that overrides Matlab's desire to call all</span>
+0004 <span class="comment">% fonts 'Helvetica' in an exported .eps file. This is particularly annoying</span>
+0005 <span class="comment">% if you import your file into Illustrator and find that not only do you</span>
+0006 <span class="comment">% NOT have 'Helvetica', but that in substituting for it, your subscripts</span>
+0007 <span class="comment">% have moved a mile away and things otherwise just don't look 'right.'</span>
+0008 <span class="comment">% It is suggested that you set your default font in a</span>
+0009 <span class="comment">% startup file to something that you actually have on your system. For</span>
+0010 <span class="comment">% instance, if you purchased the Helvetica family straight from Adobe,</span>
+0011 <span class="comment">% set(0, 'DefaultAxesFontName', 'HelveticaLTStd-Roman');</span>
+0012 <span class="comment">% the whole point of this is that when you generate a figure in Matlab,</span>
+0013 <span class="comment">% you'd like your exported file to be as close a representation of that</span>
+0014 <span class="comment">% figure as possible.</span>
+0015 <span class="comment">% J. Aumentado</span>
+0016 <span class="comment">% 4/20/05</span>
+0017 <span class="comment">% Note: This is a global change of font in the file. That is, any text you</span>
+0018 <span class="comment">% add via text() and title() commands will end up in the default axes font.</span>
+0019 <span class="comment">% this is because there is no easy way to parse out the fonts of these</span>
+0020 <span class="comment">% objects in the .eps file for replacement.</span>
+0021 <span class="comment">%</span>
+0022 <span class="comment">%</span>
+0023 <span class="comment">% EXAMPLE:</span>
+0024 <span class="comment">% set(0, 'DefaultAxesFontName', 'Arial');   %replace fontname with something</span>
+0025 <span class="comment">%                                           %you have</span>
+0026 <span class="comment">% figure(1);clf;fplot(@tanh,[-5,5]);        %plot something</span>
+0027 <span class="comment">% printeps(1,'test');                       %print the contents of figure 1</span>
+0028 <span class="comment">%                                           %to test.eps.</span>
+0029 figfilestr = [figname <span class="string">'.eps'</span>];
+0030 eval([<span class="string">'print -depsc2 -f'</span> num2str(fignum) <span class="string">' '</span> figfilestr <span class="string">';'</span>]);
+0031 
+0032 <span class="comment">% now read in the file</span>
+0033 fid = fopen(figfilestr);
+0034 ff = char(fread(fid))';
+0035 fclose(fid);
+0036 
+0037 <span class="comment">%get the actual font</span>
+0038 figure(fignum);
+0039 actualfont = get(gca,<span class="string">'FontName'</span>)
+0040 
+0041 <span class="comment">%these are the only allowed fonts in MatLab and so we have to weed them out</span>
+0042 <span class="comment">%and replace them:</span>
+0043 mlabfontlist = {<span class="string">'AvantGarde'</span>,<span class="string">'Helvetica-Narrow'</span>,<span class="string">'Times-Roman'</span>,<span class="string">'Bookman'</span>,<span class="keyword">...</span>
+0044     <span class="string">'NewCenturySchlbk'</span>,<span class="string">'ZapfChancery'</span>,<span class="string">'Courier'</span>,<span class="string">'Palatino'</span>,<span class="string">'ZapfDingbats'</span>,<span class="keyword">...</span>
+0045     <span class="string">'Helvetica'</span>};<span class="comment">%,'Symbol'};</span>
+0046 
+0047 <span class="keyword">for</span> k = 1:length(mlabfontlist)
+0048 ff = strrep(ff,mlabfontlist{k},actualfont);
+0049 <span class="keyword">end</span>
+0050 
+0051 <span class="comment">% open the file up and overwrite it</span>
+0052 fid = fopen(figfilestr,<span class="string">'w'</span>);
+0053 fprintf(fid,<span class="string">'%s'</span>,ff);
+0054 fclose(fid);</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

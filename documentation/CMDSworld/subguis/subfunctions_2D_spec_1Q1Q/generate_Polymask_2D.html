@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of generate_Polymask_2D</title>
+  <meta name="keywords" content="generate_Polymask_2D">
+  <meta name="description" content="round to integer pixel">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="../../index.html">CMDSworld</a> &gt; <a href="../index.html">subguis</a> &gt; <a href="index.html">subfunctions_2D_spec_1Q1Q</a> &gt; generate_Polymask_2D.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis\subfunctions_2D_spec_1Q1Q&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>generate_Polymask_2D
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>round to integer pixel</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [xvalues,yvalues,mask_local]=generate_Polymask_2D(xPoly,yPoly,ZeroMask) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> round to integer pixel</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="TwoD_def_ROI.html" class="code" title="function [x,y,local_mask]=TwoD_def_ROI(type,activated_figure,Domain,tau_vector_image,t_vector_image,w_tau_vector_image,w_t_vector_image)">TwoD_def_ROI</a>	watch out: x axis in plot is t axis in plot</li></ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function [xvalues,yvalues,mask_local]=generate_Polymask_2D(xPoly,yPoly,ZeroMask)</a>
+0002 
+0003 <span class="comment">% round to integer pixel</span>
+0004 xPoly=round(xPoly);
+0005 yPoly=round(yPoly);
+0006 
+0007 <span class="comment">% define rectangle with two points in which the polygon is located.</span>
+0008 xvalues=[min(xPoly),max(xPoly)];
+0009 yvalues=[min(yPoly),max(yPoly)];
+0010 <span class="comment">%define width and heigth of rectangle in which polygon is located</span>
+0011 w=max(xPoly)-min(xPoly)+1;
+0012 h=max(yPoly)-min(yPoly)+1;
+0013 
+0014 <span class="comment">%generate linear Index</span>
+0015 Ind=1:w*h;
+0016 
+0017 <span class="comment">%generate indices of array with dim w*h</span>
+0018 [I,J]=ind2sub([w,h],Ind);
+0019 
+0020 
+0021 [in,~]=inpolygon(I,J,xPoly-min(xPoly),yPoly-min(yPoly));
+0022 
+0023 mask_local=reshape((in)*1,[w,h]);
+0024 mask_local=mask_local';
+0025 
+0026 
+0027 
+0028 <span class="comment">%generate global mask for whole picture</span>
+0029 
+0030 ZeroMask(min(yPoly):max(yPoly),min(xPoly):max(xPoly))=mask_local;
+0031 mask_local=ZeroMask;
+0032 
+0033 
+0034</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

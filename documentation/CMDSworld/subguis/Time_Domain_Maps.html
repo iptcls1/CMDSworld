@@ -1,0 +1,557 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of Time_Domain_Maps</title>
+  <meta name="keywords" content="Time_Domain_Maps">
+  <meta name="description" content="TIME_DOMAIN_MAPS M-file for Time_Domain_Maps.fig">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../index.html">Home</a> &gt;  <a href="../index.html">CMDSworld</a> &gt; <a href="index.html">subguis</a> &gt; Time_Domain_Maps.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../index.html"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for CMDSworld\subguis&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+
+<h1>Time_Domain_Maps
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>TIME_DOMAIN_MAPS M-file for Time_Domain_Maps.fig</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>function varargout = Time_Domain_Maps(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">TIME_DOMAIN_MAPS M-file for Time_Domain_Maps.fig
+      TIME_DOMAIN_MAPS, by itself, creates a new TIME_DOMAIN_MAPS or raises the existing
+      singleton*.
+
+      H = TIME_DOMAIN_MAPS returns the handle to a new TIME_DOMAIN_MAPS or the handle to
+      the existing singleton*.
+
+      TIME_DOMAIN_MAPS('Property','Value',...) creates a new TIME_DOMAIN_MAPS using the
+      given property value pairs. Unrecognized properties are passed via
+      varargin to Time_Domain_Maps_OpeningFcn.  This calling syntax produces a
+      warning when there is an existing singleton*.
+
+      TIME_DOMAIN_MAPS('CALLBACK') and TIME_DOMAIN_MAPS('CALLBACK',hObject,...) call the
+      local function named CALLBACK in TIME_DOMAIN_MAPS.M with the given input
+      arguments.
+
+      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one
+      instance to run (singleton)&quot;.
+
+ See also: GUIDE, GUIDATA, GUIHANDLES</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>	CMDSWORLD MATLAB code for CMDSworld.fig</li><li><a href="../../CMDSworld/subfunctions/plot_functions/plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>	this plot function plot Time Domain Maps tau vs t for T_increment of</li><li><a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/calculate_predef_ROI_mean.html" class="code" title="function [Normalization_array,pos_tau,pos_t]=calculate_predef_ROI_mean(TimeDomainData,tau_vector,t_vector,Percentage)">calculate_predef_ROI_mean</a>	</li><li><a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/check_input_data.html" class="code" title="function[outputboolean,Size_TimeDomainData]=check_input_data(TimeDomainData,tau_vector,T_vector,t_vector)">check_input_data</a>	</li><li><a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/do_TD_normalization.html" class="code" title="function TimeDomainData_new=do_TD_normalization(TimeDomainData,Normalization_array)">do_TD_normalization</a>	</li><li><a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/undo_TD_normalization.html" class="code" title="function TimeDomainData_new=undo_TD_normalization(TimeDomainData,Normalization_array)">undo_TD_normalization</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>	CMDSWORLD MATLAB code for CMDSworld.fig</li></ul>
+<!-- crossreference -->
+
+<h2><a name="_subfunctions"></a>SUBFUNCTIONS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="#_sub1" class="code">function Time_Domain_Maps_OpeningFcn(hObject, eventdata, handles, varargin)</a></li><li><a href="#_sub2" class="code">function varargout = Time_Domain_Maps_OutputFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub3" class="code">function slider_pc_step_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub4" class="code">function slider_pc_step_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub5" class="code">function slider_T_step_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub6" class="code">function slider_T_step_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub7" class="code">function slider_varible_step_position_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub8" class="code">function slider_varible_step_position_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub9" class="code">function text_variable_scan_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub10" class="code">function edit1_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub11" class="code">function edit1_CreateFcn(hObject, eventdata, handles)</a></li><li><a href="#_sub12" class="code">function menu_Data_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub13" class="code">function menu_Data_define_ROI_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub14" class="code">function button_last10percent_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub15" class="code">function button_last15percent_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub16" class="code">function button_last20percent_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub17" class="code">function radio_Normalize_to_ROI_mean_Callback(hObject, eventdata, handles)</a></li><li><a href="#_sub18" class="code">function push_add_to_current_session_Callback(hObject, eventdata, handles)</a></li></ul>
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function varargout = Time_Domain_Maps(varargin)</a>
+0002 <span class="comment">%TIME_DOMAIN_MAPS M-file for Time_Domain_Maps.fig</span>
+0003 <span class="comment">%      TIME_DOMAIN_MAPS, by itself, creates a new TIME_DOMAIN_MAPS or raises the existing</span>
+0004 <span class="comment">%      singleton*.</span>
+0005 <span class="comment">%</span>
+0006 <span class="comment">%      H = TIME_DOMAIN_MAPS returns the handle to a new TIME_DOMAIN_MAPS or the handle to</span>
+0007 <span class="comment">%      the existing singleton*.</span>
+0008 <span class="comment">%</span>
+0009 <span class="comment">%      TIME_DOMAIN_MAPS('Property','Value',...) creates a new TIME_DOMAIN_MAPS using the</span>
+0010 <span class="comment">%      given property value pairs. Unrecognized properties are passed via</span>
+0011 <span class="comment">%      varargin to Time_Domain_Maps_OpeningFcn.  This calling syntax produces a</span>
+0012 <span class="comment">%      warning when there is an existing singleton*.</span>
+0013 <span class="comment">%</span>
+0014 <span class="comment">%      TIME_DOMAIN_MAPS('CALLBACK') and TIME_DOMAIN_MAPS('CALLBACK',hObject,...) call the</span>
+0015 <span class="comment">%      local function named CALLBACK in TIME_DOMAIN_MAPS.M with the given input</span>
+0016 <span class="comment">%      arguments.</span>
+0017 <span class="comment">%</span>
+0018 <span class="comment">%      *See GUI Options on GUIDE's Tools menu.  Choose &quot;GUI allows only one</span>
+0019 <span class="comment">%      instance to run (singleton)&quot;.</span>
+0020 <span class="comment">%</span>
+0021 <span class="comment">% See also: GUIDE, GUIDATA, GUIHANDLES</span>
+0022 
+0023 <span class="comment">% Edit the above text to modify the response to help Time_Domain_Maps</span>
+0024 
+0025 <span class="comment">% Last Modified by GUIDE v2.5 13-Aug-2018 17:47:58</span>
+0026 
+0027 <span class="comment">% Begin initialization code - DO NOT EDIT</span>
+0028 gui_Singleton = 1;
+0029 gui_State = struct(<span class="string">'gui_Name'</span>,       mfilename, <span class="keyword">...</span>
+0030                    <span class="string">'gui_Singleton'</span>,  gui_Singleton, <span class="keyword">...</span>
+0031                    <span class="string">'gui_OpeningFcn'</span>, @<a href="#_sub1" class="code" title="subfunction Time_Domain_Maps_OpeningFcn(hObject, eventdata, handles, varargin)">Time_Domain_Maps_OpeningFcn</a>, <span class="keyword">...</span>
+0032                    <span class="string">'gui_OutputFcn'</span>,  @<a href="#_sub2" class="code" title="subfunction varargout = Time_Domain_Maps_OutputFcn(hObject, eventdata, handles)">Time_Domain_Maps_OutputFcn</a>, <span class="keyword">...</span>
+0033                    <span class="string">'gui_LayoutFcn'</span>,  [], <span class="keyword">...</span>
+0034                    <span class="string">'gui_Callback'</span>,   []);
+0035 <span class="keyword">if</span> nargin &amp;&amp; ischar(varargin{1})
+0036    gui_State.gui_Callback = str2func(varargin{1});
+0037 <span class="keyword">end</span>
+0038 
+0039 <span class="keyword">if</span> nargout
+0040     [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+0041 <span class="keyword">else</span>
+0042     gui_mainfcn(gui_State, varargin{:});
+0043 <span class="keyword">end</span>
+0044 <span class="comment">% End initialization code - DO NOT EDIT</span>
+0045 
+0046 
+0047 <span class="comment">% --- Executes just before Time_Domain_Maps is made visible.</span>
+0048 <a name="_sub1" href="#_subfunctions" class="code">function Time_Domain_Maps_OpeningFcn(hObject, eventdata, handles, varargin)</a>
+0049 <span class="comment">% This function has no output args, see OutputFcn.</span>
+0050 <span class="comment">% hObject    handle to figure</span>
+0051 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0052 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0053 <span class="comment">% varargin   unrecognized PropertyName/PropertyValue pairs from the</span>
+0054 <span class="comment">%            command line (see VARARGIN)</span>
+0055 
+0056 <span class="comment">% Choose default command line output for Time_Domain_Maps</span>
+0057 handles.output = hObject;
+0058 maindata=varargin{1};
+0059 <span class="comment">% Update handles structure</span>
+0060 guidata(hObject, handles);
+0061 <span class="comment">%get data from Main Gui</span>
+0062 <span class="comment">%maindata=guidata(CMDSworld);</span>
+0063 handles.maindata=maindata;
+0064 
+0065 <span class="comment">%check data availability</span>
+0066 
+0067 checkavail=<a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/check_input_data.html" class="code" title="function[outputboolean,Size_TimeDomainData]=check_input_data(TimeDomainData,tau_vector,T_vector,t_vector)">check_input_data</a>(maindata.TDdata.TimeDomainData,<span class="keyword">...</span>
+0068     maindata.TDdata.tau_vector,<span class="keyword">...</span>
+0069     maindata.TDdata.T_vector,<span class="keyword">...</span>
+0070     maindata.TDdata.t_vector);
+0071 
+0072 <span class="keyword">if</span> checkavail==false
+0073     error(<span class="string">'Data not available!'</span>);
+0074 <span class="keyword">end</span>
+0075 <span class="comment">% call first plot function</span>
+0076 
+0077 
+0078 handles.Tpos=1;
+0079 handles.PCpos=1;
+0080 handles.ROI_norm.ROIdata.ROI_data_x=[];
+0081 handles.ROI_norm.ROIdata.ROI_data_y=[];
+0082 
+0083 
+0084 <span class="keyword">if</span> isfield(maindata,<span class="string">'figuredata'</span>)
+0085     <span class="keyword">if</span> isfield(maindata.figuredata,<span class="string">'Varpos'</span>);
+0086         handles.Varpos=maindata.figuredata.Varpos;
+0087     <span class="keyword">else</span> 
+0088         handles.Varpos=1;
+0089     <span class="keyword">end</span>
+0090 <span class="keyword">else</span>
+0091   handles.Varpos=1; 
+0092 <span class="keyword">end</span>
+0093 <span class="keyword">if</span> ndims(maindata.TDdata.TimeDomainData)&lt;5
+0094     TimeDomainData=squeeze(handles.maindata.TDdata.TimeDomainData);
+0095 <span class="keyword">else</span>
+0096     TimeDomainData(:,:,:,:)=handles.maindata.TDdata.TimeDomainData(:,:,:,:,handles.Varpos);
+0097 <span class="keyword">end</span>
+0098 
+0099 
+0100 axes(handles.Time_Domain_axes);
+0101 <a href="../../CMDSworld/subfunctions/plot_functions/plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>(TimeDomainData,<span class="keyword">...</span>
+0102     handles.maindata.TDdata.tau_vector,<span class="keyword">...</span>
+0103     handles.maindata.TDdata.T_vector,<span class="keyword">...</span>
+0104     handles.maindata.TDdata.t_vector,<span class="keyword">...</span>
+0105     handles.PCpos,handles.Tpos,<span class="string">''</span>,<span class="string">''</span>,[],[],[],[],[],<span class="keyword">...</span>
+0106     handles.ROI_norm.ROIdata);
+0107 set(handles.text_time_T,<span class="string">'String'</span>,[<span class="string">'Time T = '</span> num2str(maindata.TDdata.T_vector(handles.Tpos)) <span class="string">' fs'</span>]);
+0108 
+0109 <span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+0110 <span class="comment">%set slider presettings</span>
+0111 <span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+0112 SizeTimeDomainData=size(handles.maindata.TDdata.TimeDomainData);
+0113 set(handles.slider_pc_step,<span class="string">'Min'</span>,1)
+0114 set(handles.slider_pc_step,<span class="string">'Max'</span>,SizeTimeDomainData(1,1));
+0115 Max=get(handles.slider_pc_step,<span class="string">'Max'</span>);
+0116 set(handles.slider_pc_step,<span class="string">'SliderStep'</span>,[1/(Max-1) 1/(Max-1)]);
+0117 set(handles.slider_pc_step,<span class="string">'Value'</span>,1);
+0118 
+0119 NumDim=ndims(handles.maindata.TDdata.TimeDomainData);
+0120 <span class="keyword">if</span> NumDim&lt;5
+0121 set(handles.slider_varible_step_position,<span class="string">'Value'</span>,0);
+0122 set(handles.slider_varible_step_position,<span class="string">'Visible'</span>,<span class="string">'off'</span>);
+0123 <span class="keyword">else</span>
+0124 set(handles.text_variable_scan,<span class="string">'Visible'</span>,<span class="string">'on'</span>);    
+0125 set(handles.slider_varible_step_position,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0126 set(handles.slider_varible_step_position,<span class="string">'Min'</span>,1);
+0127 set(handles.slider_varible_step_position,<span class="string">'Max'</span>,SizeTimeDomainData(1,5));
+0128 Max=get(handles.slider_varible_step_position,<span class="string">'Max'</span>);
+0129 set(handles.slider_varible_step_position,<span class="string">'SliderStep'</span>,[1/(Max-1) 1/(Max-1)]);
+0130 set(handles.slider_varible_step_position,<span class="string">'Value'</span>,1);
+0131 <span class="keyword">end</span>
+0132 
+0133 <span class="keyword">if</span> SizeTimeDomainData(1,3)==1
+0134 set(handles.slider_T_step,<span class="string">'Value'</span>,0);    
+0135 <span class="keyword">else</span>
+0136 set(handles.slider_T_step,<span class="string">'Min'</span>,1)
+0137 set(handles.slider_T_step,<span class="string">'Max'</span>,SizeTimeDomainData(1,3));
+0138 Max=get(handles.slider_T_step,<span class="string">'Max'</span>);
+0139 set(handles.slider_T_step,<span class="string">'SliderStep'</span>,[1/(Max-1) 1/(Max-1)]);
+0140 set(handles.slider_T_step,<span class="string">'Value'</span>,1);
+0141 <span class="keyword">end</span>
+0142 
+0143 guidata(hObject,handles);
+0144 
+0145 
+0146 
+0147 <span class="comment">% UIWAIT makes Time_Domain_Maps wait for user response (see UIRESUME)</span>
+0148  uiwait(handles.Time_domain_maps);
+0149 
+0150 
+0151 <span class="comment">% --- Outputs from this function are returned to the command line.</span>
+0152 <a name="_sub2" href="#_subfunctions" class="code">function varargout = Time_Domain_Maps_OutputFcn(hObject, eventdata, handles)</a>
+0153 <span class="comment">% varargout  cell array for returning output args (see VARARGOUT);</span>
+0154 <span class="comment">% hObject    handle to figure</span>
+0155 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0156 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0157 
+0158 <span class="comment">% Get default command line output from handles structure</span>
+0159 varargout{1} = handles.new_TimaDomainMap_name;
+0160 varargout{2} = handles.new_TimeDomainMap;
+0161 varargout{3} = handles.maindata.TDdata.tau_vector;
+0162 varargout{4} = handles.maindata.TDdata.T_vector;
+0163 varargout{5} = handles.maindata.TDdata.t_vector;
+0164 <span class="keyword">if</span> isfield(handles.maindata.TDdata,<span class="string">'variable_vector'</span>)
+0165 varargout{6} = handles.maindata.TDdata.variable_vector;
+0166 <span class="keyword">else</span> 
+0167     varargout{6}=[];
+0168 <span class="keyword">end</span>
+0169 
+0170 <span class="comment">% --- Executes on slider movement.</span>
+0171 <a name="_sub3" href="#_subfunctions" class="code">function slider_pc_step_Callback(hObject, eventdata, handles)</a>
+0172 <span class="comment">% hObject    handle to slider_pc_step (see GCBO)</span>
+0173 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0174 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0175 
+0176 <span class="comment">% Hints: get(hObject,'Value') returns position of slider</span>
+0177 <span class="comment">%        get(hObject,'Min') and get(hObject,'Max') to determine range of slider</span>
+0178 
+0179 SizeTimeDomainData=size(handles.maindata.TDdata.TimeDomainData);
+0180 set(hObject,<span class="string">'Min'</span>,1)
+0181 set(hObject,<span class="string">'Max'</span>,SizeTimeDomainData(1,1));
+0182 Max=get(hObject,<span class="string">'Max'</span>);
+0183 set(hObject,<span class="string">'SliderStep'</span>,[1/(Max-1) 1/(Max-1)]);
+0184 PCpos=get(hObject,<span class="string">'Value'</span>);
+0185 handles.PCpos=round(PCpos);
+0186 <span class="keyword">if</span> exist(<span class="string">'handles.Tpos'</span>,<span class="string">'var'</span>)==0;
+0187     handles.Tpos=1;
+0188 <span class="keyword">end</span>
+0189 <span class="keyword">if</span> ndims(handles.maindata.TDdata.TimeDomainData)&lt;5
+0190     TimeDomainData=handles.maindata.TDdata.TimeDomainData;
+0191 <span class="keyword">else</span>
+0192     TimeDomainData(:,:,:,:)=handles.maindata.TDdata.TimeDomainData(:,:,:,:,handles.Varpos);
+0193 <span class="keyword">end</span>
+0194 
+0195 
+0196 <a href="../../CMDSworld/subfunctions/plot_functions/plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>(TimeDomainData,<span class="keyword">...</span>
+0197     handles.maindata.TDdata.tau_vector,<span class="keyword">...</span>
+0198     handles.maindata.TDdata.T_vector,<span class="keyword">...</span>
+0199     handles.maindata.TDdata.t_vector,<span class="keyword">...</span>
+0200     handles.PCpos,<span class="keyword">...</span>
+0201     handles.Tpos,<span class="string">''</span>,<span class="string">''</span>,[],[],[],[],[],<span class="keyword">...</span>
+0202     handles.ROI_norm.ROIdata);
+0203 set(handles.text_pc_step,<span class="string">'Visible'</span>,<span class="string">'on'</span>,<span class="string">'String'</span>,[<span class="string">'PC step '</span> num2str(round(PCpos))]);
+0204 
+0205 <span class="keyword">if</span> isfield(handles.ROI_norm,<span class="string">'Normalization_array'</span>)==1
+0206     <span class="keyword">if</span> ismatrix(handles.ROI_norm.Normalization_array)==1;
+0207     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(handles.ROI_norm.Normalization_array(handles.PCpos,handles.Tpos)));
+0208     <span class="keyword">elseif</span> ndims(handles.ROI_norm.Normalization_array)==3;
+0209     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(handles.ROI_norm.Normalization_array(handles.PCpos,handles.Tpos,handles.Varpos)));
+0210     <span class="keyword">end</span>
+0211 <span class="keyword">end</span>
+0212 
+0213 
+0214 guidata(hObject,handles);
+0215 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0216 <a name="_sub4" href="#_subfunctions" class="code">function slider_pc_step_CreateFcn(hObject, eventdata, handles)</a>
+0217 <span class="comment">% hObject    handle to slider_pc_step (see GCBO)</span>
+0218 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0219 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0220 
+0221 <span class="comment">% Hint: slider controls usually have a light gray background.</span>
+0222 <span class="keyword">if</span> isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0223     set(hObject,<span class="string">'BackgroundColor'</span>,[.9 .9 .9]);
+0224 <span class="keyword">end</span>
+0225 <span class="comment">%maindata=guidata(CMDSworld);</span>
+0226 <span class="comment">%handles.maindata=maindata;</span>
+0227 
+0228 
+0229 guidata(hObject,handles);
+0230 <span class="comment">% --- Executes on slider movement.</span>
+0231 <a name="_sub5" href="#_subfunctions" class="code">function slider_T_step_Callback(hObject, eventdata, handles)</a>
+0232 <span class="comment">% hObject    handle to slider_T_step (see GCBO)</span>
+0233 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0234 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0235 SizeTimeDomainData=size(handles.maindata.TDdata.TimeDomainData);
+0236 set(hObject,<span class="string">'Min'</span>,1)
+0237 set(hObject,<span class="string">'Max'</span>,SizeTimeDomainData(1,3));
+0238 Max=get(hObject,<span class="string">'Max'</span>);
+0239 set(hObject,<span class="string">'SliderStep'</span>,[1/(Max-1) 1/(Max-1)]);
+0240 
+0241 Tpos=get(hObject,<span class="string">'Value'</span>);
+0242 handles.Tpos=round(Tpos);
+0243 <span class="keyword">if</span> isempty(handles.PCpos)
+0244     handles.PCpos=1;
+0245 <span class="keyword">end</span>
+0246 <span class="keyword">if</span> ndims(handles.maindata.TDdata.TimeDomainData)&lt;5
+0247     TimeDomainData=handles.maindata.TDdata.TimeDomainData;
+0248 <span class="keyword">else</span>
+0249     TimeDomainData=squeeze(handles.maindata.TDdata.TimeDomainData(:,:,:,:,handles.Varpos));
+0250 <span class="keyword">end</span>
+0251 
+0252 <a href="../../CMDSworld/subfunctions/plot_functions/plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>(TimeDomainData,<span class="keyword">...</span>
+0253     handles.maindata.TDdata.tau_vector,<span class="keyword">...</span>
+0254     handles.maindata.TDdata.T_vector,<span class="keyword">...</span>
+0255     handles.maindata.TDdata.t_vector,<span class="keyword">...</span>
+0256     handles.PCpos,<span class="keyword">...</span>
+0257     handles.Tpos,<span class="string">''</span>,<span class="string">''</span>,[],[],[],[],[],<span class="keyword">...</span>
+0258     handles.ROI_norm.ROIdata)
+0259 set(handles.text_time_T,<span class="string">'String'</span>,[<span class="string">'Time T = '</span> num2str(handles.maindata.TDdata.T_vector(handles.Tpos)) <span class="string">' fs'</span>]);
+0260 
+0261 <span class="keyword">if</span> isfield(handles.ROI_norm,<span class="string">'Normalization_array'</span>)==1
+0262     <span class="keyword">if</span> ismatrix(handles.ROI_norm.Normalization_array)==1;
+0263     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(handles.ROI_norm.Normalization_array(handles.PCpos,handles.Tpos)));
+0264     <span class="keyword">elseif</span> ndims(handles.ROI_norm.Normalization_array)==3;
+0265     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(handles.ROI_norm.Normalization_array(handles.PCpos,handles.Tpos,handles.Varpos)));
+0266     <span class="keyword">end</span>
+0267 <span class="keyword">end</span>
+0268 guidata(hObject,handles);
+0269 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0270 <a name="_sub6" href="#_subfunctions" class="code">function slider_T_step_CreateFcn(hObject, eventdata, handles)</a>
+0271 <span class="comment">% hObject    handle to slider_T_step (see GCBO)</span>
+0272 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0273 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0274 
+0275 <span class="comment">% Hint: slider controls usually have a light gray background.</span>
+0276 <span class="keyword">if</span> isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0277     set(hObject,<span class="string">'BackgroundColor'</span>,[.9 .9 .9]);
+0278 <span class="keyword">end</span>
+0279 <span class="comment">%maindata=guidata(CMDSworld);</span>
+0280 <span class="comment">%handles.maindata=maindata;</span>
+0281 
+0282 guidata(hObject,handles);   
+0283 
+0284 
+0285 <span class="comment">% --- Executes on slider movement.</span>
+0286 <a name="_sub7" href="#_subfunctions" class="code">function slider_varible_step_position_Callback(hObject, eventdata, handles)</a>
+0287 <span class="comment">% hObject    handle to slider_varible_step_position (see GCBO)</span>
+0288 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0289 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0290 
+0291 <span class="comment">% Hints: get(hObject,'Value') returns position of slider</span>
+0292 <span class="comment">%        get(hObject,'Min') and get(hObject,'Max') to determine range of slider</span>
+0293 handles.Varpos=get(hObject,<span class="string">'Value'</span>);
+0294 handles.TDdata.Varpos(1)=round(handles.Varpos);
+0295 handles.Varpos=handles.TDdata.Varpos(1);
+0296 set(handles.text_variable_scan,<span class="string">'String'</span>,[<span class="string">'Variable = '</span> num2str(handles.maindata.TDdata.variable_vector(handles.TDdata.Varpos(1))) <span class="string">' [arb.u.]'</span>]);
+0297 <span class="keyword">if</span> ndims(handles.maindata.TDdata.TimeDomainData)&lt;5
+0298     TimeDomainData=handles.maindata.TDdata.TimeDomainData;
+0299 <span class="keyword">else</span>
+0300     TimeDomainData(:,:,:,:)=handles.maindata.TDdata.TimeDomainData(:,:,:,:,handles.Varpos);
+0301 <span class="keyword">end</span>
+0302     <a href="../../CMDSworld/subfunctions/plot_functions/plotfunction_Time_Domain_maps.html" class="code" title="function plotfunction_Time_Domain_maps(TimeDomainData,tau_vector,T_vector,t_vector,pcstep,T_increment,operation,Contour,Time_data_contour,tau_vector_contour,T_vector_contour,t_vector_contour,contour_isovalues,ROIdata)">plotfunction_Time_Domain_maps</a>(TimeDomainData,<span class="keyword">...</span>
+0303     handles.maindata.TDdata.tau_vector,<span class="keyword">...</span>
+0304     handles.maindata.TDdata.T_vector,<span class="keyword">...</span>
+0305     handles.maindata.TDdata.t_vector,<span class="keyword">...</span>
+0306     handles.PCpos,<span class="keyword">...</span>
+0307     handles.Tpos,<span class="string">''</span>,<span class="string">''</span>,[],[],[],[],[],<span class="keyword">...</span>
+0308     handles.ROI_norm.ROIdata)
+0309 
+0310 <span class="keyword">if</span> isfield(handles.ROI_norm,<span class="string">'Normalization_array'</span>)==1
+0311     <span class="keyword">if</span> ismatrix(handles.ROI_norm.Normalization_array)==1;
+0312     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(handles.ROI_norm.Normalization_array(handles.PCpos,handles.Tpos)));
+0313     <span class="keyword">elseif</span> ndims(handles.ROI_norm.Normalization_array)==3;
+0314     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(handles.ROI_norm.Normalization_array(handles.PCpos,handles.Tpos,handles.Varpos)));
+0315     <span class="keyword">end</span>
+0316 <span class="keyword">end</span>
+0317 guidata(hObject,handles);
+0318 
+0319 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0320 <a name="_sub8" href="#_subfunctions" class="code">function slider_varible_step_position_CreateFcn(hObject, eventdata, handles)</a>
+0321 <span class="comment">% hObject    handle to slider_varible_step_position (see GCBO)</span>
+0322 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0323 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0324 
+0325 <span class="comment">% Hint: slider controls usually have a light gray background.</span>
+0326 <span class="keyword">if</span> isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0327     set(hObject,<span class="string">'BackgroundColor'</span>,[.9 .9 .9]);
+0328 <span class="keyword">end</span>
+0329 <span class="comment">%maindata=guidata(CMDSworld);</span>
+0330 
+0331 <span class="comment">%handles.maindata=maindata;</span>
+0332 
+0333 guidata(hObject,handles);  
+0334 
+0335 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0336 <a name="_sub9" href="#_subfunctions" class="code">function text_variable_scan_CreateFcn(hObject, eventdata, handles)</a>
+0337 <span class="comment">% hObject    handle to text_variable_scan (see GCBO)</span>
+0338 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0339 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0340 maindata=guidata(<a href="../../CMDSworld/CMDSworld.html" class="code" title="function varargout = CMDSworld(varargin)">CMDSworld</a>);
+0341 
+0342 handles.maindata=maindata;
+0343 NumDim=ndims(handles.maindata.TDdata.TimeDomainData);
+0344 <span class="keyword">if</span> NumDim&gt;=5
+0345     set(hObject,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0346 <span class="keyword">end</span>
+0347 
+0348 
+0349 
+0350 <a name="_sub10" href="#_subfunctions" class="code">function edit1_Callback(hObject, eventdata, handles)</a>
+0351 <span class="comment">% hObject    handle to edit1 (see GCBO)</span>
+0352 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0353 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0354 
+0355 <span class="comment">% Hints: get(hObject,'String') returns contents of edit1 as text</span>
+0356 <span class="comment">%        str2double(get(hObject,'String')) returns contents of edit1 as a double</span>
+0357 
+0358 
+0359 <span class="comment">% --- Executes during object creation, after setting all properties.</span>
+0360 <a name="_sub11" href="#_subfunctions" class="code">function edit1_CreateFcn(hObject, eventdata, handles)</a>
+0361 <span class="comment">% hObject    handle to edit1 (see GCBO)</span>
+0362 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0363 <span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+0364 
+0365 <span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+0366 <span class="comment">%       See ISPC and COMPUTER.</span>
+0367 <span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+0368     set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+0369 <span class="keyword">end</span>
+0370 
+0371 
+0372 <span class="comment">% --------------------------------------------------------------------</span>
+0373 <a name="_sub12" href="#_subfunctions" class="code">function menu_Data_Callback(hObject, eventdata, handles)</a>
+0374 <span class="comment">% hObject    handle to menu_Data (see GCBO)</span>
+0375 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0376 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0377 
+0378 <span class="comment">% --------------------------------------------------------------------</span>
+0379 <a name="_sub13" href="#_subfunctions" class="code">function menu_Data_define_ROI_Callback(hObject, eventdata, handles)</a>
+0380 <span class="comment">% hObject    handle to menu_Data_define_ROI (see GCBO)</span>
+0381 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0382 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0383 set(handles.panel_define_ROI,<span class="string">'Visible'</span>,<span class="string">'on'</span>);
+0384 handles.ROI_norm.ROI_percentage=0.1;
+0385 [Normalization_array,ROI_pos_tau,ROI_pos_t]=<span class="keyword">...</span>
+0386     <a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/calculate_predef_ROI_mean.html" class="code" title="function [Normalization_array,pos_tau,pos_t]=calculate_predef_ROI_mean(TimeDomainData,tau_vector,t_vector,Percentage)">calculate_predef_ROI_mean</a>(handles.maindata.TDdata.TimeDomainData,<span class="keyword">...</span>
+0387             handles.maindata.TDdata.tau_vector,handles.maindata.TDdata.t_vector,handles.ROI_norm.ROI_percentage);
+0388 handles.ROI_norm.ROIdata.ROI_data_x{1}=ROI_pos_tau;
+0389 handles.ROI_norm.ROIdata.ROI_data_y{1}=ROI_pos_t;
+0390 handles.ROI_norm.Normalization_array=Normalization_array;
+0391 <span class="keyword">if</span> ismatrix(Normalization_array)==1;
+0392     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(Normalization_array(handles.PCpos,handles.Tpos)));
+0393 <span class="keyword">elseif</span> ndims(Normalization_array)==3;
+0394     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(Normalization_array(handles.PCpos,handles.Tpos,handles.Varpos)));
+0395 <span class="keyword">end</span>
+0396 guidata(hObject,handles);
+0397 <span class="comment">% --- Executes on button press in button_last10percent.</span>
+0398 <a name="_sub14" href="#_subfunctions" class="code">function button_last10percent_Callback(hObject, eventdata, handles)</a>
+0399 <span class="comment">% hObject    handle to button_last10percent (see GCBO)</span>
+0400 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0401 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0402 
+0403 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of button_last10percent</span>
+0404 state=get(hObject,<span class="string">'Value'</span>);
+0405 <span class="keyword">if</span> state==1
+0406     handles.ROI_norm.ROI_percentage=0.1;
+0407 <span class="keyword">end</span>
+0408 [Normalization_array,ROI_pos_tau,ROI_pos_t]=<span class="keyword">...</span>
+0409     <a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/calculate_predef_ROI_mean.html" class="code" title="function [Normalization_array,pos_tau,pos_t]=calculate_predef_ROI_mean(TimeDomainData,tau_vector,t_vector,Percentage)">calculate_predef_ROI_mean</a>(handles.maindata.TDdata.TimeDomainData,<span class="keyword">...</span>
+0410             handles.maindata.TDdata.tau_vector,handles.maindata.TDdata.t_vector,handles.ROI_norm.ROI_percentage);
+0411 handles.ROI_norm.ROIdata.ROI_data_x{1}=ROI_pos_tau;
+0412 handles.ROI_norm.ROIdata.ROI_data_y{1}=ROI_pos_t;
+0413 handles.ROI_norm.Normalization_array=Normalization_array;
+0414 <span class="keyword">if</span> ismatrix(Normalization_array)==1;
+0415     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(Normalization_array(handles.PCpos,handles.Tpos)));
+0416 <span class="keyword">elseif</span> ndims(Normalization_array)==3;
+0417     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(Normalization_array(handles.PCpos,handles.Tpos,handles.Varpos)));
+0418 <span class="keyword">end</span>
+0419 guidata(hObject,handles);
+0420 <span class="comment">% --- Executes on button press in button_last15percent.</span>
+0421 <a name="_sub15" href="#_subfunctions" class="code">function button_last15percent_Callback(hObject, eventdata, handles)</a>
+0422 <span class="comment">% hObject    handle to button_last15percent (see GCBO)</span>
+0423 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0424 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0425 
+0426 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of button_last15percent</span>
+0427 state=get(hObject,<span class="string">'Value'</span>);
+0428 <span class="keyword">if</span> state==1
+0429     handles.ROI_norm.ROI_percentage=0.15;
+0430 <span class="keyword">end</span>
+0431 [Normalization_array,ROI_pos_tau,ROI_pos_t]=<span class="keyword">...</span>
+0432     <a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/calculate_predef_ROI_mean.html" class="code" title="function [Normalization_array,pos_tau,pos_t]=calculate_predef_ROI_mean(TimeDomainData,tau_vector,t_vector,Percentage)">calculate_predef_ROI_mean</a>(handles.maindata.TDdata.TimeDomainData,<span class="keyword">...</span>
+0433             handles.maindata.TDdata.tau_vector,handles.maindata.TDdata.t_vector,handles.ROI_norm.ROI_percentage);
+0434 handles.ROI_norm.ROIdata.ROI_data_x{1}=ROI_pos_tau;
+0435 handles.ROI_norm.ROIdata.ROI_data_y{1}=ROI_pos_t;
+0436 handles.ROI_norm.Normalization_array=Normalization_array;
+0437 <span class="keyword">if</span> ismatrix(Normalization_array)==1;
+0438     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(Normalization_array(handles.PCpos,handles.Tpos)));
+0439 <span class="keyword">elseif</span> ndims(Normalization_array)==3;
+0440     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(Normalization_array(handles.PCpos,handles.Tpos,handles.Varpos)));
+0441 <span class="keyword">end</span>
+0442 guidata(hObject,handles);
+0443 <span class="comment">% --- Executes on button press in button_last20percent.</span>
+0444 <a name="_sub16" href="#_subfunctions" class="code">function button_last20percent_Callback(hObject, eventdata, handles)</a>
+0445 <span class="comment">% hObject    handle to button_last20percent (see GCBO)</span>
+0446 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0447 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0448 state=get(hObject,<span class="string">'Value'</span>);
+0449 <span class="keyword">if</span> state==1
+0450     handles.ROI_norm.ROI_percentage=0.15;
+0451 <span class="keyword">end</span>
+0452 [Normalization_array,ROI_pos_tau,ROI_pos_t]=<span class="keyword">...</span>
+0453     <a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/calculate_predef_ROI_mean.html" class="code" title="function [Normalization_array,pos_tau,pos_t]=calculate_predef_ROI_mean(TimeDomainData,tau_vector,t_vector,Percentage)">calculate_predef_ROI_mean</a>(handles.maindata.TDdata.TimeDomainData,<span class="keyword">...</span>
+0454             handles.maindata.TDdata.tau_vector,handles.maindata.TDdata.t_vector,handles.ROI_norm.ROI_percentage);
+0455 handles.ROI_norm.ROIdata.ROI_data_x{1}=ROI_pos_tau;
+0456 handles.ROI_norm.ROIdata.ROI_data_y{1}=ROI_pos_t;
+0457 handles.ROI_norm.Normalization_array=Normalization_array;
+0458 <span class="keyword">if</span> ismatrix(Normalization_array)==1;
+0459     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(Normalization_array(handles.PCpos,handles.Tpos)));
+0460 <span class="keyword">elseif</span> ndims(Normalization_array)==3;
+0461     set(handles.text_current_mean_value,<span class="string">'String'</span>,num2str(Normalization_array(handles.PCpos,handles.Tpos,handles.Varpos)));
+0462 <span class="keyword">end</span>
+0463 guidata(hObject,handles);
+0464 <span class="comment">% --- Executes on button press in radio_Normalize_to_ROI_mean.</span>
+0465 <a name="_sub17" href="#_subfunctions" class="code">function radio_Normalize_to_ROI_mean_Callback(hObject, eventdata, handles)</a>
+0466 <span class="comment">% hObject    handle to radio_Normalize_to_ROI_mean (see GCBO)</span>
+0467 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0468 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0469 
+0470 <span class="comment">% Hint: get(hObject,'Value') returns toggle state of radio_Normalize_to_ROI_mean</span>
+0471 state=get(hObject,<span class="string">'Value'</span>);
+0472 TimeDomainData=handles.maindata.TDdata.TimeDomainData;
+0473 Normalization_array=handles.ROI_norm.Normalization_array;
+0474 <span class="keyword">if</span> state==1
+0475 TimeDomainData=<a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/do_TD_normalization.html" class="code" title="function TimeDomainData_new=do_TD_normalization(TimeDomainData,Normalization_array)">do_TD_normalization</a>(TimeDomainData,Normalization_array);   
+0476 <span class="keyword">elseif</span> state ==0
+0477 TimeDomainData=<a href="../../CMDSworld/subguis/subfunctions_time_domain_maps/undo_TD_normalization.html" class="code" title="function TimeDomainData_new=undo_TD_normalization(TimeDomainData,Normalization_array)">undo_TD_normalization</a>(TimeDomainData,Normalization_array);         
+0478 <span class="keyword">end</span>
+0479 handles.maindata.TDdata.TimeDomainData=TimeDomainData;
+0480 guidata(hObject,handles);
+0481 <span class="comment">% --- Executes on button press in push_add_to_current_session.</span>
+0482 <a name="_sub18" href="#_subfunctions" class="code">function push_add_to_current_session_Callback(hObject, eventdata, handles)</a>
+0483 <span class="comment">% hObject    handle to push_add_to_current_session (see GCBO)</span>
+0484 <span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+0485 <span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+0486 handles.new_TimeDomainMap=handles.maindata.TDdata.TimeDomainData;
+0487 handles.new_TimaDomainMap_name = inputdlg({<span class="string">'Set dataset name'</span>},<span class="string">''</span>,1,{<span class="string">''</span>});
+0488 guidata(hObject,handles);
+0489 uiresume(handles.Time_domain_maps);</pre></div>
+<hr><address>Generated on Wed 28-Nov-2018 10:50:52 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>
