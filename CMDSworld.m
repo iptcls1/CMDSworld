@@ -52,9 +52,6 @@ function CMDSworld_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for CMDSworld
 handles.output = hObject;
-addpath(genpath('L:\Matlab Scripts\CMDSworld\subfunctions'),...
-    genpath('L:\Matlab Scripts\CMDSworld\subguis'),...
-    genpath('L:\Matlab Scripts\CMDSworld\demo_arrays'));
 
 opengl hardware;
 

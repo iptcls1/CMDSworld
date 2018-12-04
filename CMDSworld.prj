@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration file="L:\Matlab Scripts\CMDSworld\CMDSworld.prj" location="L:\Matlab Scripts\CMDSworld" name="CMDSworld" target="target.toolbox" target-name="Package Toolbox">
+  <configuration build-checksum="1438123559" file="L:\Matlab Scripts\zzz_CMDSworld_development\CMDSworld_feature_development\CMDSworld.prj" location="L:\Matlab Scripts\zzz_CMDSworld_development\CMDSworld_feature_development" name="CMDSworld" target="target.toolbox" target-name="Package Toolbox">
     <param.appname>CMDSworld</param.appname>
     <param.authnamewatermark>Bernhard Huber</param.authnamewatermark>
     <param.email>bernhard.huber@phys-chemie.uni-wuerzburg.de</param.email>
@@ -7,46 +7,64 @@
     <param.summary>Program to analyze and plot 2D spectra</param.summary>
     <param.description>Program to analyze and plot 2D spectra</param.description>
     <param.screenshot>${PROJECT_ROOT}\CMDSworld_image_v2.png</param.screenshot>
-    <param.version>2.2</param.version>
+    <param.version>2.4</param.version>
     <param.output>${PROJECT_ROOT}\CMDSworld.mltbx</param.output>
-    <param.products.name />
-    <param.products.id />
-    <param.products.version />
+    <param.products.name>
+      <item>MATLAB</item>
+    </param.products.name>
+    <param.products.id>
+      <item>1</item>
+    </param.products.id>
+    <param.products.version>
+      <item>8.5</item>
+    </param.products.version>
     <param.platforms />
     <param.guid>29e8199f-cec9-4ddd-88f2-2f4438205f88</param.guid>
-    <param.exclude.filters />
-    <param.examples />
+    <param.exclude.filters>% List files contained in your toolbox folder that you would like to exclude
+% from packaging.  Excludes should be listed relative to the toolbox folder.
+% Some examples of how to specify excludes are provided below:
+%
+% A single file in the toolbox folder:
+% .svn
+%
+% A single file in a subfolder of the toolbox folder:
+% example/.svn
+%
+% All files in a subfolder of the toolbox folder:
+ .git/*
+demo_arrays/*
+old_versions/*
+documentation/*
+%
+% All files of a certain name in all subfolders of the toolbox folder:
+% **/.svn
+%
+% All files matching a pattern in all subfolders of the toolbox folder:
+% **/*.bak
+%</param.exclude.filters>
+    <param.examples>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;examples/&gt;</param.examples>
     <param.demosxml />
     <param.apps />
-    <param.registered.apps />
     <param.docs />
-    <param.getting.started.guide />
-    <param.matlabpath.excludes />
-    <param.javaclasspath.excludes />
     <unset>
       <param.output />
-      <param.products.name />
-      <param.products.id />
-      <param.products.version />
       <param.platforms />
-      <param.exclude.filters />
-      <param.examples />
       <param.demosxml />
       <param.apps />
-      <param.registered.apps />
       <param.docs />
-      <param.getting.started.guide />
-      <param.matlabpath.excludes />
-      <param.javaclasspath.excludes />
     </unset>
     <fileset.rootdir>
-      <file>L:\Matlab Scripts\CMDSworld</file>
+      <file>L:\Matlab Scripts\zzz_CMDSworld_development\CMDSworld_feature_development</file>
     </fileset.rootdir>
     <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\.git</file>
+      <file>${PROJECT_ROOT}\00_This_is_CMDSworld_FEATURE_DEVELOPMENT.txt</file>
       <file>${PROJECT_ROOT}\CMDSworld.fig</file>
       <file>${PROJECT_ROOT}\CMDSworld.m</file>
       <file>${PROJECT_ROOT}\CMDSworld_image_v2.png</file>
       <file>${PROJECT_ROOT}\demo_arrays</file>
+      <file>${PROJECT_ROOT}\documentation</file>
       <file>${PROJECT_ROOT}\old_versions</file>
       <file>${PROJECT_ROOT}\subfunctions</file>
       <file>${PROJECT_ROOT}\subguis</file>
@@ -55,11 +73,11 @@
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="L:\Matlab Scripts\CMDSworld" name="CMDSworld.mltbx" optional="false">L:\Matlab Scripts\CMDSworld\CMDSworld.mltbx</file>
+      <file location="L:\Matlab Scripts\zzz_CMDSworld_development\CMDSworld_feature_development" name="CMDSworld.mltbx" optional="false">L:\Matlab Scripts\zzz_CMDSworld_development\CMDSworld_feature_development\CMDSworld.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Anwendungen\Mess&amp;Auswert\Matlab R2017b</root>
+      <root>C:\Anwendungen\Mess&amp;Auswert\Matlab R2015a</root>
       <toolboxes />
     </matlab>
     <platform>
